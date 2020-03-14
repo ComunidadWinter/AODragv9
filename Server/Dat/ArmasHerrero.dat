@@ -1,0 +1,50 @@
+[INIT]
+NumArmas=16
+
+[Arma1] ' Sable Roñoso
+Index=125
+
+[Arma2] ' Cimitarra
+Index=399
+
+[Arma3] ' Espada dos Manos
+Index=19
+
+[Arma4] ' Katana
+Index=124
+
+[Arma5] ' Espada de plata
+Index=403
+
+[Arma6] ' Espada Cántabra
+Index=561
+
+[Arma7] ' Hacha Dos Manos
+Index=1038
+
+[Arma8] ' Halberd
+Index=565
+
+[Arma9] ' Martillo de Guerra
+Index=401
+
+[Arma10] ' Hacha Roñosa
+Index=619
+
+[Arma11] ' Hacha de Guerra Dos Filos
+Index=129
+
+[Arma12] ' Excalibur
+Index=1039
+
+[Arma13] ' Espada Templaria
+Index=1041
+
+[Arma14] ' Espadas dobles
+Index=1043
+
+[Arma15] ' Hachas dobles
+Index=1044
+
+[Arma16] ' Hoja Rápida
+Index=365
