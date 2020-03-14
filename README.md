@@ -1,5 +1,7 @@
 # AODrag v9 Reforged
 
+Esta versión de AODrag fue programada desde 0 tomando como base Argentum Online 0.12.3
+
 Codigo del cliente y servidor de AODrag v9 Reforged
 
 Proyecto Completo 
