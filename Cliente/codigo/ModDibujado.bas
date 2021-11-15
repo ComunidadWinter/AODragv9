@@ -11,7 +11,7 @@ Private Declare Function GlobalAlloc Lib "kernel32" (ByVal uFlags As Long, ByVal
 Private Declare Function GlobalLock Lib "kernel32" (ByVal hMem As Long) As Long
 Private Declare Function GlobalUnlock Lib "kernel32" (ByVal hMem As Long) As Long
 Private Declare Function OleLoadPicture Lib "olepro32" (pStream As Any, ByVal lSize As Long, ByVal fRunmode As Long, riid As Any, ppvObj As Any) As Long
-Private Declare Sub CopyMemory Lib "kernel32.dll" Alias "RtlMoveMemory" (ByRef destination As Any, ByRef source As Any, ByVal length As Long)
+Private Declare Sub CopyMemory Lib "kernel32.dll" Alias "RtlMoveMemory" (ByRef Destination As Any, ByRef Source As Any, ByVal Length As Long)
 
 Private Declare Function SetBitmapBits Lib "gdi32" (ByVal hBitmap As Long, ByVal dwCount As Long, lpBits As Any) As Long
 
@@ -102,43 +102,69 @@ Sub DrawGrhtoHdc(ByVal desthDC As Long, ByVal grh_index As Long, ByVal Picture A
     End If
 
 End Sub
- 
-' GSZAO - Función para cargar y dibujar el MiniMap :)
-'Sub DrawMiniMap(ByVal desthDC As Long, ByVal iMap As Integer)
-'***************************************************
-'Author: ^[GS]^
-'Last Modification: 14/09/2012 - ^[GS]^
-'***************************************************
-'    'on error resume next
-'
-'    If iMap <= 0 Then Exit Sub
-'
-'    Dim tExp As String
-'    Dim hdcsrc As Long
-'    Dim PrevObj As Long
-'    Dim bmpData As StdPicture
-'    Dim data() As Byte
-'
-'    'If GraficosPNG = True Then
-'        'tExp = ".PNG"
-'    'Else
-'        tExp = ".BMP"
-'    'End If
-'
-'    ' Leemos el MiniMap del comprimido de mapas
-'    If Get_File_Data(DirMapas, "MAPA" & CStr(iMap) & tExp, data, 1) <> False Then
-'        Set bmpData = ArrayToPicture(data(), 0, UBound(data) + 1)
-'        ' Mostramos el MiniMap
-'        hdcsrc = CreateCompatibleDC(desthDC)
-'        'If GraficosPNG = False Then
-'            PrevObj = SelectObject(hdcsrc, bmpData)
-'        'End If
-'        BitBlt desthDC, 0, 0, 100, 100, hdcsrc, 0, 0, vbSrcCopy
-'        DeleteDC hdcsrc
-'        Set bmpData = Nothing
-'    Else
-'        ' no dibujar
-'    End If
-'
-'End Sub
 
+Public Sub DrawHeadHdc(ByVal desthDC As Long, ByVal Cabeza As Byte, ByVal Picture As Picture, ByVal X As Long, ByVal Y As Long, ByVal Heading As Byte, ByVal EsCabeza As Boolean)
+    Dim textureX1 As Integer
+    Dim textureX2 As Integer
+    Dim textureY1 As Integer
+    Dim textureY2 As Integer
+    Dim offsetX As Integer
+    Dim offsetY As Integer
+    Dim Texture As Long
+    Dim bmpData As StdPicture
+    Dim src_x As Integer
+    Dim src_y As Integer
+    Dim src_width As Integer
+    Dim src_height As Integer
+    Dim hdcsrc As Long
+    Dim MaskDC As Long
+    Dim PrevObj As Long
+    Dim PrevObj2 As Long
+    
+    Dim InfoHead As INFOHEADER
+    Dim buffer() As Byte
+        If EsCabeza = True Then
+            If heads(Cabeza).Texture <= 0 Then Exit Sub
+            Texture = heads(Cabeza).Texture
+        Else
+            If Cascos(Cabeza).Texture <= 0 Then Exit Sub
+            Texture = Cascos(Cabeza).Texture
+        End If
+        
+        textureX2 = 27
+        textureY2 = 32
+ 
+        If EsCabeza = True Then
+            textureX1 = heads(Cabeza).startX
+            textureY1 = ((Heading - 1) * textureY2) + heads(Cabeza).startY
+        Else
+            textureX1 = Cascos(Cabeza).startX
+            textureY1 = ((Heading - 1) * textureY2) + Cascos(Cabeza).startY
+        End If
+ 
+        offsetX = (textureX2) - 30
+        offsetY = (textureY2) - 35
+        
+        InfoHead = File_Find(App.Path & "\Recursos\Graphics.DRAG", CStr(heads(Cabeza).Texture) & ".bmp")
+   
+    If InfoHead.lngFileSize <> 0 Then
+        Extract_File_Memory Graphics, App.Path & "\Recursos\", CStr(heads(Cabeza).Texture) & ".bmp", buffer()
+        
+        Set bmpData = ArrayToPicture(buffer(), 0, UBound(buffer) + 1)
+        
+        src_x = textureX1
+        src_y = textureY1
+        src_width = (textureX2 + src_x)
+        src_height = (textureY2 + src_y)
+        
+        hdcsrc = CreateCompatibleDC(desthDC)
+        PrevObj = SelectObject(hdcsrc, bmpData)
+        
+        BitBlt desthDC, X, Y, src_width, src_height, hdcsrc, src_x, src_y, vbSrcCopy
+        DeleteDC hdcsrc
+        
+        Set bmpData = Nothing
+        Erase buffer
+    End If
+
+End Sub

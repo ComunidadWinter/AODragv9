@@ -575,6 +575,9 @@ Public Sub ParseUserCommand(ByVal RawCommand As String)
                         
                         Case "AGREGAR"
                             tmpInt = eEditOptions.eo_addGold
+                            
+                        Case "SPEED"
+                            tmpInt = eEditOptions.eo_Speed
                         
                         Case Else
                             tmpInt = -1
@@ -1451,7 +1454,7 @@ End Sub
 ' @param    Numero The number to be checked.
 ' @param    Tipo The acceptable type of number.
 
-Public Function ValidNumber(ByVal Numero As String, ByVal Tipo As eNumber_Types) As Boolean
+Public Function ValidNumber(ByVal Numero As String, ByVal tipo As eNumber_Types) As Boolean
 '***************************************************
 'Author: Nicolas Matias Gonzalez (NIGO)
 'Last Modification: 01/06/07
@@ -1463,7 +1466,7 @@ Public Function ValidNumber(ByVal Numero As String, ByVal Tipo As eNumber_Types)
     If Not IsNumeric(Numero) Then _
         Exit Function
     
-    Select Case Tipo
+    Select Case tipo
         Case eNumber_Types.ent_Byte
             Minimo = 0
             Maximo = 255

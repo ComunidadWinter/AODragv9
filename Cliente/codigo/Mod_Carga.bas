@@ -57,8 +57,8 @@ Sub CargarAtaques()
                 InitGrh AtaqueData(i).AtaqueWalk(j), MisAtaques(i).Body(j), 0
             Next j
             
-            AtaqueData(i).HeadOffset.x = MisAtaques(i).HeadOffsetX
-            AtaqueData(i).HeadOffset.y = MisAtaques(i).HeadOffsetY
+            AtaqueData(i).HeadOffset.X = MisAtaques(i).HeadOffsetX
+            AtaqueData(i).HeadOffset.Y = MisAtaques(i).HeadOffsetY
         End If
     Next i
     
@@ -154,15 +154,12 @@ Sub CargarCuerpos()
     
     For i = 1 To NumCuerpos
         Get #N, , MisCuerpos(i)
-        
-        If MisCuerpos(i).Body(1) Then
-            For j = 1 To 4
-                InitGrh BodyData(i).Walk(j), MisCuerpos(i).Body(j), 0
-            Next j
-
-            BodyData(i).HeadOffset.x = MisCuerpos(i).HeadOffsetX
-            BodyData(i).HeadOffset.y = MisCuerpos(i).HeadOffsetY
-        End If
+        'MisCuerpos(i) = MisCuerposInt(i)
+        For j = 1 To 4
+            InitGrh BodyData(i).Walk(j), MisCuerpos(i).Body(j), 0
+        Next j
+        BodyData(i).HeadOffset.X = MisCuerpos(i).HeadOffsetX
+        BodyData(i).HeadOffset.Y = MisCuerpos(i).HeadOffsetY
     Next i
     
     Close #N
@@ -210,10 +207,10 @@ Sub CargarAnimArmas()
             
     ReDim WeaponAnimData(1 To NumWeaponAnims) As WeaponAnimData
     For i = 1 To NumWeaponAnims
-        InitGrh WeaponAnimData(i).WeaponWalk(1), Val(Leer.GetValue("ARMA" & i, "Dir1")), 0
-        InitGrh WeaponAnimData(i).WeaponWalk(2), Val(Leer.GetValue("ARMA" & i, "Dir2")), 0
-        InitGrh WeaponAnimData(i).WeaponWalk(3), Val(Leer.GetValue("ARMA" & i, "Dir3")), 0
-        InitGrh WeaponAnimData(i).WeaponWalk(4), Val(Leer.GetValue("ARMA" & i, "Dir4")), 0
+        InitGrh WeaponAnimData(i).WeaponWalk(NORTH), Val(Leer.GetValue("ARMA" & i, "Dir1")), 0
+        InitGrh WeaponAnimData(i).WeaponWalk(EAST), Val(Leer.GetValue("ARMA" & i, "Dir2")), 0
+        InitGrh WeaponAnimData(i).WeaponWalk(SOUTH), Val(Leer.GetValue("ARMA" & i, "Dir3")), 0
+        InitGrh WeaponAnimData(i).WeaponWalk(WEST), Val(Leer.GetValue("ARMA" & i, "Dir4")), 0
     Next i
     
     Delete_File file
@@ -263,10 +260,10 @@ Sub CargarAnimEscudos()
             
     ReDim ShieldAnimData(1 To NumEscudosAnims) As ShieldAnimData
     For i = 1 To NumEscudosAnims
-        InitGrh ShieldAnimData(i).ShieldWalk(1), Val(Leer.GetValue("ESC" & i, "Dir1")), 0
-        InitGrh ShieldAnimData(i).ShieldWalk(2), Val(Leer.GetValue("ESC" & i, "Dir2")), 0
-        InitGrh ShieldAnimData(i).ShieldWalk(3), Val(Leer.GetValue("ESC" & i, "Dir3")), 0
-        InitGrh ShieldAnimData(i).ShieldWalk(4), Val(Leer.GetValue("ESC" & i, "Dir4")), 0
+        InitGrh ShieldAnimData(i).ShieldWalk(NORTH), Val(Leer.GetValue("ESC" & i, "Dir1")), 0
+        InitGrh ShieldAnimData(i).ShieldWalk(EAST), Val(Leer.GetValue("ESC" & i, "Dir2")), 0
+        InitGrh ShieldAnimData(i).ShieldWalk(SOUTH), Val(Leer.GetValue("ESC" & i, "Dir3")), 0
+        InitGrh ShieldAnimData(i).ShieldWalk(WEST), Val(Leer.GetValue("ESC" & i, "Dir4")), 0
     Next i
     Delete_File file
     
@@ -475,7 +472,7 @@ On Error GoTo ErrorHandler
             StreamData(loopc).Y1 = Leer.GetValue(Val(loopc), "Y1")
             StreamData(loopc).X2 = Leer.GetValue(Val(loopc), "X2")
             StreamData(loopc).Y2 = Leer.GetValue(Val(loopc), "Y2")
-            StreamData(loopc).angle = Leer.GetValue(Val(loopc), "Angle")
+            StreamData(loopc).Angle = Leer.GetValue(Val(loopc), "Angle")
             StreamData(loopc).vecx1 = Leer.GetValue(Val(loopc), "VecX1")
             StreamData(loopc).vecx2 = Leer.GetValue(Val(loopc), "VecX2")
             StreamData(loopc).vecy1 = Leer.GetValue(Val(loopc), "VecY1")

@@ -17,9 +17,9 @@ Private DirectD3D As D3DX8
  
 Private Declare Sub CopyMemory _
                 Lib "kernel32" _
-                Alias "RtlMoveMemory" (destination As Any, _
-                                       source As Any, _
-                                       ByVal length As Long)
+                Alias "RtlMoveMemory" (Destination As Any, _
+                                       Source As Any, _
+                                       ByVal Length As Long)
  
 'Describes the return from a texture init
 Private Type D3DXIMAGE_INFO_A
@@ -72,11 +72,11 @@ Private cfonts(1 To 3) As CustomFont  ' _Default2 As CustomFont
 Sub Engine_Text_Draw(ByVal Left As Long, _
                      ByVal Top As Long, _
                      ByVal Text As String, _
-                     ByVal color As Long, _
+                     ByVal Color As Long, _
                      Optional ByVal Alpha As Byte = 255, _
                      Optional ByVal Center As Boolean = False, Optional ByVal Font As Byte = 1)
    
-        Engine_Render_Text cfonts(Font), Text, Left, Top, color, Center, Alpha, Font
+        Engine_Render_Text cfonts(Font), Text, Left, Top, Color, Center, Alpha, Font
  
 End Sub
 
@@ -96,7 +96,7 @@ Private Sub Engine_Render_Text(ByRef UseFont As CustomFont, _
                                ByVal Text As String, _
                                ByVal X As Long, _
                                ByVal Y As Long, _
-                               ByVal color As Long, _
+                               ByVal Color As Long, _
                                Optional ByVal Center As Boolean = False, Optional ByVal Alpha As Byte = 255, Optional ByVal Font As Byte = 1)
  
         Dim TempVA(0 To 3) As TLVERTEX
@@ -108,84 +108,84 @@ Private Sub Engine_Render_Text(ByRef UseFont As CustomFont, _
         Dim TempColor      As Long
         Dim ResetColor     As Byte
         Dim YOffset        As Single
- 
-        D3DDevice.SetRenderState D3DRS_SRCBLEND, D3DBLEND_SRCALPHA
-        D3DDevice.SetRenderState D3DRS_DESTBLEND, D3DBLEND_INVSRCALPHA
-        D3DDevice.SetRenderState D3DRS_ALPHABLENDENABLE, True
-   
-        'Check if we have the device
-        If D3DDevice.TestCooperativeLevel <> D3D_OK Then Exit Sub
- 
-        'Check for valid text to render
-        If LenB(Text) = 0 Then Exit Sub
-   
-        'Get the text into arrays (split by vbCrLf)
-        tempstr = Split(Text, vbCrLf)
-   
-        'Set the temp color (or else the first character has no color)
-        TempColor = color
- 
-        'Set the texture
-        D3DDevice.SetTexture 0, UseFont.Texture
-   
-        If Center Then
-                X = X - Engine_GetTextWidth(cfonts(Font), Text) * 0.5
-        End If
-   
-        'Loop through each line if there are line breaks (vbCrLf)
-        For i = 0 To UBound(tempstr)
- 
-                If Len(tempstr(i)) > 0 Then
-                        YOffset = i * UseFont.CharHeight
-                        count = 0
-       
-                        'Convert the characters to the ascii value
-                        ascii() = StrConv(tempstr(i), vbFromUnicode)
-       
-                        'Loop through the characters
-                        For j = 1 To Len(tempstr(i))
-   
-                                'Copy from the cached vertex array to the temp vertex array
-                                CopyMemory TempVA(0), UseFont.HeaderInfo.CharVA(ascii(j - 1)).Vertex(0), 32 * 4
- 
-                                'Set up the verticies
-                                TempVA(0).X = X + count
-                                TempVA(0).Y = Y + YOffset
-                       
-                                TempVA(1).X = TempVA(1).X + X + count
-                                TempVA(1).Y = TempVA(0).Y
- 
-                                TempVA(2).X = TempVA(0).X
-                                TempVA(2).Y = TempVA(2).Y + TempVA(0).Y
- 
-                                TempVA(3).X = TempVA(1).X
-                                TempVA(3).Y = TempVA(2).Y
-                       
-                                'Set the colors
-                                TempVA(0).color = TempColor
-                                TempVA(1).color = TempColor
-                                TempVA(2).color = TempColor
-                                TempVA(3).color = TempColor
-                       
-                                'Draw the verticies
-                                D3DDevice.SetRenderState D3DRS_TEXTUREFACTOR, D3DColorARGB(Alpha, 0, 0, 0)
-                                D3DDevice.DrawPrimitiveUP D3DPT_TRIANGLESTRIP, 2, TempVA(0), Len(TempVA(0))
-                                
-                                'Shift over the the position to render the next character
-                                count = count + UseFont.HeaderInfo.CharWidth(ascii(j - 1))
- 
-                                'Check to reset the color
-                                If ResetColor Then
-                                        ResetColor = 0
-                                        TempColor = color
-                                End If
-               
-                        Next j
-           
-                End If
- 
-        Next i
-   
+        
+        With DirectDevice
+           .SetRenderState D3DRS_SRCBLEND, D3DBLEND_SRCALPHA
+           .SetRenderState D3DRS_DESTBLEND, D3DBLEND_INVSRCALPHA
+           .SetRenderState D3DRS_ALPHABLENDENABLE, True
+      
+           'Check if we have the device
+           If .TestCooperativeLevel <> D3D_OK Then Exit Sub
+    
+           'Check for valid text to render
+           If LenB(Text) = 0 Then Exit Sub
+      
+           'Get the text into arrays (split by vbCrLf)
+           tempstr = Split(Text, vbCrLf)
+      
+           'Set the temp color (or else the first character has no color)
+           TempColor = Color
+    
+           'Set the texture
+           .SetTexture 0, UseFont.Texture
+      
+           If Center Then _
+                   X = X - Engine_GetTextWidth(cfonts(Font), Text) * 0.5
+      
+           'Loop through each line if there are line breaks (vbCrLf)
+           For i = 0 To UBound(tempstr)
+    
+                   If Len(tempstr(i)) > 0 Then
+                           YOffset = i * UseFont.CharHeight
+                           count = 0
+          
+                           'Convert the characters to the ascii value
+                           ascii() = StrConv(tempstr(i), vbFromUnicode)
+          
+                           'Loop through the characters
+                           For j = 1 To Len(tempstr(i))
+      
+                                   'Copy from the cached vertex array to the temp vertex array
+                                   CopyMemory TempVA(0), UseFont.HeaderInfo.CharVA(ascii(j - 1)).Vertex(0), 32 * 4
+    
+                                   'Set up the verticies
+                                   TempVA(0).X = X + count
+                                   TempVA(0).Y = Y + YOffset
+                          
+                                   TempVA(1).X = TempVA(1).X + X + count
+                                   TempVA(1).Y = TempVA(0).Y
+    
+                                   TempVA(2).X = TempVA(0).X
+                                   TempVA(2).Y = TempVA(2).Y + TempVA(0).Y
+    
+                                   TempVA(3).X = TempVA(1).X
+                                   TempVA(3).Y = TempVA(2).Y
+                          
+                                   'Set the colors
+                                   TempVA(0).Color = TempColor
+                                   TempVA(1).Color = TempColor
+                                   TempVA(2).Color = TempColor
+                                   TempVA(3).Color = TempColor
+                          
+                                   'Draw the verticies
+                                   .SetRenderState D3DRS_TEXTUREFACTOR, D3DColorARGB(Alpha, 0, 0, 0)
+                                   .DrawPrimitiveUP D3DPT_TRIANGLESTRIP, 2, TempVA(0), Len(TempVA(0))
+                                   
+                                   'Shift over the the position to render the next character
+                                   count = count + UseFont.HeaderInfo.CharWidth(ascii(j - 1))
+    
+                                   'Check to reset the color
+                                   If ResetColor Then
+                                           ResetColor = 0
+                                           TempColor = Color
+                                   End If
+                  
+                           Next j
+              
+                   End If
+    
+           Next i
+    End With
 End Sub
  
 Private Function Engine_GetTextWidth(ByRef UseFont As CustomFont, _
@@ -242,37 +242,37 @@ Sub Engine_Init_FontSettings()
         
                        'Set the verticies
                        With cfonts(i).HeaderInfo.CharVA(LoopChar)
-                               .Vertex(0).color = D3DColorARGB(255, 0, 0, 0)   'Black is the most common color
+                               .Vertex(0).Color = D3DColorARGB(255, 0, 0, 0)   'Black is the most common color
                                .Vertex(0).rhw = 1
                                .Vertex(0).tu = u
                                .Vertex(0).tv = v
                                .Vertex(0).X = 0
                                .Vertex(0).Y = 0
-                               .Vertex(0).Z = 0
+                               .Vertex(0).z = 0
                   
-                               .Vertex(1).color = D3DColorARGB(255, 0, 0, 0)
+                               .Vertex(1).Color = D3DColorARGB(255, 0, 0, 0)
                                .Vertex(1).rhw = 1
                                .Vertex(1).tu = u + cfonts(i).ColFactor
                                .Vertex(1).tv = v
                                .Vertex(1).X = cfonts(i).HeaderInfo.CellWidth
                                .Vertex(1).Y = 0
-                               .Vertex(1).Z = 0
+                               .Vertex(1).z = 0
                   
-                               .Vertex(2).color = D3DColorARGB(255, 0, 0, 0)
+                               .Vertex(2).Color = D3DColorARGB(255, 0, 0, 0)
                                .Vertex(2).rhw = 1
                                .Vertex(2).tu = u
                                .Vertex(2).tv = v + cfonts(i).RowFactor
                                .Vertex(2).X = 0
                                .Vertex(2).Y = cfonts(i).HeaderInfo.CellHeight
-                               .Vertex(2).Z = 0
+                               .Vertex(2).z = 0
                   
-                               .Vertex(3).color = D3DColorARGB(255, 0, 0, 0)
+                               .Vertex(3).Color = D3DColorARGB(255, 0, 0, 0)
                                .Vertex(3).rhw = 1
                                .Vertex(3).tu = u + cfonts(i).ColFactor
                                .Vertex(3).tv = v + cfonts(i).RowFactor
                                .Vertex(3).X = cfonts(i).HeaderInfo.CellWidth
                                .Vertex(3).Y = cfonts(i).HeaderInfo.CellHeight
-                               .Vertex(3).Z = 0
+                               .Vertex(3).z = 0
                        End With
             Next LoopChar
           Next i
@@ -289,21 +289,18 @@ Sub Engine_Init_FontTextures()
         Dim Data() As Byte
         
         'Check if we have the device
-        If D3DDevice.TestCooperativeLevel <> D3D_OK Then Exit Sub
- 
-        '*** Default font ***
-   
+        If DirectDevice.TestCooperativeLevel <> D3D_OK Then Exit Sub
+
         'Set the texture
         For i = 1 To 3
         
         'Lorwik> Para no complicarnos la vida, los graficos de las font van a ir uno detras de otro, asi le podemos meter un For ;)
-
         InfoHead = File_Find(App.Path & "\RECURSOS\Fuentes.DRAG", CStr(i) & ".png")
         'Si existe usamos BMP
         If InfoHead.lngFileSize <> 0 Then
             Extract_File_Memory Fuentes, App.Path & "\Recursos\", LCase$(CStr(i) & ".png"), Data()
             
-            Set cfonts(i).Texture = D3DX.CreateTextureFromFileInMemoryEx(D3DDevice, Data(0), UBound(Data) + 1, _
+            Set cfonts(i).Texture = DirectD3D8.CreateTextureFromFileInMemoryEx(DirectDevice, Data(0), UBound(Data) + 1, _
                 D3DX_DEFAULT, D3DX_DEFAULT, 3, 0, D3DFMT_A8R8G8B8, D3DPOOL_MANAGED, D3DX_FILTER_NONE, _
                 D3DX_FILTER_NONE, ByVal 0, ByVal 0, ByVal 0)
                 
@@ -321,14 +318,6 @@ eDebug:
         If Err.number = "-2005529767" Then
                 MsgBox "Error en la textura utilizada de DirectX 8", vbCritical
         End If
- 
         End
- 
 End Sub
-
-
-
-
-
-
 

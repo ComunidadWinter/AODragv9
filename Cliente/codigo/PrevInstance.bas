@@ -70,10 +70,17 @@ End Function
 
 Public Sub CloseClient()
 '***************************************************
-'Autor: Juan Martín Sotuyo Dodero (Maraxus)
-'Last Modification: 01/04/07
+'Autor: Lorwik
+'Last Modification: 23/11/2018
 '
 '***************************************************
+    ' Allow new instances of the client to be opened
+'    Call PrevInstance.CloseClient
+    
+    EngineRun = False
+    frmCargando.Show
+    frmCargando.Status.Caption = "Liberando recursos..."
+    frmCargando.Status.Refresh
     'Establecemos el 100% de la carga
     Call frmCargando.establecerProgreso(100)
     Call GuardarOpciones
@@ -81,7 +88,22 @@ Public Sub CloseClient()
     StopURLDetect
     Call ReleaseMutex(mutexHID)
     Call CloseHandle(mutexHID)
-    Engine.Engine_Deinit
+    
+    'Stop tile engine
+    Call DeinitTileEngine
+    
+    'Destruimos los objetos públicos creados
+    Set CustomKeys = Nothing
+    Set SurfaceDB = Nothing
+    Set Dialogos = Nothing
+    Set Inventario = Nothing
+    Set MainTimer = Nothing
+    Set incomingData = Nothing
+    Set outgoingData = Nothing
+    
+    Call UnloadAllForms
+
+    End
     'Establecemos el 0% de la carga
     Call frmCargando.progresoConDelay(0)
 End Sub

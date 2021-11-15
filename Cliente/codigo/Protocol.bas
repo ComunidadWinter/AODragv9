@@ -61,6 +61,7 @@ Private Enum ServerPacketID
     CharacterMove           ' MP, +, * and _ '
     ForceCharMove
     CharacterChange         ' CP
+    ChangeSpeed
     ObjectCreate            ' HO
     ObjectDelete            ' BO
     BlockPosition           ' BQ
@@ -118,6 +119,16 @@ Private Enum ServerPacketID
     ActualizacionParty
     SetPartyId
     
+    '15/12/2018 Irongete: Paquetes de Efectos
+    CrearEfecto
+    QuitarEfecto
+    RenovarEfecto
+    
+    
+    '15/12/2018 Irongete:
+    CrearZona
+    QuitarZona
+       
     'GM messages
     SpawnList               ' SPL
     ShowSOSForm             ' MSOS
@@ -769,6 +780,9 @@ On Error Resume Next
         
         Case ServerPacketID.CharacterChange         ' CP
             Call HandleCharacterChange
+            
+        Case ServerPacketID.ChangeSpeed
+            Call HandleChangeSpeed
         
         Case ServerPacketID.ObjectCreate            ' HO
             Call HandleObjectCreate
@@ -931,7 +945,18 @@ On Error Resume Next
             
         Case ServerPacketID.SetPartyId
             Call HandleSetPartyId
+            
+        Case ServerPacketID.CrearEfecto
+            Call HandleCrearEfecto
+            
+        Case ServerPacketID.QuitarEfecto
+            Call HandleQuitarEfecto
 
+        'Case ServerPacketID.RenovarEfecto
+            'Call HandleRenovarEfecto
+            
+        Case ServerPacketID.CrearZona
+          Call HandleCrearZona
         
         '*******************
         'GM messages
@@ -1049,10 +1074,11 @@ Private Sub HandleLogged()
     'Set connected state
     Call SetConnected
     'Minimapa
+    Call ActualizarMiniMapa
     Call DibujarMiniMapa
     
     Inventario.DrawInv
-    Engine.DrawSpells
+    DrawSpells
     
     If Opciones.PrimeraVez = 1 Then frmTutorial.Show vbModeless, frmMain
 End Sub
@@ -1218,8 +1244,8 @@ Private Sub HandleCommerceInit()
     Set InvComNpc = New clsGraphicalInventory
     
     ' Initialize commerce inventories
-    Call InvComUsu.Initialize(D3DX, frmComerciar.picInv, Inventario.MaxObjs)
-    Call InvComNpc.Initialize(D3DX, frmComerciar.picInvNpc, MAX_NPC_INVENTORY_SLOTS)
+    Call InvComUsu.Initialize(DirectD3D8, frmComerciar.picInv, Inventario.MaxObjs)
+    Call InvComNpc.Initialize(DirectD3D8, frmComerciar.picInvNpc, MAX_NPC_INVENTORY_SLOTS)
 
     'Fill user inventory
     For i = 1 To MAX_INVENTORY_SLOTS
@@ -1228,7 +1254,7 @@ Private Sub HandleCommerceInit()
                 Call InvComUsu.SetItem(i, .OBJIndex(i), _
                 .amount(i), .Equipped(i), .GrhIndex(i), _
                 .OBJType(i), .MaxHit(i), .MinHit(i), .MaxDef(i), _
-                .MinDef(i), .Valor(i), .ItemName(i), .PuedeUsar(i))
+                .MinDef(i), .valor(i), .ItemName(i), .PuedeUsar(i))
             End With
         End If
     Next i
@@ -1240,7 +1266,7 @@ Private Sub HandleCommerceInit()
                 Call InvComNpc.SetItem(i, .OBJIndex, _
                 .amount, 0, .GrhIndex, _
                 .OBJType, .MaxHit, .MinHit, .MaxDef, _
-                .MinDef, .Valor, .name, .PuedeUsar)
+                .MinDef, .valor, .name, .PuedeUsar)
             End With
         End If
     Next i
@@ -1268,15 +1294,15 @@ Private Sub HandleBankInit()
     Set InvBanco(0) = New clsGraphicalInventory
     Set InvBanco(1) = New clsGraphicalInventory
     
-    Call InvBanco(0).Initialize(D3DX, frmBancoObj.PicBancoInv, MAX_BANCOINVENTORY_SLOTS)
-    Call InvBanco(1).Initialize(D3DX, frmBancoObj.picInv, Inventario.MaxObjs)
+    Call InvBanco(0).Initialize(DirectD3D8, frmBancoObj.PicBancoInv, MAX_BANCOINVENTORY_SLOTS)
+    Call InvBanco(1).Initialize(DirectD3D8, frmBancoObj.picInv, Inventario.MaxObjs)
     
     For i = 1 To Inventario.MaxObjs
         With Inventario
             Call InvBanco(1).SetItem(i, .OBJIndex(i), _
                 .amount(i), .Equipped(i), .GrhIndex(i), _
                 .OBJType(i), .MaxHit(i), .MinHit(i), .MaxDef(i), _
-                .MinDef(i), .Valor(i), .ItemName(i), .PuedeUsar(i))
+                .MinDef(i), .valor(i), .ItemName(i), .PuedeUsar(i))
         End With
     Next i
     
@@ -1285,7 +1311,7 @@ Private Sub HandleBankInit()
             Call InvBanco(0).SetItem(i, .OBJIndex, _
                 .amount, .Equipped, .GrhIndex, _
                 .OBJType, .MaxHit, .MinHit, .MaxDef, _
-                .MinDef, .Valor, .name, .PuedeUsar)
+                .MinDef, .valor, .name, .PuedeUsar)
         End With
     Next i
     
@@ -1670,6 +1696,7 @@ Dim MapFile
     End If
     
     'Dibujo el minimapa
+    Call ActualizarMiniMapa
     Call DibujarMiniMapa
 End Sub
 
@@ -1691,25 +1718,25 @@ Private Sub HandlePosUpdate()
     Call incomingData.ReadByte
     
     'Remove char from old position
-    If MapData(UserPos.x, UserPos.y).CharIndex = UserCharIndex Then
-        MapData(UserPos.x, UserPos.y).CharIndex = 0
+    If MapData(UserPos.X, UserPos.Y).CharIndex = UserCharIndex Then
+        MapData(UserPos.X, UserPos.Y).CharIndex = 0
     End If
     
     'Set new pos
-    UserPos.x = incomingData.ReadByte()
-    UserPos.y = incomingData.ReadByte()
+    UserPos.X = incomingData.ReadByte()
+    UserPos.Y = incomingData.ReadByte()
     
     'Set char
-    MapData(UserPos.x, UserPos.y).CharIndex = UserCharIndex
+    MapData(UserPos.X, UserPos.Y).CharIndex = UserCharIndex
     charlist(UserCharIndex).Pos = UserPos
     
     'Are we under a roof?
-    bTecho = IIf(MapData(UserPos.x, UserPos.y).Trigger = 1 Or _
-            MapData(UserPos.x, UserPos.y).Trigger = 2 Or _
-            MapData(UserPos.x, UserPos.y).Trigger = 4, True, False)
+    bTecho = IIf(MapData(UserPos.X, UserPos.Y).trigger = 1 Or _
+            MapData(UserPos.X, UserPos.Y).trigger = 2 Or _
+            MapData(UserPos.X, UserPos.Y).trigger = 4, True, False)
             
     'Update pos label
-    frmMain.lblMapCoord.Caption = UserMap & "," & UserPos.x & "," & UserPos.y
+    frmMain.lblMapCoord.Caption = UserMap & "," & UserPos.X & "," & UserPos.Y
     If Not MapInfo.name = "" Then _
         MapInfo.name = "Mapa Desconocido"
 End Sub
@@ -1816,7 +1843,7 @@ On Error GoTo errhandler
     Dim b As Byte
     Dim NoConsole As Boolean
     
-    Dim color As String
+    Dim Color As String
         
     chat = buffer.ReadASCIIString()
     CharIndex = buffer.ReadInteger()
@@ -1836,8 +1863,8 @@ On Error GoTo errhandler
             If NoConsole = False Then
                 
                 '30/10/2015 Irongete: Añado este filtro para que los hechizos no se añadan al chat
-                color = RGB(r, g, b)
-                If Not color = "16776960" Then
+                Color = RGB(r, g, b)
+                If Not Color = "16776960" Then
                     Call AddtoRichTextBox(frmMain.RecTxt, charlist(CharIndex).Nombre & "> " & chat, r, g, b, False, False, False)
                 End If
             End If
@@ -1847,15 +1874,15 @@ On Error GoTo errhandler
     Call incomingData.CopyBuffer(buffer)
 
 errhandler:
-    Dim error As Long
-    error = Err.number
+    Dim Error As Long
+    Error = Err.number
 On Error GoTo 0
     
     'Destroy auxiliar buffer
     Set buffer = Nothing
     
-    If error <> 0 Then _
-        Err.Raise error
+    If Error <> 0 Then _
+        Err.Raise Error
 End Sub
 
 ''
@@ -1881,14 +1908,14 @@ On Error GoTo errhandler
     Call buffer.ReadByte
     
     Dim chat As String
-    Dim fontIndex As Integer
+    Dim FontIndex As Integer
     Dim str As String
     Dim r As Byte
     Dim g As Byte
     Dim b As Byte
     
     chat = buffer.ReadASCIIString()
-    fontIndex = buffer.ReadByte()
+    FontIndex = buffer.ReadByte()
     
     If InStr(1, chat, "~") Then
         str = ReadField(2, chat, 126)
@@ -1914,7 +1941,7 @@ On Error GoTo errhandler
             
         Call AddtoRichTextBox(frmMain.RecTxt, Left$(chat, InStr(1, chat, "~") - 1), r, g, b, Val(ReadField(5, chat, 126)) <> 0, Val(ReadField(6, chat, 126)) <> 0)
     Else
-        With FontTypes(fontIndex)
+        With FontTypes(FontIndex)
             Call AddtoRichTextBox(frmMain.RecTxt, chat, .red, .green, .blue, .bold, .italic)
         End With
     End If
@@ -1923,15 +1950,15 @@ On Error GoTo errhandler
     Call incomingData.CopyBuffer(buffer)
     
 errhandler:
-    Dim error As Long
-    error = Err.number
+    Dim Error As Long
+    Error = Err.number
 On Error GoTo 0
     
     'Destroy auxiliar buffer
     Set buffer = Nothing
 
-    If error <> 0 Then _
-        Err.Raise error
+    If Error <> 0 Then _
+        Err.Raise Error
 End Sub
 
 ''
@@ -2000,15 +2027,15 @@ On Error GoTo errhandler
     Call incomingData.CopyBuffer(buffer)
     
 errhandler:
-    Dim error As Long
-    error = Err.number
+    Dim Error As Long
+    Error = Err.number
 On Error GoTo 0
     
     'Destroy auxiliar buffer
     Set buffer = Nothing
 
-    If error <> 0 Then _
-        Err.Raise error
+    If Error <> 0 Then _
+        Err.Raise Error
 End Sub
 
 ''
@@ -2040,15 +2067,15 @@ On Error GoTo errhandler
     Call incomingData.CopyBuffer(buffer)
     
 errhandler:
-    Dim error As Long
-    error = Err.number
+    Dim Error As Long
+    Error = Err.number
 On Error GoTo 0
     
     'Destroy auxiliar buffer
     Set buffer = Nothing
 
-    If error <> 0 Then _
-        Err.Raise error
+    If Error <> 0 Then _
+        Err.Raise Error
 End Sub
 
 ''
@@ -2092,12 +2119,12 @@ Private Sub HandleUserCharIndexInServer()
     UserPos = charlist(UserCharIndex).Pos
     
     'Are we under a roof?
-    bTecho = IIf(MapData(UserPos.x, UserPos.y).Trigger = 1 Or _
-            MapData(UserPos.x, UserPos.y).Trigger = 2 Or _
-            MapData(UserPos.x, UserPos.y).Trigger = 4, True, False)
+    bTecho = IIf(MapData(UserPos.X, UserPos.Y).trigger = 1 Or _
+            MapData(UserPos.X, UserPos.Y).trigger = 2 Or _
+            MapData(UserPos.X, UserPos.Y).trigger = 4, True, False)
             
     'Update pos label
-    frmMain.lblMapCoord.Caption = UserMap & "," & UserPos.x & "," & UserPos.y
+    frmMain.lblMapCoord.Caption = UserMap & "," & UserPos.X & "," & UserPos.Y
     If Not MapInfo.name = "" Then
         frmMain.lblMapName.Caption = MapInfo.name
     Else
@@ -2131,21 +2158,22 @@ On Error GoTo errhandler
     Dim Body As Integer
     Dim Head As Integer
     Dim Heading As E_Heading
-    Dim x As Byte
-    Dim y As Byte
+    Dim X As Byte
+    Dim Y As Byte
     Dim weapon As Integer
     Dim shield As Integer
     Dim helmet As Integer
     Dim privs As Integer
     Dim Ataque As Integer
     Dim NPCtype As Integer
+    Dim Speed As Byte
     
     CharIndex = buffer.ReadInteger()
     Body = buffer.ReadInteger()
     Head = buffer.ReadInteger()
     Heading = buffer.ReadByte()
-    x = buffer.ReadByte()
-    y = buffer.ReadByte()
+    X = buffer.ReadByte()
+    Y = buffer.ReadByte()
     weapon = buffer.ReadInteger()
     shield = buffer.ReadInteger()
     helmet = buffer.ReadInteger()
@@ -2186,14 +2214,13 @@ On Error GoTo errhandler
         End If
         .bType = buffer.ReadByte() ' GSZAO
         
-      
-        
-    End With
     
-    Ataque = buffer.ReadInteger()
+        Ataque = buffer.ReadInteger()
+        .Speed = buffer.ReadByte()
+        If CharIndex = UserCharIndex Then UserSpeed = .Speed
      
-    Call MakeChar(CharIndex, Body, Head, Heading, x, y, weapon, shield, helmet, Ataque)
-    
+    End With
+    Call MakeChar(CharIndex, Body, Head, Heading, X, Y, weapon, shield, helmet, Ataque)
     
     Call RefreshAllChars
     
@@ -2201,15 +2228,15 @@ On Error GoTo errhandler
     Call incomingData.CopyBuffer(buffer)
     
 errhandler:
-    Dim error As Long
-    error = Err.number
+    Dim Error As Long
+    Error = Err.number
 On Error GoTo 0
     
     'Destroy auxiliar buffer
     Set buffer = Nothing
 
-    If error <> 0 Then _
-        Err.Raise error
+    If Error <> 0 Then _
+        Err.Raise Error
 End Sub
 
 Private Sub HandleCharacterChangeNick()
@@ -2274,12 +2301,12 @@ Private Sub HandleCharacterMove()
     Call incomingData.ReadByte
     
     Dim CharIndex As Integer
-    Dim x As Byte
-    Dim y As Byte
+    Dim X As Byte
+    Dim Y As Byte
     
     CharIndex = incomingData.ReadInteger()
-    x = incomingData.ReadByte()
-    y = incomingData.ReadByte()
+    X = incomingData.ReadByte()
+    Y = incomingData.ReadByte()
     
     With charlist(CharIndex)
         If .FxIndex >= 40 And .FxIndex <= 49 Then   'If it's meditating, we remove the FX
@@ -2292,7 +2319,7 @@ Private Sub HandleCharacterMove()
         End If
     End With
     
-    Call MoveCharbyPos(CharIndex, x, y)
+    Call MoveCharbyPos(CharIndex, X, Y)
     
     Call RefreshAllChars
 End Sub
@@ -2314,7 +2341,7 @@ Private Sub HandleForceCharMove()
     
     Direccion = incomingData.ReadByte()
 
-    Call Engine.Char_Move_by_Head(UserCharIndex, Direccion)
+    Call MoveCharbyHead(UserCharIndex, Direccion)
     Call MoveScreen(Direccion)
     
     Call RefreshAllChars
@@ -2357,13 +2384,8 @@ Private Sub HandleCharacterChange()
         
         headIndex = incomingData.ReadInteger()
         
-        If headIndex < LBound(HeadData()) Or headIndex > UBound(HeadData()) Then
-            .Head = HeadData(0)
-            .iHead = 0
-        Else
-            .Head = HeadData(headIndex)
-            .iHead = headIndex
-        End If
+        .Head = headIndex
+        .iHead = headIndex
         
         .muerto = (headIndex = CASPER_HEAD)
         
@@ -2376,12 +2398,31 @@ Private Sub HandleCharacterChange()
         If tempint <> 0 Then .Escudo = ShieldAnimData(tempint)
         
         tempint = incomingData.ReadInteger()
-        If tempint <> 0 Then .Casco = CascoAnimData(tempint)
+        If tempint <> 0 Then .Casco = tempint
         
         Call SetCharacterFx(CharIndex, incomingData.ReadInteger(), incomingData.ReadInteger())
     End With
     
     Call RefreshAllChars
+End Sub
+
+Private Sub HandleChangeSpeed()
+'***************************************************
+'Author: Lorwik
+'Last Modification: 16/12/2018
+'
+'***************************************************
+    If incomingData.Length < 6 Then
+        Err.Raise incomingData.NotEnoughDataErrCode
+        Exit Sub
+    End If
+    
+    'Remove packet id
+    Call incomingData.ReadByte
+    Dim CharIndex As Integer
+    CharIndex = incomingData.ReadInteger
+    charlist(CharIndex).Speed = incomingData.ReadByte
+    
 End Sub
 
 ''
@@ -2401,15 +2442,15 @@ Private Sub HandleObjectCreate()
     'Remove packet ID
     Call incomingData.ReadByte
     
-    Dim x As Byte
-    Dim y As Byte
+    Dim X As Byte
+    Dim Y As Byte
     
-    x = incomingData.ReadByte()
-    y = incomingData.ReadByte()
+    X = incomingData.ReadByte()
+    Y = incomingData.ReadByte()
     
-    MapData(x, y).ObjGrh.GrhIndex = incomingData.ReadLong()
+    MapData(X, Y).ObjGrh.GrhIndex = incomingData.ReadLong()
     
-    Call InitGrh(MapData(x, y).ObjGrh, MapData(x, y).ObjGrh.GrhIndex)
+    Call InitGrh(MapData(X, Y).ObjGrh, MapData(X, Y).ObjGrh.GrhIndex)
 End Sub
 
 ''
@@ -2429,12 +2470,12 @@ Private Sub HandleObjectDelete()
     'Remove packet ID
     Call incomingData.ReadByte
     
-    Dim x As Byte
-    Dim y As Byte
+    Dim X As Byte
+    Dim Y As Byte
     
-    x = incomingData.ReadByte()
-    y = incomingData.ReadByte()
-    MapData(x, y).ObjGrh.GrhIndex = 0
+    X = incomingData.ReadByte()
+    Y = incomingData.ReadByte()
+    MapData(X, Y).ObjGrh.GrhIndex = 0
 End Sub
 
 ''
@@ -2454,16 +2495,16 @@ Private Sub HandleBlockPosition()
     'Remove packet ID
     Call incomingData.ReadByte
     
-    Dim x As Byte
-    Dim y As Byte
+    Dim X As Byte
+    Dim Y As Byte
     
-    x = incomingData.ReadByte()
-    y = incomingData.ReadByte()
+    X = incomingData.ReadByte()
+    Y = incomingData.ReadByte()
     
     If incomingData.ReadBoolean() Then
-        MapData(x, y).blocked = 1
+        MapData(X, Y).blocked = 1
     Else
-        MapData(x, y).blocked = 0
+        MapData(X, Y).blocked = 0
     End If
 End Sub
 
@@ -2569,15 +2610,15 @@ On Error GoTo errhandler
     frmGuildAdm.Show vbModeless, frmMain
     
 errhandler:
-    Dim error As Long
-    error = Err.number
+    Dim Error As Long
+    Error = Err.number
 On Error GoTo 0
     
     'Destroy auxiliar buffer
     Set buffer = Nothing
 
-    If error <> 0 Then _
-        Err.Raise error
+    If Error <> 0 Then _
+        Err.Raise Error
 End Sub
 
 ''
@@ -2597,13 +2638,13 @@ Private Sub HandleAreaChanged()
     'Remove packet ID
     Call incomingData.ReadByte
     
-    Dim x As Byte
-    Dim y As Byte
+    Dim X As Byte
+    Dim Y As Byte
     
-    x = incomingData.ReadByte()
-    y = incomingData.ReadByte()
+    X = incomingData.ReadByte()
+    Y = incomingData.ReadByte()
         
-    Call CambioDeArea(x, y)
+    Call CambioDeArea(X, Y)
 
 End Sub
 
@@ -2847,15 +2888,15 @@ On Error GoTo errhandler
     Call incomingData.CopyBuffer(buffer)
     
 errhandler:
-    Dim error As Long
-    error = Err.number
+    Dim Error As Long
+    Error = Err.number
 On Error GoTo 0
     
     'Destroy auxiliar buffer
     Set buffer = Nothing
 
-    If error <> 0 Then _
-        Err.Raise error
+    If Error <> 0 Then _
+        Err.Raise Error
 End Sub
 
 ''
@@ -2895,13 +2936,13 @@ On Error GoTo errhandler
         .MinHit = buffer.ReadInteger()
         .MinDef = buffer.ReadInteger()
         .MaxDef = buffer.ReadInteger()
-        .Valor = buffer.ReadLong()
+        .valor = buffer.ReadLong()
         .PuedeUsar = buffer.ReadByte()
         
         If Comerciando Then
             Call InvBanco(0).SetItem(slot, .OBJIndex, .amount, _
                 .Equipped, .GrhIndex, .OBJType, .MaxHit, _
-                .MinHit, .MaxDef, .MinDef, .Valor, .name, .PuedeUsar)
+                .MinHit, .MaxDef, .MinDef, .valor, .name, .PuedeUsar)
         End If
     End With
     
@@ -2909,15 +2950,15 @@ On Error GoTo errhandler
     Call incomingData.CopyBuffer(buffer)
     
 errhandler:
-    Dim error As Long
-    error = Err.number
+    Dim Error As Long
+    Error = Err.number
 On Error GoTo 0
     
     'Destroy auxiliar buffer
     Set buffer = Nothing
 
-    If error <> 0 Then _
-        Err.Raise error
+    If Error <> 0 Then _
+        Err.Raise Error
 End Sub
 
 ''
@@ -2966,22 +3007,22 @@ On Error GoTo errhandler
         UserHechizos(slot).Index = buffer.ReadInteger()
         UserHechizos(slot).name = buffer.ReadASCIIString()
         UserHechizos(slot).GrhIndex = buffer.ReadInteger()
-        Engine.DrawSpells
+        DrawSpells
     End If
     
     'If we got here then packet is complete, copy data back to original queue
     Call incomingData.CopyBuffer(buffer)
     
 errhandler:
-    Dim error As Long
-    error = Err.number
+    Dim Error As Long
+    Error = Err.number
 On Error GoTo 0
     
     'Destroy auxiliar buffer
     Set buffer = Nothing
 
-    If error <> 0 Then _
-        Err.Raise error
+    If Error <> 0 Then _
+        Err.Raise Error
 End Sub
 
 ''
@@ -3064,15 +3105,15 @@ On Error GoTo errhandler
     Call incomingData.CopyBuffer(buffer)
     
 errhandler:
-    Dim error As Long
-    error = Err.number
+    Dim Error As Long
+    Error = Err.number
 On Error GoTo 0
     
     'Destroy auxiliar buffer
     Set buffer = Nothing
 
-    If error <> 0 Then _
-        Err.Raise error
+    If Error <> 0 Then _
+        Err.Raise Error
 End Sub
 
 ''
@@ -3120,15 +3161,15 @@ On Error GoTo errhandler
     Call incomingData.CopyBuffer(buffer)
     
 errhandler:
-    Dim error As Long
-    error = Err.number
+    Dim Error As Long
+    Error = Err.number
 On Error GoTo 0
     
     'Destroy auxiliar buffer
     Set buffer = Nothing
 
-    If error <> 0 Then _
-        Err.Raise error
+    If Error <> 0 Then _
+        Err.Raise Error
 End Sub
 
 ''
@@ -3175,15 +3216,15 @@ On Error GoTo errhandler
     Call incomingData.CopyBuffer(buffer)
     
 errhandler:
-    Dim error As Long
-    error = Err.number
+    Dim Error As Long
+    Error = Err.number
 On Error GoTo 0
     
     'Destroy auxiliar buffer
     Set buffer = Nothing
 
-    If error <> 0 Then _
-        Err.Raise error
+    If Error <> 0 Then _
+        Err.Raise Error
 End Sub
 
 ''
@@ -3230,15 +3271,15 @@ On Error GoTo errhandler
     Call incomingData.CopyBuffer(buffer)
     
 errhandler:
-    Dim error As Long
-    error = Err.number
+    Dim Error As Long
+    Error = Err.number
 On Error GoTo 0
     
     'Destroy auxiliar buffer
     Set buffer = Nothing
 
-    If error <> 0 Then _
-        Err.Raise error
+    If Error <> 0 Then _
+        Err.Raise Error
 End Sub
 
 ''
@@ -3302,15 +3343,15 @@ On Error GoTo errhandler
     Call incomingData.CopyBuffer(buffer)
     
 errhandler:
-    Dim error As Long
-    error = Err.number
+    Dim Error As Long
+    Error = Err.number
 On Error GoTo 0
     
     'Destroy auxiliar buffer
     Set buffer = Nothing
 
-    If error <> 0 Then _
-        Err.Raise error
+    If Error <> 0 Then _
+        Err.Raise Error
 End Sub
 
 ''
@@ -3341,7 +3382,7 @@ On Error GoTo errhandler
     With NPCInventory(slot)
         .name = buffer.ReadASCIIString()
         .amount = buffer.ReadInteger()
-        .Valor = buffer.ReadSingle()
+        .valor = buffer.ReadSingle()
         .GrhIndex = buffer.ReadInteger()
         .OBJIndex = buffer.ReadInteger()
         .OBJType = buffer.ReadByte()
@@ -3356,15 +3397,15 @@ On Error GoTo errhandler
     Call incomingData.CopyBuffer(buffer)
     
 errhandler:
-    Dim error As Long
-    error = Err.number
+    Dim Error As Long
+    Error = Err.number
 On Error GoTo 0
     
     'Destroy auxiliar buffer
     Set buffer = Nothing
 
-    If error <> 0 Then _
-        Err.Raise error
+    If Error <> 0 Then _
+        Err.Raise Error
 End Sub
 
 ''
@@ -3597,15 +3638,15 @@ On Error GoTo errhandler
     Call incomingData.CopyBuffer(buffer)
     
 errhandler:
-    Dim error As Long
-    error = Err.number
+    Dim Error As Long
+    Error = Err.number
 On Error GoTo 0
     
     'Destroy auxiliar buffer
     Set buffer = Nothing
 
-    If error <> 0 Then _
-        Err.Raise error
+    If Error <> 0 Then _
+        Err.Raise Error
 End Sub
 
 ''
@@ -3656,15 +3697,15 @@ On Error GoTo errhandler
     Call incomingData.CopyBuffer(buffer)
     
 errhandler:
-    Dim error As Long
-    error = Err.number
+    Dim Error As Long
+    Error = Err.number
 On Error GoTo 0
     
     'Destroy auxiliar buffer
     Set buffer = Nothing
 
-    If error <> 0 Then _
-        Err.Raise error
+    If Error <> 0 Then _
+        Err.Raise Error
 End Sub
 
 ''
@@ -3695,15 +3736,15 @@ On Error GoTo errhandler
     Call incomingData.CopyBuffer(buffer)
     
 errhandler:
-    Dim error As Long
-    error = Err.number
+    Dim Error As Long
+    Error = Err.number
 On Error GoTo 0
     
     'Destroy auxiliar buffer
     Set buffer = Nothing
 
-    If error <> 0 Then _
-        Err.Raise error
+    If Error <> 0 Then _
+        Err.Raise Error
 End Sub
 
 ''
@@ -3745,15 +3786,15 @@ On Error GoTo errhandler
     Call incomingData.CopyBuffer(buffer)
     
 errhandler:
-    Dim error As Long
-    error = Err.number
+    Dim Error As Long
+    Error = Err.number
 On Error GoTo 0
     
     'Destroy auxiliar buffer
     Set buffer = Nothing
 
-    If error <> 0 Then _
-        Err.Raise error
+    If Error <> 0 Then _
+        Err.Raise Error
 End Sub
 
 ''
@@ -3795,15 +3836,15 @@ On Error GoTo errhandler
     Call incomingData.CopyBuffer(buffer)
     
 errhandler:
-    Dim error As Long
-    error = Err.number
+    Dim Error As Long
+    Error = Err.number
 On Error GoTo 0
     
     'Destroy auxiliar buffer
     Set buffer = Nothing
 
-    If error <> 0 Then _
-        Err.Raise error
+    If Error <> 0 Then _
+        Err.Raise Error
 End Sub
 
 ''
@@ -3894,15 +3935,15 @@ On Error GoTo errhandler
     Call incomingData.CopyBuffer(buffer)
     
 errhandler:
-    Dim error As Long
-    error = Err.number
+    Dim Error As Long
+    Error = Err.number
 On Error GoTo 0
     
     'Destroy auxiliar buffer
     Set buffer = Nothing
 
-    If error <> 0 Then _
-        Err.Raise error
+    If Error <> 0 Then _
+        Err.Raise Error
 End Sub
 
 ''
@@ -3971,15 +4012,15 @@ On Error GoTo errhandler
     Call incomingData.CopyBuffer(buffer)
     
 errhandler:
-    Dim error As Long
-    error = Err.number
+    Dim Error As Long
+    Error = Err.number
 On Error GoTo 0
     
     'Destroy auxiliar buffer
     Set buffer = Nothing
 
-    If error <> 0 Then _
-        Err.Raise error
+    If Error <> 0 Then _
+        Err.Raise Error
 End Sub
 
 ''
@@ -4051,15 +4092,15 @@ On Error GoTo errhandler
     frmGuildBrief.Show vbModeless, frmMain
     
 errhandler:
-    Dim error As Long
-    error = Err.number
+    Dim Error As Long
+    Error = Err.number
 On Error GoTo 0
     
     'Destroy auxiliar buffer
     Set buffer = Nothing
 
-    If error <> 0 Then _
-        Err.Raise error
+    If Error <> 0 Then _
+        Err.Raise Error
 End Sub
 
 ''
@@ -4122,15 +4163,15 @@ On Error GoTo errhandler
     Call incomingData.CopyBuffer(buffer)
     
 errhandler:
-    Dim error As Long
-    error = Err.number
+    Dim Error As Long
+    Error = Err.number
 On Error GoTo 0
     
     'Destroy auxiliar buffer
     Set buffer = Nothing
 
-    If error <> 0 Then _
-        Err.Raise error
+    If Error <> 0 Then _
+        Err.Raise Error
 End Sub
 
 ''
@@ -4156,7 +4197,7 @@ Private Sub HandleTradeOK()
                     Call InvComUsu.SetItem(i, .OBJIndex(i), _
                     .amount(i), .Equipped(i), .GrhIndex(i), _
                     .OBJType(i), .MaxHit(i), .MinHit(i), .MaxDef(i), .MinDef(i), _
-                    .Valor(i), .ItemName(i), .PuedeUsar(i))
+                    .valor(i), .ItemName(i), .PuedeUsar(i))
                 End With
             ' Vendio o compro cierta cantidad de un item que ya tenia
             ElseIf Inventario.amount(i) <> InvComUsu.amount(i) Then
@@ -4172,7 +4213,7 @@ Private Sub HandleTradeOK()
                     Call InvComNpc.SetItem(i, .OBJIndex, _
                     .amount, 0, .GrhIndex, _
                     .OBJType, .MaxHit, .MinHit, .MaxDef, .MinDef, _
-                    .Valor, .name, .PuedeUsar)
+                    .valor, .name, .PuedeUsar)
                 End With
             ' Compraron o vendieron cierta cantidad (no su totalidad)
             ElseIf NPCInventory(i).amount <> InvComNpc.amount(i) Then
@@ -4203,7 +4244,7 @@ Private Sub HandleBankOK()
             With Inventario
                 Call InvBanco(1).SetItem(i, .OBJIndex(i), .amount(i), _
                     .Equipped(i), .GrhIndex(i), .OBJType(i), .MaxHit(i), _
-                    .MinHit(i), .MaxDef(i), .MinDef(i), .Valor(i), .ItemName(i), .PuedeUsar(i))
+                    .MinHit(i), .MaxDef(i), .MinDef(i), .valor(i), .ItemName(i), .PuedeUsar(i))
             End With
         Next i
         
@@ -4245,7 +4286,7 @@ On Error GoTo errhandler
         .MinHit = buffer.ReadInteger()
         .MaxDef = buffer.ReadInteger()
         .MinDef = buffer.ReadInteger()
-        .Valor = buffer.ReadLong()
+        .valor = buffer.ReadLong()
         
         frmComerciarUsu.List2.Clear
         
@@ -4259,15 +4300,15 @@ On Error GoTo errhandler
     Call incomingData.CopyBuffer(buffer)
     
 errhandler:
-    Dim error As Long
-    error = Err.number
+    Dim Error As Long
+    Error = Err.number
 On Error GoTo 0
     
     'Destroy auxiliar buffer
     Set buffer = Nothing
 
-    If error <> 0 Then _
-        Err.Raise error
+    If Error <> 0 Then _
+        Err.Raise Error
 End Sub
 
 ''
@@ -4327,15 +4368,15 @@ On Error GoTo errhandler
     Call incomingData.CopyBuffer(buffer)
     
 errhandler:
-    Dim error As Long
-    error = Err.number
+    Dim Error As Long
+    Error = Err.number
 On Error GoTo 0
     
     'Destroy auxiliar buffer
     Set buffer = Nothing
 
-    If error <> 0 Then _
-        Err.Raise error
+    If Error <> 0 Then _
+        Err.Raise Error
 End Sub
 
 
@@ -4373,8 +4414,8 @@ Private Sub HandleShowPuntosClanes()
     'Destroy auxiliar buffer
     Set buffer = Nothing
 
-    If error <> 0 Then _
-        Err.Raise error
+    If Error <> 0 Then _
+        Err.Raise Error
 End Sub
 
 Private Sub HandleSetPartyId()
@@ -4475,15 +4516,15 @@ On Error GoTo errhandler
     Call incomingData.CopyBuffer(buffer)
     
 errhandler:
-    Dim error As Long
-    error = Err.number
+    Dim Error As Long
+    Error = Err.number
 On Error GoTo 0
     
     'Destroy auxiliar buffer
     Set buffer = Nothing
 
-    If error <> 0 Then _
-        Err.Raise error
+    If Error <> 0 Then _
+        Err.Raise Error
 End Sub
 
 ''
@@ -4515,15 +4556,15 @@ On Error GoTo errhandler
     Call incomingData.CopyBuffer(buffer)
     
 errhandler:
-    Dim error As Long
-    error = Err.number
+    Dim Error As Long
+    Error = Err.number
 On Error GoTo 0
     
     'Destroy auxiliar buffer
     Set buffer = Nothing
 
-    If error <> 0 Then _
-        Err.Raise error
+    If Error <> 0 Then _
+        Err.Raise Error
 End Sub
 
 ''
@@ -4580,15 +4621,15 @@ On Error GoTo errhandler
     Call incomingData.CopyBuffer(buffer)
     
 errhandler:
-    Dim error As Long
-    error = Err.number
+    Dim Error As Long
+    Error = Err.number
 On Error GoTo 0
     
     'Destroy auxiliar buffer
     Set buffer = Nothing
 
-    If error <> 0 Then _
-        Err.Raise error
+    If Error <> 0 Then _
+        Err.Raise Error
 End Sub
 
 ''
@@ -4656,15 +4697,15 @@ On Error GoTo errhandler
     Call incomingData.CopyBuffer(buffer)
     
 errhandler:
-    Dim error As Long
-    error = Err.number
+    Dim Error As Long
+    Error = Err.number
 On Error GoTo 0
     
     'Destroy auxiliar buffer
     Set buffer = Nothing
 
-    If error <> 0 Then _
-        Err.Raise error
+    If Error <> 0 Then _
+        Err.Raise Error
 End Sub
 
 
@@ -4683,7 +4724,7 @@ Public Sub WriteLoginExistingChar()
         Call .WriteByte(ClientPacketID.LoginExistingChar)
         Call .WriteASCIIString(Cuenta.name)
         Call .WriteASCIIString(Cuenta.Pass)
-        Call .WriteASCIIString(frmCuenta.ListPJ.List(frmCuenta.ListPJ.ListIndex))
+        Call .WriteASCIIString(Cuenta.pjs(frmCuenta.PJSelected).NamePJ)
         Call .WriteByte(App.Major)
         Call .WriteByte(App.Minor)
         Call .WriteByte(App.Revision)
@@ -5069,7 +5110,7 @@ End Sub
 ' @param    y Tile coord in the y-axis in which the user clicked.
 ' @remarks  The data is not actually sent until the buffer is properly flushed.
 
-Public Sub WriteLeftClick(ByVal x As Byte, ByVal y As Byte)
+Public Sub WriteLeftClick(ByVal X As Byte, ByVal Y As Byte)
 '***************************************************
 'Author: Juan Martín Sotuyo Dodero (Maraxus)
 'Last Modification: 05/17/06
@@ -5078,8 +5119,8 @@ Public Sub WriteLeftClick(ByVal x As Byte, ByVal y As Byte)
     With outgoingData
         Call .WriteByte(ClientPacketID.LeftClick)
         
-        Call .WriteByte(x)
-        Call .WriteByte(y)
+        Call .WriteByte(X)
+        Call .WriteByte(Y)
     End With
 End Sub
 
@@ -5090,7 +5131,7 @@ End Sub
 ' @param    y Tile coord in the y-axis in which the user clicked.
 ' @remarks  The data is not actually sent until the buffer is properly flushed.
 
-Public Sub WriteDoubleClick(ByVal x As Byte, ByVal y As Byte)
+Public Sub WriteDoubleClick(ByVal X As Byte, ByVal Y As Byte)
 '***************************************************
 'Author: Juan Martín Sotuyo Dodero (Maraxus)
 'Last Modification: 05/17/06
@@ -5099,8 +5140,8 @@ Public Sub WriteDoubleClick(ByVal x As Byte, ByVal y As Byte)
     With outgoingData
         Call .WriteByte(ClientPacketID.DoubleClick)
         
-        Call .WriteByte(x)
-        Call .WriteByte(y)
+        Call .WriteByte(X)
+        Call .WriteByte(Y)
     End With
 End Sub
 
@@ -5204,7 +5245,7 @@ End Sub
 ' @param    skill The skill which the user attempts to use.
 ' @remarks  The data is not actually sent until the buffer is properly flushed.
 
-Public Sub WriteWorkLeftClick(ByVal x As Byte, ByVal y As Byte, ByVal Skill As eSkill)
+Public Sub WriteWorkLeftClick(ByVal X As Byte, ByVal Y As Byte, ByVal Skill As eSkill)
 '***************************************************
 'Author: Juan Martín Sotuyo Dodero (Maraxus)
 'Last Modification: 05/17/06
@@ -5216,8 +5257,8 @@ Public Sub WriteWorkLeftClick(ByVal x As Byte, ByVal y As Byte, ByVal Skill As e
         
         Call .WriteByte(ClientPacketID.WorkLeftClick)
         
-        Call .WriteByte(x)
-        Call .WriteByte(y)
+        Call .WriteByte(X)
+        Call .WriteByte(Y)
         
         Call .WriteByte(Skill)
     End With
@@ -6664,7 +6705,7 @@ End Sub
 ' @param    y The y position in the map to which to waro the character.
 ' @remarks  The data is not actually sent until the buffer is properly flushed.
 
-Public Sub WriteWarpChar(ByVal UserName As String, ByVal Map As Integer, ByVal x As Byte, ByVal y As Byte)
+Public Sub WriteWarpChar(ByVal UserName As String, ByVal Map As Integer, ByVal X As Byte, ByVal Y As Byte)
 '***************************************************
 'Author: Juan Martín Sotuyo Dodero (Maraxus)
 'Last Modification: 05/17/06
@@ -6678,8 +6719,8 @@ Public Sub WriteWarpChar(ByVal UserName As String, ByVal Map As Integer, ByVal x
         
         Call .WriteInteger(Map)
         
-        Call .WriteByte(x)
-        Call .WriteByte(y)
+        Call .WriteByte(X)
+        Call .WriteByte(Y)
     End With
 End Sub
 
@@ -7136,11 +7177,11 @@ Public Sub WriteIrAlCementerio()
 End Sub
 
 '17/11/2015 Irongete: Envia al servidor el la invitacion a party de un jugador
-Public Sub WriteInvitacionAParty(ByVal x As Byte, ByVal y As Byte)
+Public Sub WriteInvitacionAParty(ByVal X As Byte, ByVal Y As Byte)
     With outgoingData
         Call .WriteByte(ClientPacketID.InvitacionAParty)
-        Call .WriteByte(x)
-        Call .WriteByte(y)
+        Call .WriteByte(X)
+        Call .WriteByte(Y)
     End With
 End Sub
 
@@ -7390,7 +7431,7 @@ End Sub
 ' @param    y The position in the y axis to which the teleport will lead.
 ' @remarks  The data is not actually sent until the buffer is properly flushed.
 
-Public Sub WriteTeleportCreate(ByVal Map As Integer, ByVal x As Byte, ByVal y As Byte)
+Public Sub WriteTeleportCreate(ByVal Map As Integer, ByVal X As Byte, ByVal Y As Byte)
 '***************************************************
 'Author: Juan Martín Sotuyo Dodero (Maraxus)
 'Last Modification: 05/17/06
@@ -7401,8 +7442,8 @@ Public Sub WriteTeleportCreate(ByVal Map As Integer, ByVal x As Byte, ByVal y As
         
         Call .WriteInteger(Map)
         
-        Call .WriteByte(x)
-        Call .WriteByte(y)
+        Call .WriteByte(X)
+        Call .WriteByte(Y)
     End With
 End Sub
 
@@ -7470,7 +7511,7 @@ End Sub
 ' @param    y       The position in the y axis in which to play the given wave.
 ' @remarks  The data is not actually sent until the buffer is properly flushed.
 
-Public Sub WriteForceWAVEToMap(ByVal waveID As Byte, ByVal Map As Integer, ByVal x As Byte, ByVal y As Byte)
+Public Sub WriteForceWAVEToMap(ByVal waveID As Byte, ByVal Map As Integer, ByVal X As Byte, ByVal Y As Byte)
 '***************************************************
 'Author: Juan Martín Sotuyo Dodero (Maraxus)
 'Last Modification: 05/17/06
@@ -7483,8 +7524,8 @@ Public Sub WriteForceWAVEToMap(ByVal waveID As Byte, ByVal Map As Integer, ByVal
         
         Call .WriteInteger(Map)
         
-        Call .WriteByte(x)
-        Call .WriteByte(y)
+        Call .WriteByte(X)
+        Call .WriteByte(Y)
     End With
 End Sub
 
@@ -7726,7 +7767,7 @@ End Sub
 ' @param    trigger The type of trigger to be set to the tile.
 ' @remarks  The data is not actually sent until the buffer is properly flushed.
 
-Public Sub WriteSetTrigger(ByVal Trigger As eTrigger)
+Public Sub WriteSetTrigger(ByVal trigger As eTrigger)
 '***************************************************
 'Author: Juan Martín Sotuyo Dodero (Maraxus)
 'Last Modification: 05/17/06
@@ -7735,7 +7776,7 @@ Public Sub WriteSetTrigger(ByVal Trigger As eTrigger)
     With outgoingData
         Call .WriteByte(ClientPacketID.SetTrigger)
         
-        Call .WriteByte(Trigger)
+        Call .WriteByte(trigger)
     End With
 End Sub
 
@@ -8741,7 +8782,7 @@ Private Sub handleNoche()
     'Remove packet ID
     Call incomingData.ReadByte
    
-    Anocheceria = incomingData.ReadByte()
+    DayStatus = incomingData.ReadByte()
 
 End Sub
 
@@ -8768,9 +8809,9 @@ Dim Total As Byte
             .pjs(.CantPJ).rcvWeapon = incomingData.ReadByte
             .pjs(.CantPJ).rcvRaza = incomingData.ReadByte
             .pjs(.CantPJ).PJLogged = incomingData.ReadByte
-            .pjs(.CantPJ).Mapa = incomingData.ReadASCIIString
+            .pjs(.CantPJ).mapa = incomingData.ReadASCIIString
                     
-            frmCuenta.ListPJ.AddItem .pjs(.CantPJ).NamePJ
+            frmCuenta.ListPJ.AddItem .pjs(.CantPJ).NamePJ & " <" & ListaClases(.pjs(.CantPJ).ClasePJ) & " Nivel:" & .pjs(.CantPJ).LvlPJ & ">"
         End If
                 
         Total = incomingData.ReadByte
@@ -8978,7 +9019,7 @@ End Sub
 ' @param    x Tile coord in the x-axis in which the user clicked.
 ' @param    y Tile coord in the y-axis in which the user clicked.
 
-Public Sub WriteSolParty(ByVal x As Byte, ByVal y As Byte)
+Public Sub WriteSolParty(ByVal X As Byte, ByVal Y As Byte)
 '***************************************************
 'Author: Juan Martín Sotuyo Dodero (Maraxus)
 'Last Modification: 05/17/06
@@ -8987,8 +9028,8 @@ Public Sub WriteSolParty(ByVal x As Byte, ByVal y As Byte)
     With outgoingData
         Call .WriteByte(ClientPacketID.SolParty)
         
-        Call .WriteByte(x)
-        Call .WriteByte(y)
+        Call .WriteByte(X)
+        Call .WriteByte(Y)
         
     End With
 End Sub
@@ -9041,11 +9082,11 @@ Public Sub WriteEntregarDC(ByVal UserName As String, ByVal DragCreditos As Long,
     End With
 End Sub
 
-Public Sub WritePremios(ByVal Tipo As Byte, Optional ByVal Premio As Integer = 0)
+Public Sub WritePremios(ByVal tipo As Byte, Optional ByVal Premio As Integer = 0)
 'Segun el tipo, mostramos la ventana o solicitamos el premio
         With outgoingData
         Call .WriteByte(ClientPacketID.Premios)
-        Call .WriteByte(Tipo)
+        Call .WriteByte(tipo)
         Call .WriteInteger(Premio)
     End With
 End Sub
@@ -9090,7 +9131,7 @@ Private Sub HandleAtaqueNPC()
     
     With charlist(NPCAtaqueIndex)
             
-        MapData(.Pos.x, .Pos.y).CharIndex = NPCAtaqueIndex
+        MapData(.Pos.X, .Pos.Y).CharIndex = NPCAtaqueIndex
         .Ataque.AtaqueWalk(.Heading).Started = 1
         .NPCAttack = True
     End With
@@ -9340,15 +9381,15 @@ End Sub
 
 Public Sub HandleSegNoti()
 'Un paquete para notificarlos a todos xD
-Dim Tipo As Byte
+Dim tipo As Byte
 Dim Activado As Boolean
     'Remove packet ID
     Call incomingData.ReadByte
     
-    Tipo = incomingData.ReadByte
+    tipo = incomingData.ReadByte
     Activado = incomingData.ReadBoolean
     
-    Select Case Tipo
+    Select Case tipo
         Case 0 'Seguro de Resu
             If Activado = False Then
                 frmMain.ImgResu.Picture = General_Load_Picture_From_Resource("39.gif")
@@ -9396,7 +9437,7 @@ Dim i As Byte
     LlegoRank = True
 End Sub
 
-Public Sub WriteHacerTorneo(ByVal MinLevel As Byte, ByVal Maxlevel As Byte, ByVal Cupos As Byte, ByVal AutoSum As Byte, Optional ByVal Mapa As Integer, Optional x As Byte, Optional y As Byte)
+Public Sub WriteHacerTorneo(ByVal MinLevel As Byte, ByVal Maxlevel As Byte, ByVal Cupos As Byte, ByVal AutoSum As Byte, Optional ByVal mapa As Integer, Optional X As Byte, Optional Y As Byte)
     With outgoingData
         Call .WriteByte(ClientPacketID.gmcommands)
         Call .WriteByte(eGMCommands.hacerTorneo)
@@ -9406,9 +9447,9 @@ Public Sub WriteHacerTorneo(ByVal MinLevel As Byte, ByVal Maxlevel As Byte, ByVa
         Call .WriteByte(AutoSum)
         
         If AutoSum = 1 Then
-            Call .WriteInteger(Mapa)
-            Call .WriteByte(x)
-            Call .WriteByte(y)
+            Call .WriteInteger(mapa)
+            Call .WriteByte(X)
+            Call .WriteByte(Y)
         End If
     End With
 End Sub
@@ -9492,12 +9533,12 @@ Public Sub WriteSalirSubasta()
     Unload frmSubastas
 End Sub
 
-Public Sub WriteNuevaSubasta(ByVal ItemSelect As Byte, ByVal Precio As Long, ByVal Duracion As Byte, ByVal cantidad As Integer)
+Public Sub WriteNuevaSubasta(ByVal ItemSelect As Byte, ByVal Precio As Long, ByVal duracion As Byte, ByVal cantidad As Integer)
     With outgoingData
         Call .WriteByte(ClientPacketID.NuevaSubasta)
         Call .WriteByte(ItemSelect)
         Call .WriteLong(Precio)
-        Call .WriteByte(Duracion)
+        Call .WriteByte(duracion)
         Call .WriteInteger(cantidad)
     End With
     

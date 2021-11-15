@@ -2,7 +2,7 @@ VERSION 5.00
 Object = "{3B7C8863-D78F-101B-B9B5-04021C009402}#1.2#0"; "RICHTX32.OCX"
 Object = "{48E59290-9880-11CF-9754-00AA00C00908}#1.0#0"; "MSINET.OCX"
 Object = "{248DD890-BB45-11CF-9ABC-0080C7E7B78D}#1.0#0"; "MSWINSCK.OCX"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "Mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
 Begin VB.Form frmMain 
    BackColor       =   &H00E0E0E0&
    BorderStyle     =   0  'None
@@ -33,6 +33,11 @@ Begin VB.Form frmMain
    ScaleWidth      =   1024
    StartUpPosition =   2  'CenterScreen
    Visible         =   0   'False
+   Begin VB.Timer Efectos 
+      Interval        =   100
+      Left            =   10920
+      Top             =   240
+   End
    Begin VB.CommandButton lvButtons_H1 
       BackColor       =   &H0000FFFF&
       Caption         =   "REPORTAR BUG"
@@ -65,10 +70,10 @@ Begin VB.Form frmMain
          ENAB            =   -1  'True
          FCOL            =   16777215
          OCOL            =   16777215
-         PICE            =   "frmMainbackup.frx":25D01
-         PICF            =   "frmMainbackup.frx":25D5F
-         PICH            =   "frmMainbackup.frx":25DBD
-         PICV            =   "frmMainbackup.frx":25E1B
+         PICE            =   "frmMainbackup.frx":2A62B
+         PICF            =   "frmMainbackup.frx":2A689
+         PICH            =   "frmMainbackup.frx":2A6E7
+         PICV            =   "frmMainbackup.frx":2A745
          BeginProperty FONT {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Arial"
             Size            =   9.75
@@ -92,10 +97,10 @@ Begin VB.Form frmMain
          ENAB            =   -1  'True
          FCOL            =   16777215
          OCOL            =   16777215
-         PICE            =   "frmMainbackup.frx":25E79
-         PICF            =   "frmMainbackup.frx":25ED7
-         PICH            =   "frmMainbackup.frx":25F35
-         PICV            =   "frmMainbackup.frx":25F93
+         PICE            =   "frmMainbackup.frx":2A7A3
+         PICF            =   "frmMainbackup.frx":2A801
+         PICH            =   "frmMainbackup.frx":2A85F
+         PICV            =   "frmMainbackup.frx":2A8BD
          BeginProperty FONT {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Arial"
             Size            =   9.75
@@ -112,24 +117,24 @@ Begin VB.Form frmMain
       BackColor       =   &H00000000&
       ForeColor       =   &H00FFFFFF&
       Height          =   1980
-      Left            =   10935
+      Left            =   11040
       TabIndex        =   35
       TabStop         =   0   'False
       Top             =   5520
       Visible         =   0   'False
-      Width           =   4005
+      Width           =   3900
    End
    Begin VB.PictureBox renderer 
       BackColor       =   &H00000000&
       BorderStyle     =   0  'None
       Height          =   7860
-      Left            =   135
+      Left            =   120
       ScaleHeight     =   524
       ScaleMode       =   3  'Pixel
-      ScaleWidth      =   692
+      ScaleWidth      =   700
       TabIndex        =   22
       Top             =   2730
-      Width           =   10380
+      Width           =   10500
       Begin VB.Frame fMenu 
          Appearance      =   0  'Flat
          BackColor       =   &H00000000&
@@ -154,10 +159,10 @@ Begin VB.Form frmMain
             ENAB            =   -1  'True
             FCOL            =   16777215
             OCOL            =   16777215
-            PICE            =   "frmMainbackup.frx":25FF1
-            PICF            =   "frmMainbackup.frx":2604F
-            PICH            =   "frmMainbackup.frx":260AD
-            PICV            =   "frmMainbackup.frx":2610B
+            PICE            =   "frmMainbackup.frx":2A91B
+            PICF            =   "frmMainbackup.frx":2A979
+            PICH            =   "frmMainbackup.frx":2A9D7
+            PICV            =   "frmMainbackup.frx":2AA35
             BeginProperty FONT {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Arial"
                Size            =   9.75
@@ -181,10 +186,10 @@ Begin VB.Form frmMain
             ENAB            =   -1  'True
             FCOL            =   16777215
             OCOL            =   16777215
-            PICE            =   "frmMainbackup.frx":26169
-            PICF            =   "frmMainbackup.frx":261C7
-            PICH            =   "frmMainbackup.frx":26225
-            PICV            =   "frmMainbackup.frx":26283
+            PICE            =   "frmMainbackup.frx":2AA93
+            PICF            =   "frmMainbackup.frx":2AAF1
+            PICH            =   "frmMainbackup.frx":2AB4F
+            PICV            =   "frmMainbackup.frx":2ABAD
             BeginProperty FONT {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Arial"
                Size            =   9.75
@@ -208,10 +213,10 @@ Begin VB.Form frmMain
             ENAB            =   -1  'True
             FCOL            =   16777215
             OCOL            =   16777215
-            PICE            =   "frmMainbackup.frx":262E1
-            PICF            =   "frmMainbackup.frx":2633F
-            PICH            =   "frmMainbackup.frx":2639D
-            PICV            =   "frmMainbackup.frx":263FB
+            PICE            =   "frmMainbackup.frx":2AC0B
+            PICF            =   "frmMainbackup.frx":2AC69
+            PICH            =   "frmMainbackup.frx":2ACC7
+            PICV            =   "frmMainbackup.frx":2AD25
             BeginProperty FONT {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Arial"
                Size            =   9.75
@@ -235,10 +240,10 @@ Begin VB.Form frmMain
             ENAB            =   -1  'True
             FCOL            =   16777215
             OCOL            =   16777215
-            PICE            =   "frmMainbackup.frx":26459
-            PICF            =   "frmMainbackup.frx":264B7
-            PICH            =   "frmMainbackup.frx":26515
-            PICV            =   "frmMainbackup.frx":26573
+            PICE            =   "frmMainbackup.frx":2AD83
+            PICF            =   "frmMainbackup.frx":2ADE1
+            PICH            =   "frmMainbackup.frx":2AE3F
+            PICV            =   "frmMainbackup.frx":2AE9D
             BeginProperty FONT {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Arial"
                Size            =   9.75
@@ -262,10 +267,10 @@ Begin VB.Form frmMain
             ENAB            =   -1  'True
             FCOL            =   16777215
             OCOL            =   16777215
-            PICE            =   "frmMainbackup.frx":265D1
-            PICF            =   "frmMainbackup.frx":2662F
-            PICH            =   "frmMainbackup.frx":2668D
-            PICV            =   "frmMainbackup.frx":266EB
+            PICE            =   "frmMainbackup.frx":2AEFB
+            PICF            =   "frmMainbackup.frx":2AF59
+            PICH            =   "frmMainbackup.frx":2AFB7
+            PICV            =   "frmMainbackup.frx":2B015
             BeginProperty FONT {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Arial"
                Size            =   9.75
@@ -289,10 +294,10 @@ Begin VB.Form frmMain
             ENAB            =   -1  'True
             FCOL            =   16777215
             OCOL            =   16777215
-            PICE            =   "frmMainbackup.frx":26749
-            PICF            =   "frmMainbackup.frx":267A7
-            PICH            =   "frmMainbackup.frx":26805
-            PICV            =   "frmMainbackup.frx":26863
+            PICE            =   "frmMainbackup.frx":2B073
+            PICF            =   "frmMainbackup.frx":2B0D1
+            PICH            =   "frmMainbackup.frx":2B12F
+            PICV            =   "frmMainbackup.frx":2B18D
             BeginProperty FONT {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Arial"
                Size            =   9.75
@@ -316,10 +321,10 @@ Begin VB.Form frmMain
             ENAB            =   -1  'True
             FCOL            =   16777215
             OCOL            =   16777215
-            PICE            =   "frmMainbackup.frx":268C1
-            PICF            =   "frmMainbackup.frx":2691F
-            PICH            =   "frmMainbackup.frx":2697D
-            PICV            =   "frmMainbackup.frx":269DB
+            PICE            =   "frmMainbackup.frx":2B1EB
+            PICF            =   "frmMainbackup.frx":2B249
+            PICH            =   "frmMainbackup.frx":2B2A7
+            PICV            =   "frmMainbackup.frx":2B305
             BeginProperty FONT {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Arial"
                Size            =   9.75
@@ -343,10 +348,10 @@ Begin VB.Form frmMain
             ENAB            =   -1  'True
             FCOL            =   16777215
             OCOL            =   16777215
-            PICE            =   "frmMainbackup.frx":26A39
-            PICF            =   "frmMainbackup.frx":26A97
-            PICH            =   "frmMainbackup.frx":26AF5
-            PICV            =   "frmMainbackup.frx":26B53
+            PICE            =   "frmMainbackup.frx":2B363
+            PICF            =   "frmMainbackup.frx":2B3C1
+            PICH            =   "frmMainbackup.frx":2B41F
+            PICV            =   "frmMainbackup.frx":2B47D
             BeginProperty FONT {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Arial"
                Size            =   9.75
@@ -370,10 +375,10 @@ Begin VB.Form frmMain
             ENAB            =   -1  'True
             FCOL            =   16777215
             OCOL            =   16777215
-            PICE            =   "frmMainbackup.frx":26BB1
-            PICF            =   "frmMainbackup.frx":26C0F
-            PICH            =   "frmMainbackup.frx":26C6D
-            PICV            =   "frmMainbackup.frx":26CCB
+            PICE            =   "frmMainbackup.frx":2B4DB
+            PICF            =   "frmMainbackup.frx":2B539
+            PICH            =   "frmMainbackup.frx":2B597
+            PICV            =   "frmMainbackup.frx":2B5F5
             BeginProperty FONT {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Arial"
                Size            =   9.75
@@ -397,10 +402,10 @@ Begin VB.Form frmMain
             ENAB            =   -1  'True
             FCOL            =   16777215
             OCOL            =   16777215
-            PICE            =   "frmMainbackup.frx":26D29
-            PICF            =   "frmMainbackup.frx":26D87
-            PICH            =   "frmMainbackup.frx":26DE5
-            PICV            =   "frmMainbackup.frx":26E43
+            PICE            =   "frmMainbackup.frx":2B653
+            PICF            =   "frmMainbackup.frx":2B6B1
+            PICH            =   "frmMainbackup.frx":2B70F
+            PICV            =   "frmMainbackup.frx":2B76D
             BeginProperty FONT {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Arial"
                Size            =   9.75
@@ -424,10 +429,10 @@ Begin VB.Form frmMain
             ENAB            =   -1  'True
             FCOL            =   16777215
             OCOL            =   16777215
-            PICE            =   "frmMainbackup.frx":26EA1
-            PICF            =   "frmMainbackup.frx":26EFF
-            PICH            =   "frmMainbackup.frx":26F5D
-            PICV            =   "frmMainbackup.frx":26FBB
+            PICE            =   "frmMainbackup.frx":2B7CB
+            PICF            =   "frmMainbackup.frx":2B829
+            PICH            =   "frmMainbackup.frx":2B887
+            PICV            =   "frmMainbackup.frx":2B8E5
             BeginProperty FONT {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Arial"
                Size            =   9.75
@@ -461,13 +466,13 @@ Begin VB.Form frmMain
       CausesValidation=   0   'False
       ClipControls    =   0   'False
       ForeColor       =   &H80000008&
-      Height          =   1980
-      Left            =   10920
-      ScaleHeight     =   1980
-      ScaleWidth      =   3870
+      Height          =   2025
+      Left            =   11040
+      ScaleHeight     =   2025
+      ScaleWidth      =   3915
       TabIndex        =   16
       Top             =   5520
-      Width           =   3870
+      Width           =   3915
    End
    Begin VB.PictureBox picInv 
       Appearance      =   0  'Flat
@@ -486,7 +491,7 @@ Begin VB.Form frmMain
       EndProperty
       ForeColor       =   &H00000000&
       Height          =   2415
-      Left            =   11160
+      Left            =   11220
       ScaleHeight     =   161
       ScaleMode       =   3  'Pixel
       ScaleWidth      =   235
@@ -525,7 +530,7 @@ Begin VB.Form frmMain
       BackColor       =   &H00000000&
       ForeColor       =   &H80000008&
       Height          =   1530
-      Left            =   8790
+      Left            =   8865
       ScaleHeight     =   100
       ScaleMode       =   0  'User
       ScaleWidth      =   100
@@ -620,7 +625,7 @@ Begin VB.Form frmMain
       ScrollBars      =   2
       DisableNoScroll =   -1  'True
       Appearance      =   0
-      TextRTF         =   $"frmMainbackup.frx":27019
+      TextRTF         =   $"frmMainbackup.frx":2B943
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Tahoma"
          Size            =   8.25
@@ -703,26 +708,26 @@ Begin VB.Form frmMain
    Begin VB.Image cmdMoverHechi 
       Height          =   135
       Index           =   1
-      Left            =   14535
+      Left            =   14580
       Top             =   7755
       Width           =   225
    End
    Begin VB.Image cmdMoverHechi 
       Height          =   135
       Index           =   0
-      Left            =   14535
+      Left            =   14580
       Top             =   8040
       Width           =   225
    End
    Begin VB.Image cmdInfo 
       Height          =   495
-      Left            =   13680
+      Left            =   13740
       Top             =   7680
       Width           =   750
    End
    Begin VB.Image cmdLanzar 
       Height          =   495
-      Left            =   11070
+      Left            =   11115
       Top             =   7680
       Width           =   2400
    End
@@ -749,7 +754,7 @@ Begin VB.Form frmMain
    Begin VB.Image cmdPestaña 
       Height          =   390
       Index           =   1
-      Left            =   12960
+      Left            =   13005
       Top             =   1920
       Width           =   1980
    End
@@ -894,8 +899,8 @@ Begin VB.Form frmMain
    Begin VB.Image Norte 
       Height          =   225
       Left            =   9420
-      MouseIcon       =   "frmMainbackup.frx":27096
-      Picture         =   "frmMainbackup.frx":27D60
+      MouseIcon       =   "frmMainbackup.frx":2B9C0
+      Picture         =   "frmMainbackup.frx":2C68A
       ToolTipText     =   "Castillo Norte atacado."
       Top             =   210
       Visible         =   0   'False
@@ -904,8 +909,8 @@ Begin VB.Form frmMain
    Begin VB.Image Sur 
       Height          =   225
       Left            =   9420
-      MouseIcon       =   "frmMainbackup.frx":27FFA
-      Picture         =   "frmMainbackup.frx":28CC4
+      MouseIcon       =   "frmMainbackup.frx":2C924
+      Picture         =   "frmMainbackup.frx":2D5EE
       ToolTipText     =   "Castillo Sur atacado."
       Top             =   1920
       Visible         =   0   'False
@@ -914,8 +919,8 @@ Begin VB.Form frmMain
    Begin VB.Image Oeste 
       Height          =   225
       Left            =   8610
-      MouseIcon       =   "frmMainbackup.frx":28F5E
-      Picture         =   "frmMainbackup.frx":29C28
+      MouseIcon       =   "frmMainbackup.frx":2D888
+      Picture         =   "frmMainbackup.frx":2E552
       ToolTipText     =   "Castillo Oeste atacado."
       Top             =   1080
       Visible         =   0   'False
@@ -924,8 +929,8 @@ Begin VB.Form frmMain
    Begin VB.Image Este 
       Height          =   225
       Left            =   10320
-      MouseIcon       =   "frmMainbackup.frx":29EC2
-      Picture         =   "frmMainbackup.frx":2AB8C
+      MouseIcon       =   "frmMainbackup.frx":2E7EC
+      Picture         =   "frmMainbackup.frx":2F4B6
       ToolTipText     =   "Castillo Este atacado."
       Top             =   1080
       Visible         =   0   'False
@@ -934,7 +939,7 @@ Begin VB.Form frmMain
    Begin VB.Image cmdPestaña 
       Height          =   390
       Index           =   0
-      Left            =   10980
+      Left            =   11040
       Top             =   1920
       Width           =   1980
    End
@@ -957,7 +962,7 @@ Begin VB.Form frmMain
       Caption         =   "000/000"
       ForeColor       =   &H00FFFFFF&
       Height          =   195
-      Left            =   11640
+      Left            =   11670
       TabIndex        =   12
       Top             =   10170
       Width           =   735
@@ -978,7 +983,7 @@ Begin VB.Form frmMain
       EndProperty
       ForeColor       =   &H00FFFFFF&
       Height          =   165
-      Left            =   13980
+      Left            =   14010
       TabIndex        =   11
       Top             =   9285
       Width           =   735
@@ -999,7 +1004,7 @@ Begin VB.Form frmMain
       EndProperty
       ForeColor       =   &H00FFFFFF&
       Height          =   165
-      Left            =   13980
+      Left            =   14010
       TabIndex        =   10
       Top             =   8835
       Width           =   735
@@ -1011,14 +1016,14 @@ Begin VB.Form frmMain
       Caption         =   "000/000"
       ForeColor       =   &H00FFFFFF&
       Height          =   195
-      Left            =   11640
+      Left            =   11670
       TabIndex        =   9
       Top             =   9465
       Width           =   735
    End
    Begin VB.Image MANShp 
       Height          =   90
-      Left            =   10920
+      Left            =   10950
       Top             =   9525
       Width           =   2100
    End
@@ -1029,7 +1034,7 @@ Begin VB.Form frmMain
       Caption         =   "000/000"
       ForeColor       =   &H00FFFFFF&
       Height          =   195
-      Left            =   11640
+      Left            =   11670
       TabIndex        =   8
       Top             =   8790
       Width           =   735
@@ -1061,25 +1066,25 @@ Begin VB.Form frmMain
    End
    Begin VB.Image Hpshp 
       Height          =   90
-      Left            =   10920
+      Left            =   10950
       Top             =   8850
       Width           =   2100
    End
    Begin VB.Image STAShp 
       Height          =   90
-      Left            =   10920
+      Left            =   10950
       Top             =   10230
       Width           =   2100
    End
    Begin VB.Image COMIDAsp 
       Height          =   75
-      Left            =   13635
+      Left            =   13665
       Top             =   8880
       Width           =   1365
    End
    Begin VB.Image AGUAsp 
       Height          =   75
-      Left            =   13635
+      Left            =   13665
       Top             =   9315
       Width           =   1365
    End
@@ -1187,11 +1192,11 @@ Dim PuedeMacrear As Boolean
 Private m_Jpeg As clsJpeg
 Private m_FileName As String
 
-Private Sub BarMove_MouseDown(Button As Integer, Shift As Integer, x As Single, y As Single)
+Private Sub BarMove_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
     If (Button = vbLeftButton) Then
         Call Auto_Drag(Me.hwnd)
         Inventario.DrawInv
-        Engine.DrawSpells
+        DrawSpells
     End If
 End Sub
 
@@ -1489,14 +1494,14 @@ Private Sub Form_KeyUp(KeyCode As Integer, Shift As Integer)
      KeyFisico = False
 End Sub
 
-Private Sub Form_MouseDown(Button As Integer, Shift As Integer, x As Single, y As Single)
+Private Sub Form_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
     MouseBoton = Button
     MouseShift = Shift
 End Sub
 
-Private Sub Form_MouseUp(Button As Integer, Shift As Integer, x As Single, y As Single)
-    clicX = x
-    clicY = y
+Private Sub Form_MouseUp(Button As Integer, Shift As Integer, X As Single, Y As Single)
+    clicX = X
+    clicY = Y
 End Sub
 
 Private Sub Form_QueryUnload(Cancel As Integer, UnloadMode As Integer)
@@ -1527,9 +1532,9 @@ Private Sub ImgResu_Click()
     Call WriteResuscitationToggle
 End Sub
 
-Private Sub lblPorcLvl_MouseMove(Button As Integer, Shift As Integer, x As Single, y As Single)
-     MouseX = x
-     MouseY = y
+Private Sub lblPorcLvl_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
+     MouseX = X
+     MouseY = Y
      
     lblexpactivo = True
         
@@ -1562,8 +1567,9 @@ Private Sub lvButtons_H1_Click()
     Call ParseUserCommand("/BUG")
 End Sub
 
-Private Sub Minimap_MouseDown(Button As Integer, Shift As Integer, x As Single, y As Single)
-    If Button = vbRightButton Then Call ParseUserCommand("/TELEP YO " & UserMap & " " & CByte(x) & " " & CByte(y))
+Private Sub Minimap_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
+            
+    If Button = vbRightButton Then Call ParseUserCommand("/TELEP YO " & UserMap & " " & CByte(X) & " " & CByte(Y))
 End Sub
 
 Private Sub PicSeg_Click()
@@ -1572,10 +1578,10 @@ End Sub
 
 Private Sub picSpell_DblClick()
     UsandoDrag = False
-    Engine.DrawSpells
+    DrawSpells
 End Sub
 
-Private Sub picSpell_MouseMove(Button As Integer, Shift As Integer, x As Single, y As Single)
+Private Sub picSpell_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
 On Error Resume Next
     UsaMacro = False
     CnTd = 0
@@ -1625,7 +1631,7 @@ On Error Resume Next
     End If
 End Sub
 
-Private Sub picSpell_MouseUp(Button As Integer, Shift As Integer, x As Single, y As Single)
+Private Sub picSpell_MouseUp(Button As Integer, Shift As Integer, X As Single, Y As Single)
     picSpell.MousePointer = vbDefault
     
 End Sub
@@ -1634,7 +1640,7 @@ Private Sub renderer_Click()
     Form_Click
 End Sub
 
-Private Sub renderer_MouseDown(Button As Integer, Shift As Integer, x As Single, y As Single)
+Private Sub renderer_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
     MouseBoton = Button
     MouseShift = Shift
     
@@ -1645,13 +1651,13 @@ Private Sub renderer_MouseDown(Button As Integer, Shift As Integer, x As Single,
     End If
 End Sub
 
-Private Sub renderer_MouseMove(Button As Integer, Shift As Integer, x As Single, y As Single)
-    MouseX = x
-    MouseY = y
+Private Sub renderer_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
+    MouseX = X
+    MouseY = Y
     
     Dim selInvSlot      As Byte
     'Get new target positions
-    ConvertCPtoTP x, y, tX, tY
+    ConvertCPtoTP X, Y, tX, tY
         
     With MapData(tX, tY)
         If UsabaDrag = False Then
@@ -1804,43 +1810,32 @@ Private Sub Form_Click()
 
     If Not Comerciando Then
         Call ConvertCPtoTP(MouseX, MouseY, tX, tY)
-        
-        If MouseBoton <> vbRightButton Then
-        
-            '¿Quiere solicitar party?
-            If SolicitudParty = True Then
-                Call ChangeCursorMain(cur_Normal, frmMain)
-                Call WriteInvitacionAParty(tX, tY)
-                SolicitudParty = False
-                Exit Sub
-            End If
-        
-            'Lorwik> AntiMacros !!
-            If UsaMacro Then
-                CnTd = CnTd + 1
-                If CnTd = 5 Then
-                    Call WriteUseSpellMacro
-                    CnTd = 0
-                End If
-                UsaMacro = False
-            End If
-            '[/ybarra]
-            If UsingSkill = 0 Then
-                Call WriteLeftClick(tX, tY)
-            Else
-                
-                If Not MainTimer.Check(TimersIndex.Arrows, False) Then 'Check if arrows interval has finished.
+        If MouseShift = 0 Then
+            If MouseBoton <> vbRightButton Then
+            
+                '¿Quiere solicitar party?
+                If SolicitudParty = True Then
                     Call ChangeCursorMain(cur_Normal, frmMain)
-                    UsingSkill = 0
-                    With FontTypes(FontTypeNames.FONTTYPE_TALK)
-                        Call AddtoRichTextBox(frmMain.RecTxt, "No puedes lanzar proyectiles tan rápido.", .red, .green, .blue, .bold, .italic)
-                    End With
+                    Call WriteInvitacionAParty(tX, tY)
+                    SolicitudParty = False
                     Exit Sub
                 End If
-                
-                'Splitted because VB isn't lazy!
-                If UsingSkill = Proyectiles Then
-                    If Not MainTimer.Check(TimersIndex.Arrows) Then
+            
+                'Lorwik> AntiMacros !!
+                If UsaMacro Then
+                    CnTd = CnTd + 1
+                    If CnTd = 5 Then
+                        Call WriteUseSpellMacro
+                        CnTd = 0
+                    End If
+                    UsaMacro = False
+                End If
+                '[/ybarra]
+                If UsingSkill = 0 Then
+                    Call WriteLeftClick(tX, tY)
+                Else
+                    
+                    If Not MainTimer.Check(TimersIndex.Arrows, False) Then 'Check if arrows interval has finished.
                         Call ChangeCursorMain(cur_Normal, frmMain)
                         UsingSkill = 0
                         With FontTypes(FontTypeNames.FONTTYPE_TALK)
@@ -1848,43 +1843,61 @@ Private Sub Form_Click()
                         End With
                         Exit Sub
                     End If
-                End If
-                
-                'Splitted because VB isn't lazy!
-                If UsingSkill = magia Then
-                    If Not MainTimer.Check(TimersIndex.Attack, False) Then 'Check if attack interval has finished.
-                        If Not MainTimer.Check(TimersIndex.CastAttack) Then
-                            If Opciones.BloqCruceta = 0 Then
-                                Call ChangeCursorMain(cur_Normal, frmMain)
-                                UsingSkill = 0
-                            End If
-                            Exit Sub
-                        End If
-                    Else
-                        If Not MainTimer.Check(TimersIndex.CastSpell) Then
-                            If Opciones.BloqCruceta = 0 Then
-                                Call ChangeCursorMain(cur_Normal, frmMain)
-                                UsingSkill = 0
-                            End If
+                    
+                    'Splitted because VB isn't lazy!
+                    If UsingSkill = Proyectiles Then
+                        If Not MainTimer.Check(TimersIndex.Arrows) Then
+                            Call ChangeCursorMain(cur_Normal, frmMain)
+                            UsingSkill = 0
+                            With FontTypes(FontTypeNames.FONTTYPE_TALK)
+                                Call AddtoRichTextBox(frmMain.RecTxt, "No puedes lanzar proyectiles tan rápido.", .red, .green, .blue, .bold, .italic)
+                            End With
                             Exit Sub
                         End If
                     End If
-                End If
-                
-                'Splitted because VB isn't lazy!
-                If (UsingSkill = Pesca Or UsingSkill = Robar Or UsingSkill = Talar Or UsingSkill = Mineria Or UsingSkill = FundirMetal) Then
-                    If Not MainTimer.Check(TimersIndex.Work) Then
-                        Call ChangeCursorMain(cur_Normal, frmMain)
-                        UsingSkill = 0
-                        Exit Sub
+                    
+                    'Splitted because VB isn't lazy!
+                    If UsingSkill = magia Then
+                        If Not MainTimer.Check(TimersIndex.Attack, False) Then 'Check if attack interval has finished.
+                            If Not MainTimer.Check(TimersIndex.CastAttack) Then
+                                If Opciones.BloqCruceta = 0 Then
+                                    Call ChangeCursorMain(cur_Normal, frmMain)
+                                    UsingSkill = 0
+                                End If
+                                Exit Sub
+                            End If
+                        Else
+                            If Not MainTimer.Check(TimersIndex.CastSpell) Then
+                                If Opciones.BloqCruceta = 0 Then
+                                    Call ChangeCursorMain(cur_Normal, frmMain)
+                                    UsingSkill = 0
+                                End If
+                                Exit Sub
+                            End If
+                        End If
                     End If
+                    
+                    'Splitted because VB isn't lazy!
+                    If (UsingSkill = Pesca Or UsingSkill = Robar Or UsingSkill = Talar Or UsingSkill = Mineria Or UsingSkill = FundirMetal) Then
+                        If Not MainTimer.Check(TimersIndex.Work) Then
+                            Call ChangeCursorMain(cur_Normal, frmMain)
+                            UsingSkill = 0
+                            Exit Sub
+                        End If
+                    End If
+                    
+                    If CurrentCursor <> cur_Action Then Exit Sub 'Parcheo porque a veces tira el hechizo sin tener el cursor (NicoNZ)
+                    
+                    Call ChangeCursorMain(cur_Normal, frmMain)
+                    Call WriteWorkLeftClick(tX, tY, UsingSkill)
+                    UsingSkill = 0
                 End If
-                
-                If CurrentCursor <> cur_Action Then Exit Sub 'Parcheo porque a veces tira el hechizo sin tener el cursor (NicoNZ)
-                
-                Call ChangeCursorMain(cur_Normal, frmMain)
-                Call WriteWorkLeftClick(tX, tY, UsingSkill)
-                UsingSkill = 0
+            End If
+        ElseIf (MouseShift And 1) = 1 Then
+            If Not CustomKeys.KeyAssigned(KeyCodeConstants.vbKeyShift) Then
+                If MouseBoton = vbLeftButton Then
+                    Call WriteWarpChar("YO", UserMap, tX, tY)
+                End If
             End If
         End If
     End If
@@ -1903,6 +1916,7 @@ Private Sub Form_Load()
     #If Desarrollo = 2 Then
     If Opciones.URLCON = 1 Then Call StartURLDetect(RecTxt.hwnd, Me.hwnd)
     #End If
+    Call Make_Transparent_Richtext(RecTxt.hwnd)
     
     Set dragInventory = Inventario
     Set dragSpells = Spells
@@ -1949,9 +1963,9 @@ Private Sub Form_Unload(Cancel As Integer)
     StopURLDetect
 End Sub
 
-Private Sub Form_MouseMove(Button As Integer, Shift As Integer, x As Single, y As Single)
-    MouseX = x
-    MouseY = y
+Private Sub Form_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
+    MouseX = X
+    MouseY = Y
     
     lblexpactivo = False
     Call LabelExperiencia
@@ -1978,7 +1992,7 @@ Private Sub picInv_DblClick()
     Call EquiparItem
 End Sub
 
-Private Sub picInv_MouseUp(Button As Integer, Shift As Integer, x As Single, y As Single)
+Private Sub picInv_MouseUp(Button As Integer, Shift As Integer, X As Single, Y As Single)
     Call Sound.Sound_Play(SND_CLICK)
     Call ChangeCursorMain(cur_Normal, frmMain)
 End Sub
@@ -1988,7 +2002,7 @@ Private Sub PicInv_Click()
     Inventario.DrawInv
 End Sub
 
-Private Sub picInv_MouseMove(Button As Integer, Shift As Integer, x As Single, y As Single)
+Private Sub picInv_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
         
     If Not UsandoDrag Then
         If Button = vbRightButton Then
@@ -2244,7 +2258,7 @@ Private Sub UAOInformación_Click(Index As Integer)
     Call WriteSpellInfo(Spells.SelectedItem)
     FramHechi.Visible = False
     UsandoDrag = False
-    Engine.DrawSpells
+    DrawSpells
 End Sub
 
 Private Sub uAOMenu_Click(Index As Integer)
@@ -2363,7 +2377,7 @@ Private Sub UAOOlvidar_Click(Index As Integer)
     Call WriteOlvidaSpell(Spells.SelectedItem)
     FramHechi.Visible = False
     UsandoDrag = False
-    Engine.DrawSpells
+    DrawSpells
 End Sub
 
 Private Sub CargarCursoresMain()

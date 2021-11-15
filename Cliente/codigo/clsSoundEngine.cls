@@ -214,7 +214,7 @@ Public Function Initialize_Engine(ByVal main_hwnd As String, ByVal Set_Wav_Path 
 'Last Modify Date: 2/08/2006
 '**************************************************************
 
-On Error GoTo errhandler
+On Error GoTo ErrHandler
 
 Dim dmA As DMUS_AUDIOPARAMS
 
@@ -273,7 +273,7 @@ Call Ambient_General_Load(mEffectsVolumeAmbient)
 
 Exit Function
 
-errhandler:
+ErrHandler:
     If Len(Trim$(Err.Description)) Then
         Engine_Initialized = False
         Initialize_Engine = False
@@ -920,7 +920,7 @@ Public Function Sound_Render()
 
 On Error Resume Next
 
-Dim TiempoActual As Long, x As Integer, y As Integer, mAmb As Integer
+Dim TiempoActual As Long, X As Integer, Y As Integer, mAmb As Integer
 
 Static under_roof As Boolean
 Static Sound_Buffer As DirectSoundSecondaryBuffer8
@@ -974,15 +974,15 @@ If Engine_Initialized Then
             
         End If
     
-        If Engine.Map_Item_Grh_In_Current_Area(GRH_FOGATA, x, y) Then
+        If Map_Item_Grh_In_Current_Area(GRH_FOGATA, X, Y) Then
             If Not play_fire Then
-                ambient_fire_buffer.SetVolume Calculate_Volume(x, y)
-                ambient_fire_buffer.SetPan Calculate_Pan(x, y)
+                ambient_fire_buffer.SetVolume Calculate_Volume(X, Y)
+                ambient_fire_buffer.SetPan Calculate_Pan(X, Y)
                 ambient_fire_buffer.Play DSBPLAY_LOOPING
                 play_fire = True
             ElseIf charlist(UserCharIndex).moved Then
-                ambient_fire_buffer.SetVolume Calculate_Volume(x, y)
-                ambient_fire_buffer.SetPan Calculate_Pan(x, y)
+                ambient_fire_buffer.SetVolume Calculate_Volume(X, Y)
+                ambient_fire_buffer.SetPan Calculate_Pan(X, Y)
             End If
         ElseIf play_fire Then
             play_fire = False
@@ -1063,7 +1063,7 @@ Public Function Calculate_Pan(ByVal map_x As Integer, ByVal map_y As Integer) As
     
     Dim total_distance As Integer, position_sgn As Integer, curr_x As Integer, curr_y As Integer
     
-    If Engine.Char_Pos_Get(UserCharIndex, curr_x, curr_y) Then
+    If Char_Pos_Get(UserCharIndex, curr_x, curr_y) Then
         total_distance = General_Distance_Get(map_x, map_y, curr_x, curr_y)
         
         If mInvert_Sound = False Then
@@ -1101,7 +1101,7 @@ Public Function Calculate_Volume(ByVal map_x As Integer, ByVal map_y As Integer)
     
     If (Opciones.Audio = 0) Or (Engine_Initialized = False) Then Exit Function
     
-    If Engine.Char_Pos_Get(UserCharIndex, curr_x, curr_y) Then
+    If Char_Pos_Get(UserCharIndex, curr_x, curr_y) Then
         total_distance = General_Distance_Get(map_x, map_y, curr_x, curr_y)
         
         If (total_distance = 0) Then

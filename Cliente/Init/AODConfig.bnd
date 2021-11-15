@@ -2,33 +2,40 @@
 
 [VIDEO]
 Resolucion=1
-BaseTecho=0
+BaseTecho=70
 VSynC=0
 VProcessing=0
 
 [AUDIO]
 Musica=0
-Sonido=0
-FXSound=0
+Sonido=1
+FXSound=1
 Ambient=0
-VolMusica=-2146
-VolAudio=86
-VolAmbient=70
+VolMusica=-1086
+VolAudio=-105
+VolAmbient=0
 
 [EXTRAS]
 bCursores=0
-MovEscritura=0
-URLCON=0
+MovEscritura=1
+URLCON=1
 NamePlayers=1
 FirstRun=0
-GuildNews=1
+GuildNews=0
 bBd=0
+ClassicSpell=0
+SERVER=0
+BloqCruceta=1
 
 [COMMANDMACROS]
-F1=ONLINE
-F2=ONLINECLAN
-F3=MEDITAR
+F1=TELEPLOC
+F2=MEDITAR
+F3=INVISIBLE
 F4=PING
 F10
-F8=SALIR
-F5=PARTY
+F12=SALIR
+F6=TELEPLOC
+
+[Account]
+Check=1
+Nombre=1 

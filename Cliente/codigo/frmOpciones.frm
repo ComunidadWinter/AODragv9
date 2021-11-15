@@ -193,6 +193,7 @@ Begin VB.Form frmOpciones
          LargeChange     =   20
          Left            =   240
          Max             =   255
+         Min             =   70
          SmallChange     =   2
          TabIndex        =   3
          Top             =   600

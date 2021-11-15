@@ -21,7 +21,7 @@ Private Type SURFACE_ENTRY_DYN
     FileName As Integer
     UltimoAcceso As Long
     Texture As Direct3DTexture8
-    size As Long
+    Size As Long
     texture_width As Integer
     texture_height As Integer
 End Type
@@ -62,7 +62,7 @@ Private Sub Class_Terminate()
         End With
     Next i
 End Sub
- 
+
 Public Function GetTexture(ByVal FileName As Integer, ByRef textwidth As Long, ByRef textheight As Long) As Direct3DTexture8
 If FileName = 0 Then
 Debug.Print "0 GRH ATMPT TO BE LOADED"
@@ -105,12 +105,12 @@ Public Function Init(ByRef D3D8 As D3DX8, ByRef d3d_device As Direct3DDevice8, B
 End Function
  
 Private Function CrearGrafico(ByVal Archivo As Integer, ByRef texwidth As Long, ByRef textheight As Long) As Direct3DTexture8
-On Error GoTo ErrHandler
+On Error GoTo errhandler
     Dim surface_desc As D3DSURFACE_DESC
     Dim texture_info As D3DXIMAGE_INFO
-    Dim index As Integer
-    index = Archivo Mod HASH_TABLE_SIZE
-    With TexList(index)
+    Dim Index As Integer
+    Index = Archivo Mod HASH_TABLE_SIZE
+    With TexList(Index)
         .surfaceCount = .surfaceCount + 1
         ReDim Preserve .SurfaceEntry(1 To .surfaceCount) As SURFACE_ENTRY_DYN
         With .SurfaceEntry(.surfaceCount)
@@ -120,29 +120,29 @@ On Error GoTo ErrHandler
             'Ultimo acceso
             .UltimoAcceso = GetTickCount
  
-   Dim InfoHead As INFOHEADER
-    Dim buffer() As Byte
-   
-    InfoHead = File_Find(App.Path & "\Recursos\Graphics.DRAG", CStr(Archivo) & ".bmp")
-   
-    If InfoHead.lngFileSize <> 0 Then
-        Extract_File_Memory Graphics, App.Path & "\Recursos\", LCase$(CStr(Archivo) & ".bmp"), buffer()
-           
-        Set .Texture = D3DX.CreateTextureFromFileInMemoryEx(D3DDevice, buffer(0), UBound(buffer()) + 1, D3DX_DEFAULT, _
-                                                            D3DX_DEFAULT, 0, 0, D3DFMT_A8R8G8B8, D3DPOOL_MANAGED, _
-                                                            D3DX_FILTER_POINT, D3DX_FILTER_NONE, _
-                                                            &HFF000000, texture_info, ByVal 0)
-        Erase buffer
-    End If
+             Dim InfoHead As INFOHEADER
+             Dim buffer() As Byte
+            
+             InfoHead = File_Find(App.Path & "\Recursos\Graphics.DRAG", CStr(Archivo) & ".bmp")
+            
+             If InfoHead.lngFileSize <> 0 Then
+                 Extract_File_Memory Graphics, App.Path & "\Recursos\", LCase$(CStr(Archivo) & ".bmp"), buffer()
+                    
+                 Set .Texture = D3DX.CreateTextureFromFileInMemoryEx(D3DDevice, buffer(0), UBound(buffer()) + 1, D3DX_DEFAULT, _
+                                                                     D3DX_DEFAULT, 0, 0, D3DFMT_A8R8G8B8, D3DPOOL_MANAGED, _
+                                                                     D3DX_FILTER_POINT, D3DX_FILTER_NONE, _
+                                                                     &HFF000000, texture_info, ByVal 0)
+                 Erase buffer
+             End If
                
             .Texture.GetLevelDesc 0, surface_desc
             .texture_width = texture_info.Width
             .texture_height = texture_info.Height
-            .size = surface_desc.size
+            .Size = surface_desc.Size
             texwidth = .texture_width
             textheight = .texture_height
             Set CrearGrafico = .Texture
-            mFreeMemoryBytes = mFreeMemoryBytes + surface_desc.size
+            mFreeMemoryBytes = mFreeMemoryBytes + surface_desc.Size
         End With
     End With
     'Debug.Print mFreeMemoryBytes / 1024 / 1024; " MB LIBRES"
@@ -152,7 +152,7 @@ On Error GoTo ErrHandler
         End If
     Loop
 Exit Function
-ErrHandler:
+errhandler:
 Debug.Print "ERROR EN GRHLOAD>" & Archivo & ".png"
 End Function
  
@@ -210,7 +210,7 @@ Private Function RemoveLRU() As Boolean
     End If
    
     'Update the used bytes
-    mFreeMemoryBytes = mFreeMemoryBytes + surface_desc.size
+    mFreeMemoryBytes = mFreeMemoryBytes + surface_desc.Size
 End Function
 
 

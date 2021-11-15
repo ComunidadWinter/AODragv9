@@ -475,7 +475,7 @@ Private Sub lstProfesion_click()
      
      lblFuerza.Caption = "Fuerza: " & AtributoBase + baseFuerza + ModFuerza
      lblAgilidad.Caption = "Agilidad: " & AtributoBase + baseAgilidad + ModAgilidad
-     lblenergia.Caption = "Energia: " & AtributoBase + baseEnergia + ModEnergia
+     lblEnergia.Caption = "Energia: " & AtributoBase + baseEnergia + ModEnergia
      lblInteligencia.Caption = "Inteligencia: " & AtributoBase + baseInteligencia + ModInteligencia
      lblConstitucion.Caption = "Constitución: " & AtributoBase + baseConstitucion + ModConstitucion
 End Sub
@@ -537,7 +537,7 @@ Call DibujarHead
    
      lblFuerza.Caption = "Fuerza: " & AtributoBase + baseFuerza + ModFuerza
      lblAgilidad.Caption = "Agilidad: " & AtributoBase + baseAgilidad + ModAgilidad
-     lblenergia.Caption = "Energia: " & AtributoBase + baseEnergia + ModEnergia
+     lblEnergia.Caption = "Energia: " & AtributoBase + baseEnergia + ModEnergia
      lblInteligencia.Caption = "Inteligencia: " & AtributoBase + baseInteligencia + ModInteligencia
      lblConstitucion.Caption = "Constitución: " & AtributoBase + baseConstitucion + ModConstitucion
 End Sub
@@ -569,11 +569,8 @@ Private Sub NameTxt_Change()
 End Sub
 
 Private Sub DibujarHead()
-Dim Grh As Long
-
-    Grh = HeadData(Actual).Head(3).GrhIndex
     
     PicHead.BackColor = PicHead.BackColor
     
-    Call DrawGrhtoHdc(PicHead.hDC, Grh, PicHead, 10, 10)
+    Call DrawHeadHdc(PicHead.hDC, Actual, PicHead, 6, 0, 1, True)
 End Sub

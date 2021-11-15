@@ -259,7 +259,7 @@ Fallo:
 
 End Sub
 
-Private Function ClickItem(ByVal x As Long, ByVal y As Long) As Long
+Private Function ClickItem(ByVal X As Long, ByVal Y As Long) As Long
 '***************************************************
 'Author: Juan Martín Sotuyo Dodero (Maraxus)
 'Last Modify Date: 08/08/2012 - ^[GS]^
@@ -269,8 +269,8 @@ Private Function ClickItem(ByVal x As Long, ByVal y As Long) As Long
     Dim temp_x As Long
     Dim temp_y As Long
     
-    temp_x = x \ ownTilePixelWidth
-    temp_y = y \ ownTilePixelHeight
+    temp_x = X \ ownTilePixelWidth
+    temp_y = Y \ ownTilePixelHeight
     
     If Comerciando = False Then
         TempItem = temp_x + (temp_y + InventoryOffset) * (InventoryWindow.ScaleWidth \ ownTilePixelWidth) + 1 - temp_y
@@ -320,8 +320,8 @@ Private Sub DrawInventory()
     DestRect = TempRect
        
     'Clear the inventory window
-    D3DDevice.Clear 0, ByVal 0, D3DCLEAR_TARGET, 0, 0#, 0
-    D3DDevice.BeginScene
+    DirectDevice.Clear 0, ByVal 0, D3DCLEAR_TARGET, 0, 0#, 0
+    DirectDevice.BeginScene
     
     For loopc = InventoryOffset * (InventoryWindow.ScaleWidth \ ownTilePixelWidth) + 1 To UBound(Inventory)
 
@@ -332,14 +332,14 @@ Private Sub DrawInventory()
                     
                 'Render a box around the selected item
                 If InvSelectedItem = loopc Then
-                    Call Engine.Draw_GrhIndex(2, startdX, startdY, LightIluminado())
+                    Call DDrawTransGrhIndextoSurface(2, startdX, startdY, 0, LightIluminado())
                 End If
                                                                         
                 'Dibujamos el Grh del item
                 If Inventory(loopc).PuedeUsar = 1 Then
-                    Call Engine.Draw_GrhIndex(Inventory(loopc).GrhIndex, startdX, startdY, LightIluminado())
+                    Call DDrawTransGrhIndextoSurface(Inventory(loopc).GrhIndex, startdX, startdY, 0, LightIluminado())
                 Else
-                    Call Engine.Draw_GrhIndex(Inventory(loopc).GrhIndex, startdX, startdY, NoPuedeUsar)
+                    Call DDrawTransGrhIndextoSurface(Inventory(loopc).GrhIndex, startdX, startdY, 0, NoPuedeUsar)
                 End If
                         
                 'Si esta equipado le ponemos una marca para indicarlo
@@ -351,8 +351,8 @@ Private Sub DrawInventory()
                 Call texto.Engine_Text_Draw(startdX, startdY + 18, Inventory(loopc).amount, -1)
             End If
         Next loopc
-    D3DDevice.EndScene
-    D3DDevice.Present DestRect, ByVal 0, InventoryWindow.hwnd, ByVal 0
+    DirectDevice.EndScene
+    DirectDevice.Present DestRect, ByVal 0, InventoryWindow.hwnd, ByVal 0
     
 End Sub
 
@@ -404,7 +404,7 @@ Public Sub Initialize(ByRef DirectD3D As D3DX8, ByRef InvPic As PictureBox, ByVa
         
 End Sub
 
-Private Sub InventoryWindow_MouseMove(Button As Integer, Shift As Integer, x As Single, y As Single)
+Private Sub InventoryWindow_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
 '***************************************************
 'Author: Juan Martín Sotuyo Dodero (Maraxus)
 'Last Modify Date: 30/06/2012 - ^[GS]^
@@ -416,11 +416,11 @@ Private Sub InventoryWindow_MouseMove(Button As Integer, Shift As Integer, x As 
     Dim TempItem As Integer
     
     'Exit if it got outside the control's area
-    If x < 0 Or y < 0 Or x > InventoryWindow.Width Or y > InventoryWindow.Height Then _
+    If X < 0 Or Y < 0 Or X > InventoryWindow.Width Or Y > InventoryWindow.Height Then _
         Exit Sub
         
-    MouseX = x
-    MouseY = y
+    MouseX = X
+    MouseY = Y
         
     If Button = vbRightButton Then
         
@@ -428,8 +428,8 @@ Private Sub InventoryWindow_MouseMove(Button As Integer, Shift As Integer, x As 
         
     Else
 
-        temp_x = x \ ownTilePixelWidth
-        temp_y = y \ ownTilePixelHeight
+        temp_x = X \ ownTilePixelWidth
+        temp_y = Y \ ownTilePixelHeight
         
         If Comerciando = False Then
             TempItem = temp_x + (temp_y + InventoryOffset) * (InventoryWindow.ScaleWidth \ ownTilePixelWidth) + 1 - temp_y
@@ -454,7 +454,7 @@ Private Sub InventoryWindow_MouseMove(Button As Integer, Shift As Integer, x As 
     'Call DrawInventory
 End Sub
 
-Private Sub InventoryWindow_MouseUp(Button As Integer, Shift As Integer, x As Single, y As Single)
+Private Sub InventoryWindow_MouseUp(Button As Integer, Shift As Integer, X As Single, Y As Single)
 '***************************************************
 'Author: Juan Martín Sotuyo Dodero (Maraxus)
 'Last Modify Date: 27/07/04
@@ -468,30 +468,30 @@ Private Sub InventoryWindow_MouseUp(Button As Integer, Shift As Integer, x As Si
     Dim temp_y As Long
    
     'Exit if it got outside the control's area
-    If x < 0 Then
+    If X < 0 Then
         If frmMain.UsandoDrag Then frmMain.UsabaDrag = True
-        x = 0
-    ElseIf y < 0 Then
+        X = 0
+    ElseIf Y < 0 Then
         If frmMain.UsandoDrag Then frmMain.UsabaDrag = True
-        y = 0
-    ElseIf x > InventoryWindow.Width Then
+        Y = 0
+    ElseIf X > InventoryWindow.Width Then
         If frmMain.UsandoDrag Then frmMain.UsabaDrag = True
-        x = InventoryWindow.Width
-    ElseIf y > InventoryWindow.Height Then
+        X = InventoryWindow.Width
+    ElseIf Y > InventoryWindow.Height Then
         If frmMain.UsandoDrag Then frmMain.UsabaDrag = True
-        y = InventoryWindow.Height
+        Y = InventoryWindow.Height
     End If
    
     'Exit if it got outside the control's area
-    If x < 0 Or y < 0 Or x > InventoryWindow.Width Or y > InventoryWindow.Height Then _
+    If X < 0 Or Y < 0 Or X > InventoryWindow.Width Or Y > InventoryWindow.Height Then _
         Exit Sub
    
     prevSelItem = InvSelectedItem
    
-    temp_x = x \ ownTilePixelWidth
-    temp_y = y \ ownTilePixelHeight
+    temp_x = X \ ownTilePixelWidth
+    temp_y = Y \ ownTilePixelHeight
        
-    If Not frmMain.UsabaDrag Then InvSelectedItem = ClickItem(CInt(x), CInt(y))
+    If Not frmMain.UsabaDrag Then InvSelectedItem = ClickItem(CInt(X), CInt(Y))
     'aca
     'Call DrawInventory
         
@@ -508,18 +508,18 @@ Private Sub InventoryWindow_MouseUp(Button As Integer, Shift As Integer, x As Si
 
 End Sub
 
-Private Sub InventoryWindow_MouseDown(Button As Integer, Shift As Integer, x As Single, y As Single)
+Private Sub InventoryWindow_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
     Dim temp_x As Integer
     Dim temp_y As Integer
     Dim TempItem As Integer
 
     'Exit if it got outside the control's area
-    If x < 0 Or y < 0 Or x > InventoryWindow.Width Or y > InventoryWindow.Height Then Exit Sub
+    If X < 0 Or Y < 0 Or X > InventoryWindow.Width Or Y > InventoryWindow.Height Then Exit Sub
        
-    temp_x = x \ ownTilePixelWidth
-    temp_y = y \ ownTilePixelHeight
+    temp_x = X \ ownTilePixelWidth
+    temp_y = Y \ ownTilePixelHeight
        
-    InvSelectedItem = ClickItem(CInt(x), CInt(y))
+    InvSelectedItem = ClickItem(CInt(X), CInt(Y))
        
     If Button = vbRightButton Then
         If Comerciando = False Then

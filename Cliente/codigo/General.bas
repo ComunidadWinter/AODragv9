@@ -44,51 +44,51 @@ Private Type tMapHeader
 End Type
 
 Private Type tDatosBloqueados
-    x As Integer
-    y As Integer
+    X As Integer
+    Y As Integer
 End Type
 
 Private Type tDatosGrh
-    x As Integer
-    y As Integer
+    X As Integer
+    Y As Integer
     GrhIndex As Long
 End Type
 
 Private Type tDatosTrigger
-    x As Integer
-    y As Integer
-    Trigger As Integer
+    X As Integer
+    Y As Integer
+    trigger As Integer
 End Type
 
 Private Type tDatosLuces
-    x As Integer
-    y As Integer
+    X As Integer
+    Y As Integer
     light_value(3) As Long
     base_light(0 To 3) As Boolean 'Indica si el tile tiene luz propia.
 End Type
 
 Private Type tDatosParticulas
-    x As Integer
-    y As Integer
+    X As Integer
+    Y As Integer
     Particula As Long
 End Type
 
 Private Type tDatosNPC
-    x As Integer
-    y As Integer
+    X As Integer
+    Y As Integer
     NPCIndex As Integer
 End Type
 
 Private Type tDatosObjs
-    x As Integer
-    y As Integer
+    X As Integer
+    Y As Integer
     OBJIndex As Integer
     ObjAmmount As Integer
 End Type
 
 Private Type tDatosTE
-    x As Integer
-    y As Integer
+    X As Integer
+    Y As Integer
     DestM As Integer
     DestX As Integer
     DestY As Integer
@@ -190,32 +190,32 @@ Select Case frmCrearPersonaje.lstGenero.List(frmCrearPersonaje.lstGenero.ListInd
         Select Case frmCrearPersonaje.lstRaza.List(frmCrearPersonaje.lstRaza.ListIndex)
             Case "Humano"
                 Actual = 1
-                MaxEleccion = 41
                 MinEleccion = 1
+                MaxEleccion = 43
             Case "Elfo"
                 Actual = 101
-                MaxEleccion = 112
                 MinEleccion = 101
+                MaxEleccion = 132
             Case "Elfo Oscuro"
-                Actual = 200
-                MaxEleccion = 210
-                MinEleccion = 200
+                Actual = 201
+                MinEleccion = 201
+                MaxEleccion = 230
             Case "Enano"
-                Actual = 300
-                MaxEleccion = 306
-                MinEleccion = 300
+                Actual = 301
+                MinEleccion = 301
+                MaxEleccion = 330
             Case "Gnomo"
                 Actual = 401
-                MaxEleccion = 406
                 MinEleccion = 401
+                MaxEleccion = 430
             Case "Orco"
-                Actual = 130
-                MaxEleccion = 130
-                MinEleccion = 130
+                Actual = 501
+                MinEleccion = 501
+                MaxEleccion = 530
             Case "No-Muerto"
                 Actual = 507
-                MaxEleccion = 508
-                MinEleccion = 507
+                MinEleccion = 625
+                MaxEleccion = 626
             Case Else
                 Actual = 30
                 MaxEleccion = 30
@@ -225,32 +225,32 @@ Select Case frmCrearPersonaje.lstGenero.List(frmCrearPersonaje.lstGenero.ListInd
         Select Case frmCrearPersonaje.lstRaza.List(frmCrearPersonaje.lstRaza.ListIndex)
             Case "Humano"
                 Actual = 70
-                MaxEleccion = 79
                 MinEleccion = 70
+                MaxEleccion = 100
             Case "Elfo"
-                Actual = 171
-                MaxEleccion = 178
-                MinEleccion = 171
+                Actual = 170
+                MinEleccion = 170
+                MaxEleccion = 200
             Case "Elfo Oscuro"
                 Actual = 270
-                MaxEleccion = 278
                 MinEleccion = 270
+                MaxEleccion = 300
             Case "Gnomo"
-                Actual = 370
-                MaxEleccion = 372
-                MinEleccion = 370
+                Actual = 399
+                MinEleccion = 399
+                MaxEleccion = 470
             Case "Enano"
-                Actual = 470
-                MaxEleccion = 476
-                MinEleccion = 470
+                Actual = 370
+                MinEleccion = 370
+                MaxEleccion = 399
             Case "Orco"
-                Actual = 131
-                MaxEleccion = 131
-                MinEleccion = 131
+                Actual = 570
+                MinEleccion = 570
+                MaxEleccion = 599
             Case "No-Muerto"
-                Actual = 506
-                MaxEleccion = 506
-                MinEleccion = 506
+                Actual = 560
+                MinEleccion = 650
+                MaxEleccion = 651
             Case Else
                 Actual = 70
                 MaxEleccion = 70
@@ -301,7 +301,7 @@ Public Sub RefreshAllChars()
     
     For loopc = 1 To LastChar
         If charlist(loopc).Active = 1 Then
-            MapData(charlist(loopc).Pos.x, charlist(loopc).Pos.y).CharIndex = loopc
+            MapData(charlist(loopc).Pos.X, charlist(loopc).Pos.Y).CharIndex = loopc
         End If
     Next loopc
 End Sub
@@ -444,18 +444,18 @@ Sub MoveTo(ByVal Direccion As E_Heading)
     
     If Cartel Then Cartel = False
     
-        'Bloqueo de movimiento en escritura
+    'Bloqueo de movimiento en escritura
     If frmMain.SendTxt.Visible = True And Opciones.MovEscritura = 1 Then Exit Sub
     
     Select Case Direccion
         Case E_Heading.NORTH
-            LegalOk = MoveToLegalPos(UserPos.x, UserPos.y - 1)
+            LegalOk = MoveToLegalPos(UserPos.X, UserPos.Y - 1)
         Case E_Heading.EAST
-            LegalOk = MoveToLegalPos(UserPos.x + 1, UserPos.y)
+            LegalOk = MoveToLegalPos(UserPos.X + 1, UserPos.Y)
         Case E_Heading.SOUTH
-            LegalOk = MoveToLegalPos(UserPos.x, UserPos.y + 1)
+            LegalOk = MoveToLegalPos(UserPos.X, UserPos.Y + 1)
         Case E_Heading.WEST
-            LegalOk = MoveToLegalPos(UserPos.x - 1, UserPos.y)
+            LegalOk = MoveToLegalPos(UserPos.X - 1, UserPos.Y)
     End Select
     
     charlist(UserCharIndex).moved = True
@@ -463,9 +463,9 @@ Sub MoveTo(ByVal Direccion As E_Heading)
     If LegalOk And Not UserParalizado Then
         If Not UserDescansar And Not UserMeditar Then
             Call WriteWalk(Direccion)
-            Engine.Char_Move_by_Head UserCharIndex, Direccion
             MoveScreen Direccion
-            Call ActualizarMiniMapa(Direccion)
+            MoveCharbyHead UserCharIndex, Direccion
+            Call ActualizarMiniMapa
         Else
             If UserDescansar And Not UserAvisado Then
                 UserAvisado = True
@@ -482,6 +482,10 @@ Sub MoveTo(ByVal Direccion As E_Heading)
         End If
     End If
     
+    'Lorwik> Cambio de Zonas
+    If UserPos.Y = 101 Or UserPos.Y = 99 Then Call DibujarMiniMapa
+    If UserPos.X = 101 Or UserPos.X = 99 Then Call DibujarMiniMapa
+    
     Call FlushBuffer
     
 End Sub
@@ -492,7 +496,7 @@ Sub RandomMove()
 'Last Modify Date: 06/03/2006
 ' 06/03/2006: AlejoLp - Ahora utiliza la funcion MoveTo
 '***************************************************
-    Call MoveTo(RandomNumber(NORTH, WEST))
+    Call MoveTo(RandomNumber(SOUTH, EAST))
 End Sub
 
 Sub CheckKeys()
@@ -530,7 +534,7 @@ Sub CheckKeys()
             End If
         End If
 
-        frmMain.lblMapCoord.Caption = UserMap & "," & UserPos.x & "," & UserPos.y
+        frmMain.lblMapCoord.Caption = UserMap & "," & UserPos.X & "," & UserPos.Y
     End If
 End Sub
 
@@ -577,7 +581,7 @@ Sub SwitchMap(ByVal Map As Integer, ByVal Dir_Map As String)
                 ReDim Blqs(1 To .NumeroBloqueados)
                 Get #fh, , Blqs
                 For i = 1 To .NumeroBloqueados
-                    MapData(Blqs(i).x, Blqs(i).y).blocked = 1
+                    MapData(Blqs(i).X, Blqs(i).Y).blocked = 1
                 Next i
             End If
             
@@ -586,7 +590,7 @@ Sub SwitchMap(ByVal Map As Integer, ByVal Dir_Map As String)
                 ReDim L2(1 To .NumeroLayers(2))
                 Get #fh, , L2
                 For i = 1 To .NumeroLayers(2)
-                    InitGrh MapData(L2(i).x, L2(i).y).Graphic(2), L2(i).GrhIndex
+                    InitGrh MapData(L2(i).X, L2(i).Y).Graphic(2), L2(i).GrhIndex
                 Next i
             End If
             
@@ -595,7 +599,7 @@ Sub SwitchMap(ByVal Map As Integer, ByVal Dir_Map As String)
                 ReDim L3(1 To .NumeroLayers(3))
                 Get #fh, , L3
                 For i = 1 To .NumeroLayers(3)
-                    InitGrh MapData(L3(i).x, L3(i).y).Graphic(3), L3(i).GrhIndex
+                    InitGrh MapData(L3(i).X, L3(i).Y).Graphic(3), L3(i).GrhIndex
                 Next i
             End If
             
@@ -604,7 +608,7 @@ Sub SwitchMap(ByVal Map As Integer, ByVal Dir_Map As String)
                 ReDim L4(1 To .NumeroLayers(4))
                 Get #fh, , L4
                 For i = 1 To .NumeroLayers(4)
-                    InitGrh MapData(L4(i).x, L4(i).y).Graphic(4), L4(i).GrhIndex
+                    InitGrh MapData(L4(i).X, L4(i).Y).Graphic(4), L4(i).GrhIndex
                 Next i
             End If
             
@@ -613,7 +617,7 @@ Sub SwitchMap(ByVal Map As Integer, ByVal Dir_Map As String)
                 ReDim Triggers(1 To .NumeroTriggers)
                 Get #fh, , Triggers
                 For i = 1 To .NumeroTriggers
-                    MapData(Triggers(i).x, Triggers(i).y).Trigger = Triggers(i).Trigger
+                    MapData(Triggers(i).X, Triggers(i).Y).trigger = Triggers(i).trigger
                 Next i
             End If
             
@@ -623,7 +627,7 @@ Sub SwitchMap(ByVal Map As Integer, ByVal Dir_Map As String)
                 ReDim Particulas(1 To .NumeroParticulas)
                 Get #fh, , Particulas
                 For i = 1 To .NumeroParticulas
-                    MapData(Particulas(i).x, Particulas(i).y).particle_group_index = General_Particle_Create(Particulas(i).Particula, Particulas(i).x, Particulas(i).y)
+                    MapData(Particulas(i).X, Particulas(i).Y).particle_group_index = General_Particle_Create(Particulas(i).Particula, Particulas(i).X, Particulas(i).Y)
                 Next i
             End If
             
@@ -669,18 +673,18 @@ Sub SwitchMap(ByVal Map As Integer, ByVal Dir_Map As String)
 End Sub
 
 Public Sub Char_Clean()
-Dim x As Byte
-Dim y As Byte
-For x = 1 To 100
-    For y = 1 To 100
-        If MapData(x, y).CharIndex Then
-            EraseChar MapData(x, y).CharIndex
+Dim X As Byte
+Dim Y As Byte
+For X = 1 To 100
+    For Y = 1 To 100
+        If MapData(X, Y).CharIndex Then
+            EraseChar MapData(X, Y).CharIndex
         End If
-        If MapData(x, y).ObjGrh.GrhIndex Then
-            MapData(x, y).ObjGrh.GrhIndex = 0
+        If MapData(X, Y).ObjGrh.GrhIndex Then
+            MapData(X, Y).ObjGrh.GrhIndex = 0
         End If
-    Next y
-Next x
+    Next Y
+Next X
 End Sub
 
 Function ReadField(ByVal Pos As Integer, ByRef Text As String, ByVal SepASCII As Byte) As String
@@ -737,17 +741,18 @@ Function FileExist(ByVal file As String, ByVal FileType As VbFileAttribute) As B
 End Function
 
 Sub Main()
-'**************************************
-'Iniciar Apariencia de Windows In Game!
-             InitManifest
-'**************************************
+    '**************************************
+    'Iniciar Apariencia de Windows In Game!
+    InitManifest
+    '**************************************
+    
+    ReDim EfectoList(0) As EfectoInfo
+    ReDim ZonaList(0) As ZonaInfo
 
     frmCargando.Show
     frmCargando.Refresh
     'Establecemos el 0% de la carga
     Call frmCargando.establecerProgreso(0)
-
-    Set Sound = New clsSoundEngine
 
 #If Desarrollo = 0 Then
     OriginalClientName = "AODrag 9.0"
@@ -808,7 +813,7 @@ Sub Main()
     frmCargando.Refresh
     Call frmCargando.progresoConDelay(8)
     
-    Call ListarConsejos
+    'Call ListarConsejos
 
     frmCargando.Status.Caption = "Iniciando nombres..."
     frmCargando.Refresh
@@ -824,10 +829,21 @@ Sub Main()
     
     frmCargando.Status.Caption = "Cargando Mensajes.."
     frmCargando.Refresh
-    Call frmCargando.progresoConDelay(18)
+    Call frmCargando.progresoConDelay(17)
     
     ' Initialize FONTTYPES
     Call Protocol.InitFonts
+    
+    frmCargando.Status.Caption = "Instanciando clases..."
+    frmCargando.Refresh
+    Call frmCargando.progresoConDelay(19)
+    
+    Set Sound = New clsSoundEngine
+    Set Dialogos = New clsDialogs
+    Set incomingData = New clsByteQueue
+    Set outgoingData = New clsByteQueue
+    Set MainTimer = New clsTimer
+    Set SurfaceDB = New clsSurfaceManDyn
     
     frmCargando.Status.Caption = "Iniciando motor grafico...."
     frmCargando.Refresh
@@ -835,8 +851,10 @@ Sub Main()
     
     Call Resolution.SetResolution
     
+    Call DirectXInit
+    
     'Importante que primero iniciemos el engine
-    If Not Engine.Engine_Init Then
+    If Not InitTileEngine(frmMain.renderer.hwnd, 149, 13, 32, 32, 13, 17, 11, 8, 8, 0.019) Then
         MsgBox "¡No se ha logrado iniciar el engine gráfico! Reinstale los últimos controladores de DirectX y actualize sus controladores de video. Si el problema persiste por favor consulte los foros de soporte.", vbCritical, "Saliendo"
         Call CloseClient
     End If
@@ -897,7 +915,7 @@ Sub Main()
     Call frmCargando.progresoConDelay(85)
     
     'Inicializamos el inventario gráfico
-    Call Inventario.Initialize(D3DX, frmMain.picInv, MAX_INVENTORY_SLOTS, , , , , , , True)
+    Call Inventario.Initialize(DirectD3D8, frmMain.picInv, MAX_INVENTORY_SLOTS, , , , , , , True)
     
     frmCargando.Status.Caption = "Iniciando Hechizos...."
     frmCargando.Refresh
@@ -926,7 +944,23 @@ Sub Main()
     
     Call LoadTimerIntervals
     
-    Engine.Start
+    Do While prgRun
+        If EngineRun Then
+            If frmMain.WindowState <> vbMinimized And frmMain.Visible Then
+                Call ShowNextFrame(frmMain.Top, frmMain.Left, frmMain.MouseX, frmMain.MouseY)
+                
+                If Not pausa Then Call CheckKeys
+                ' If there is anything to be sent, we send it
+                Call FlushBuffer
+            End If
+            
+            If frmRenderConnect.Visible = True Then RenderConnect 'Para el conectar
+            If (Opciones.Audio = 1 Or Opciones.sMusica <> CONST_DESHABILITADA) Then Call Sound.Sound_Render
+        End If
+        
+        'Call FlushBuffer
+       DoEvents
+    Loop
 End Sub
 
 Private Sub LoadTimerIntervals()
@@ -1014,11 +1048,11 @@ Private Function CMSValidateChar_(ByVal iAsc As Integer) As Boolean
 End Function
 
 'TODO : como todo lo relativo a mapas, no tiene nada que hacer acá....
-Function HayAgua(ByVal x As Integer, ByVal y As Integer) As Boolean
-    HayAgua = ((MapData(x, y).Graphic(1).GrhIndex >= 1505 And MapData(x, y).Graphic(1).GrhIndex <= 1520) Or _
-            (MapData(x, y).Graphic(1).GrhIndex >= 5665 And MapData(x, y).Graphic(1).GrhIndex <= 5680) Or _
-            (MapData(x, y).Graphic(1).GrhIndex >= 13547 And MapData(x, y).Graphic(1).GrhIndex <= 13562)) And _
-                MapData(x, y).Graphic(2).GrhIndex = 0
+Function HayAgua(ByVal X As Integer, ByVal Y As Integer) As Boolean
+    HayAgua = ((MapData(X, Y).Graphic(1).GrhIndex >= 1505 And MapData(X, Y).Graphic(1).GrhIndex <= 1520) Or _
+            (MapData(X, Y).Graphic(1).GrhIndex >= 5665 And MapData(X, Y).Graphic(1).GrhIndex <= 5680) Or _
+            (MapData(X, Y).Graphic(1).GrhIndex >= 13547 And MapData(X, Y).Graphic(1).GrhIndex <= 13562)) And _
+                MapData(X, Y).Graphic(2).GrhIndex = 0
                 
 End Function
 
@@ -1207,10 +1241,10 @@ Dim YC As Byte
 
     frmRenderConnect.Visible = True
     
-    MapaConnect.Map = 1
-    MapaConnect.x = 17
-    MapaConnect.y = 68
-    Anocheceria = 1
+    MapaConnect.Map = 166
+    MapaConnect.X = 27
+    MapaConnect.Y = 158
+    DayStatus = 1
     
     Call SwitchMap(MapaConnect.Map, Get_Extract(Map, "Mapa" & MapaConnect.Map & ".csm"))
 End Sub
@@ -1281,6 +1315,8 @@ On Error GoTo errhandler
     'Cambio de resolucion
     Opciones.NoRes = 1
     Opciones.BaseTecho = Val(Leer.GetValue("VIDEO", "BaseTecho"))
+    If Opciones.BaseTecho < frmOpciones.SldTechos.min Then Opciones.BaseTecho = frmOpciones.SldTechos.min
+    
     Opciones.VSynC = Val(Leer.GetValue("VIDEO", "VSynC"))
     Opciones.VProcessing = Val(Leer.GetValue("VIDEO", "VProcessing"))
     
@@ -1365,11 +1401,12 @@ On Error Resume Next
     frmConnect.SVList.Clear
     Dim lista() As String
     Dim i As Byte
-    lista = Split(frmMain.Inet1.OpenURL("https://irongete.com/aodrag/server-list.txt"), vbLf)
+    lista = Split(frmMain.Inet1.OpenURL("https://aodrag.es/server-list.txt"), vbLf)
 
+    Debug.Print lista(0)
     
     ' 26/01/2016 Irongete: Se pueden cargar hasta un maximo de 100 servidores
-    For i = 0 To UBound(lista()) - 1
+    For i = 0 To UBound(lista())
         Servidor(i).Ip = ReadField(1, lista(i), Asc("|"))
         Servidor(i).Puerto = ReadField(2, lista(i), Asc("|"))
         Servidor(i).Nombre = ReadField(3, lista(i), Asc("|"))
@@ -1396,8 +1433,6 @@ End Sub
 
 Public Sub CerrarCuenta()
 'Uso esto para cerrar el panel de cuenta y que no quede informacion suelta.
-    frmCuenta.lblInfo = ""
-    frmCuenta.lblMap = ""
     frmCuenta.ListPJ.Clear
     Cuenta.name = ""
     Cuenta.Pass = ""
@@ -1482,20 +1517,21 @@ errhandler:
 
 End Sub
 
+Public Sub Make_Transparent_Richtext(ByVal hwnd As Long)
+    If Win2kXP Then _
+        Call SetWindowLong(hwnd, GWL_EXSTYLE, WS_EX_TRANSPARENT)
+End Sub
+
 Public Sub Make_Transparent_Form(ByVal hwnd As Long, Optional ByVal bytOpacity As Byte = 128)
-
-If Win2kXP Then
-    Call SetWindowLong(hwnd, GWL_EXSTYLE, GetWindowLong(hwnd, GWL_EXSTYLE) Or WS_EX_LAYERED)
-    Call SetLayeredWindowAttributes(hwnd, 0, bytOpacity, LWA_ALPHA)
-End If
-
+    If Win2kXP Then
+        Call SetWindowLong(hwnd, GWL_EXSTYLE, GetWindowLong(hwnd, GWL_EXSTYLE) Or WS_EX_LAYERED)
+        Call SetLayeredWindowAttributes(hwnd, 0, bytOpacity, LWA_ALPHA)
+    End If
 End Sub
 
 Public Sub UnMake_Transparent_Form(ByVal hwnd As Long)
-
-If Win2kXP Then _
-    Call SetWindowLong(hwnd, GWL_EXSTYLE, GetWindowLong(hwnd, GWL_EXSTYLE) And (Not WS_EX_TRANSPARENT))
-
+    If Win2kXP Then _
+        Call SetWindowLong(hwnd, GWL_EXSTYLE, GetWindowLong(hwnd, GWL_EXSTYLE) And (Not WS_EX_TRANSPARENT))
 End Sub
 
 '*****************************************************************
@@ -1511,19 +1547,19 @@ rgb_list(1) = RGB(StreamData(ParticulaInd).colortint(1).r, StreamData(ParticulaI
 rgb_list(2) = RGB(StreamData(ParticulaInd).colortint(2).r, StreamData(ParticulaInd).colortint(2).g, StreamData(ParticulaInd).colortint(2).b)
 rgb_list(3) = RGB(StreamData(ParticulaInd).colortint(3).r, StreamData(ParticulaInd).colortint(3).g, StreamData(ParticulaInd).colortint(3).b)
 
-General_Char_Particle_Create = Engine.Char_Particle_Group_Create(char_index, StreamData(ParticulaInd).grh_list, rgb_list(), StreamData(ParticulaInd).NumOfParticles, ParticulaInd, _
-    StreamData(ParticulaInd).AlphaBlend, IIf(particle_life = 0, StreamData(ParticulaInd).life_counter, particle_life), StreamData(ParticulaInd).Speed, , StreamData(ParticulaInd).X1, StreamData(ParticulaInd).Y1, StreamData(ParticulaInd).angle, _
+General_Char_Particle_Create = Char_Particle_Group_Create(char_index, StreamData(ParticulaInd).grh_list, rgb_list(), StreamData(ParticulaInd).NumOfParticles, ParticulaInd, _
+    StreamData(ParticulaInd).AlphaBlend, IIf(particle_life = 0, StreamData(ParticulaInd).life_counter, particle_life), StreamData(ParticulaInd).Speed, , StreamData(ParticulaInd).x1, StreamData(ParticulaInd).y1, StreamData(ParticulaInd).Angle, _
     StreamData(ParticulaInd).vecx1, StreamData(ParticulaInd).vecx2, StreamData(ParticulaInd).vecy1, StreamData(ParticulaInd).vecy2, _
     StreamData(ParticulaInd).life1, StreamData(ParticulaInd).life2, StreamData(ParticulaInd).friction, StreamData(ParticulaInd).spin_speedL, _
-    StreamData(ParticulaInd).gravity, StreamData(ParticulaInd).grav_strength, StreamData(ParticulaInd).bounce_strength, StreamData(ParticulaInd).X2, _
-    StreamData(ParticulaInd).Y2, StreamData(ParticulaInd).XMove, StreamData(ParticulaInd).move_x1, StreamData(ParticulaInd).move_x2, StreamData(ParticulaInd).move_y1, _
+    StreamData(ParticulaInd).gravity, StreamData(ParticulaInd).grav_strength, StreamData(ParticulaInd).bounce_strength, StreamData(ParticulaInd).x2, _
+    StreamData(ParticulaInd).y2, StreamData(ParticulaInd).XMove, StreamData(ParticulaInd).move_x1, StreamData(ParticulaInd).move_x2, StreamData(ParticulaInd).move_y1, _
     StreamData(ParticulaInd).move_y2, StreamData(ParticulaInd).YMove, StreamData(ParticulaInd).spin_speedH, StreamData(ParticulaInd).spin, _
     StreamData(ParticulaInd).Radio)
 
 End Function
 '*******************************************************************
 '******************Generar particulas en el mapa********************
-Public Function General_Particle_Create(ByVal ParticulaInd As Long, ByVal x As Integer, ByVal y As Integer, Optional ByVal particle_life As Long = 0) As Long
+Public Function General_Particle_Create(ByVal ParticulaInd As Long, ByVal X As Integer, ByVal Y As Integer, Optional ByVal particle_life As Long = 0) As Long
    
 Dim rgb_list(0 To 3) As Long
 rgb_list(0) = RGB(StreamData(ParticulaInd).colortint(0).r, StreamData(ParticulaInd).colortint(0).g, StreamData(ParticulaInd).colortint(0).b)
@@ -1531,12 +1567,12 @@ rgb_list(1) = RGB(StreamData(ParticulaInd).colortint(1).r, StreamData(ParticulaI
 rgb_list(2) = RGB(StreamData(ParticulaInd).colortint(2).r, StreamData(ParticulaInd).colortint(2).g, StreamData(ParticulaInd).colortint(2).b)
 rgb_list(3) = RGB(StreamData(ParticulaInd).colortint(3).r, StreamData(ParticulaInd).colortint(3).g, StreamData(ParticulaInd).colortint(3).b)
  
-General_Particle_Create = Engine.Particle_Group_Create(x, y, StreamData(ParticulaInd).grh_list, rgb_list(), StreamData(ParticulaInd).NumOfParticles, ParticulaInd, _
-    StreamData(ParticulaInd).AlphaBlend, IIf(particle_life = 0, StreamData(ParticulaInd).life_counter, particle_life), StreamData(ParticulaInd).Speed, , StreamData(ParticulaInd).X1, StreamData(ParticulaInd).Y1, StreamData(ParticulaInd).angle, _
+General_Particle_Create = Particle_Group_Create(X, Y, StreamData(ParticulaInd).grh_list, rgb_list(), StreamData(ParticulaInd).NumOfParticles, ParticulaInd, _
+    StreamData(ParticulaInd).AlphaBlend, IIf(particle_life = 0, StreamData(ParticulaInd).life_counter, particle_life), StreamData(ParticulaInd).Speed, , StreamData(ParticulaInd).x1, StreamData(ParticulaInd).y1, StreamData(ParticulaInd).Angle, _
     StreamData(ParticulaInd).vecx1, StreamData(ParticulaInd).vecx2, StreamData(ParticulaInd).vecy1, StreamData(ParticulaInd).vecy2, _
     StreamData(ParticulaInd).life1, StreamData(ParticulaInd).life2, StreamData(ParticulaInd).friction, StreamData(ParticulaInd).spin_speedL, _
-    StreamData(ParticulaInd).gravity, StreamData(ParticulaInd).grav_strength, StreamData(ParticulaInd).bounce_strength, StreamData(ParticulaInd).X2, _
-    StreamData(ParticulaInd).Y2, StreamData(ParticulaInd).XMove, StreamData(ParticulaInd).move_x1, StreamData(ParticulaInd).move_x2, StreamData(ParticulaInd).move_y1, _
+    StreamData(ParticulaInd).gravity, StreamData(ParticulaInd).grav_strength, StreamData(ParticulaInd).bounce_strength, StreamData(ParticulaInd).x2, _
+    StreamData(ParticulaInd).y2, StreamData(ParticulaInd).XMove, StreamData(ParticulaInd).move_x1, StreamData(ParticulaInd).move_x2, StreamData(ParticulaInd).move_y1, _
     StreamData(ParticulaInd).move_y2, StreamData(ParticulaInd).YMove, StreamData(ParticulaInd).spin_speedH, StreamData(ParticulaInd).spin, StreamData(ParticulaInd).Radio)
 End Function
 '*******************************************************************
@@ -1670,13 +1706,13 @@ PonerPuntos = Left$(PonerPuntos, Len(PonerPuntos) - 1)
  
 End Function
 
-Public Function General_Distance_Get(ByVal X1 As Integer, ByVal Y1 As Integer, ByVal X2 As Integer, ByVal Y2 As Integer) As Integer
+Public Function General_Distance_Get(ByVal x1 As Integer, ByVal y1 As Integer, ByVal x2 As Integer, ByVal y2 As Integer) As Integer
 '**************************************************************
 'Author: Augusto José Rando
 'Last Modify Date: Unknown
 '
 '**************************************************************
 
-General_Distance_Get = Abs(X1 - X2) + Abs(Y1 - Y2)
+General_Distance_Get = Abs(x1 - x2) + Abs(y1 - y2)
 
 End Function

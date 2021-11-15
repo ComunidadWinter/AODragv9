@@ -47,10 +47,10 @@ Public Sub DrawSpells()
             'Dibujamos un cuadradito en el item seleccionado
             If SpellSelectedItem = i Then
                 'Dibujamos el Grh del item iluminado
-                Call Engine.Draw_GrhIndex(UserHechizos(i).GrhIndex, X, Y, LightIluminado())
+                Call DDrawTransGrhIndextoSurface(UserHechizos(i).GrhIndex, X, Y, 0, LightIluminado())
             Else
                 'Dibujamos el Grh del item desiluminado
-                Call Engine.Draw_GrhIndex(UserHechizos(i).GrhIndex, X, Y, LightOscurito())
+                Call DDrawTransGrhIndextoSurface(UserHechizos(i).GrhIndex, X, Y, 0, LightOscurito())
             End If
             
         End If
@@ -125,7 +125,7 @@ Exit Sub
         'SpellWindow.ToolTipText = UserHechizos(TempItem).Name ' Que nos diga el nombre del hechizo cuando pasamos el mouse sobre él
     End If
     
-    Engine.DrawSpells
+    DrawSpells
 End Sub
 
 
@@ -168,7 +168,7 @@ Private Sub SpellWindow_MouseUp(Button As Integer, Shift As Integer, X As Single
         End If
     End If
 
-    Engine.DrawSpells
+    DrawSpells
     
 End Sub
 
@@ -202,7 +202,7 @@ Dim tY As Byte
         frmMain.lblItem.Caption = UserHechizos(SpellSelectedItem).name
     End If
     
-    Engine.DrawSpells
+    DrawSpells
             
 End Sub
 
@@ -231,7 +231,7 @@ Private Function ClickItem(ByVal X As Long, ByVal Y As Long) As Long
         
     End If
     
-    Engine.DrawSpells
+    DrawSpells
         
 End Function
 

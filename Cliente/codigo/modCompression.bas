@@ -59,7 +59,7 @@ Private Declare Function GlobalLock Lib "kernel32" (ByVal hMem As Long) As Long
 Private Declare Function GlobalUnlock Lib "kernel32" (ByVal hMem As Long) As Long
 Private Declare Sub MoveMemory Lib "kernel32" Alias "RtlMoveMemory" (pDest As Any, pSource As Any, ByVal dwLength As Long)
 
-Public Sub Compress_Data(ByRef data() As Byte)
+Public Sub Compress_Data(ByRef Data() As Byte)
 '*****************************************************************
 'Author: Juan Martín Dotuyo Dodero
 'Last Modify Date: 10/13/2004
@@ -72,40 +72,40 @@ Public Sub Compress_Data(ByRef data() As Byte)
     Dim loopc As Long
     
     'Get size of the uncompressed data
-    Dimensions = UBound(data)
+    Dimensions = UBound(Data)
     
     'Prepare a buffer 1.06 times as big as the original size
     DimBuffer = Dimensions * 1.06
     ReDim BufTemp(DimBuffer)
     
     'Compress data using zlib
-    Compress BufTemp(0), DimBuffer, data(0), Dimensions
+    Compress BufTemp(0), DimBuffer, Data(0), Dimensions
     
     'Deallocate memory used by uncompressed data
-    Erase data
+    Erase Data
     
     'Get rid of unused bytes in the compressed data buffer
     ReDim Preserve BufTemp(DimBuffer - 1)
     
     'Copy the compressed data buffer to the original data array so it will return to caller
-    data = BufTemp
+    Data = BufTemp
     
     'Deallocate memory used by the temp buffer
     Erase BufTemp
     
     'Encrypt the first byte of the compressed data for extra security
-    data(0) = data(0) Xor 166
+    Data(0) = Data(0) Xor 166
 End Sub
 
-Public Sub Decompress_Data(ByRef data() As Byte, ByVal OrigSize As Long)
+Public Sub Decompress_Data(ByRef Data() As Byte, ByVal OrigSize As Long)
     Dim BufTemp() As Byte
    
     ReDim BufTemp(OrigSize - 1)
-    data(0) = data(0) Xor 166
-    UnCompress BufTemp(0), OrigSize, data(0), UBound(data) + 1
+    Data(0) = Data(0) Xor 166
+    UnCompress BufTemp(0), OrigSize, Data(0), UBound(Data) + 1
    
-    ReDim data(OrigSize - 1)
-    data = BufTemp
+    ReDim Data(OrigSize - 1)
+    Data = BufTemp
     Erase BufTemp
 End Sub
 
@@ -122,7 +122,7 @@ Public Function Extract_All_Files(ByVal file_type As resource_file_type, ByVal r
     Dim SourceData() As Byte
     Dim FileHead As FILEHEADER
     Dim InfoHead() As INFOHEADER
-    Dim handle As Integer
+    Dim Handle As Integer
     
 'Set up the error handler
 On Local Error GoTo errhandler
@@ -237,14 +237,14 @@ On Local Error GoTo errhandler
         Decompress_Data SourceData, InfoHead(loopc).lngFileSizeUncompressed
         
         'Get a free handler
-        handle = FreeFile
+        Handle = FreeFile
         
         'Create a new file and put in the data
-        Open OutputFilePath & InfoHead(loopc).strFileName For Binary As handle
+        Open OutputFilePath & InfoHead(loopc).strFileName For Binary As Handle
         
-        Put handle, , SourceData
+        Put Handle, , SourceData
         
-        Close handle
+        Close Handle
         
         Erase SourceData
         
@@ -651,7 +651,7 @@ On Local Error GoTo errhandler
             
         Case Fuentes
             SourceFilePath = resource_path & FUENTES_PATH
-            SourceFileExtension = ".png"
+            SourceFileExtension = ".bmp"
             OutputFilePath = dest_path & "fuentes.DRAG"
     End Select
     
@@ -779,7 +779,7 @@ Public Function Extract_File(ByVal file_type As resource_file_type, ByVal resour
     Dim SourceFilePath As String
     Dim SourceData() As Byte
     Dim InfoHead As INFOHEADER
-    Dim handle As Integer
+    Dim Handle As Integer
 'Set up the error handler
 On Local Error GoTo errhandler
 
@@ -849,8 +849,8 @@ On Local Error GoTo errhandler
     If InfoHead.strFileName = "" Or InfoHead.lngFileSize = 0 Then Exit Function
 
     'Open the binary file
-    handle = FreeFile
-    Open SourceFilePath For Binary Access Read Lock Write As handle
+    Handle = FreeFile
+    Open SourceFilePath For Binary Access Read Lock Write As Handle
     
     'Check the file for validity
     'If LOF(handle) <> InfoHead.lngFileSize Then
@@ -861,7 +861,7 @@ On Local Error GoTo errhandler
     
     'Make sure there is enough space in the HD
     If InfoHead.lngFileSizeUncompressed > General_Drive_Get_Free_Bytes(Left$(App.Path, 3)) Then
-        Close handle
+        Close Handle
         MsgBox "There is not enough drive space to extract the compressed file.", , "Error"
         Exit Function
     End If
@@ -872,22 +872,22 @@ On Local Error GoTo errhandler
     ReDim SourceData(InfoHead.lngFileSize - 1)
     
     'Get the data
-    Get handle, InfoHead.lngFileStart, SourceData
+    Get Handle, InfoHead.lngFileStart, SourceData
     
     'Decompress all data
     Decompress_Data SourceData, InfoHead.lngFileSizeUncompressed
     
     'Close the binary file
-    Close handle
+    Close Handle
     
     'Get a free handler
-    handle = FreeFile
+    Handle = FreeFile
     
-    Open OutputFilePath & InfoHead.strFileName For Binary As handle
+    Open OutputFilePath & InfoHead.strFileName For Binary As Handle
     
-    Put handle, 1, SourceData
+    Put Handle, 1, SourceData
     
-    Close handle
+    Close Handle
     
     Erase SourceData
         
@@ -895,7 +895,7 @@ On Local Error GoTo errhandler
 Exit Function
 
 errhandler:
-    Close handle
+    Close Handle
     Erase SourceData
     'Display an error message if it didn't work
     'MsgBox "Unable to decode binary file. Reason: " & Err.number & " : " & Err.Description, vbOKOnly, "Error"
@@ -919,19 +919,19 @@ Public Function Delete_File(ByVal file_path As String) As Boolean
 Error_Handler:
     On Error Resume Next
     
-    Dim handle As Integer
-    Dim data() As Byte
+    Dim Handle As Integer
+    Dim Data() As Byte
 
     'We open the file to delete
-    handle = FreeFile
-    Open file_path For Binary Access Write Lock Read As handle
+    Handle = FreeFile
+    Open file_path For Binary Access Write Lock Read As Handle
     
     'We replace all the bytes in it with 0s
-    ReDim data(LOF(handle) - 1)
-    Put handle, 1, data
+    ReDim Data(LOF(Handle) - 1)
+    Put Handle, 1, Data
     
     'We close the file
-    Close handle
+    Close Handle
     
     'Now we delete it, knowing that if they retrieve it (some antivirus may create backup copies of deleted files), it will be useless
     Kill file_path
@@ -947,7 +947,7 @@ Public Function Extract_File_Memory(ByVal file_type As resource_file_type, ByVal
     Dim loopc As Long
     Dim SourceFilePath As String
     Dim InfoHead As INFOHEADER
-    Dim handle As Integer
+    Dim Handle As Integer
    
 On Local Error GoTo errhandler
    
@@ -983,11 +983,11 @@ On Local Error GoTo errhandler
    
     If InfoHead.strFileName = "" Or InfoHead.lngFileSize = 0 Then Exit Function
  
-    handle = FreeFile
-    Open SourceFilePath For Binary Access Read Lock Write As handle
+    Handle = FreeFile
+    Open SourceFilePath For Binary Access Read Lock Write As Handle
    
     If InfoHead.lngFileSizeUncompressed > General_Drive_Get_Free_Bytes(Left$(App.Path, 3)) Then
-        Close handle
+        Close Handle
         MsgBox "There is not enough drive space to extract the compressed file.", , "Error"
         Exit Function
     End If
@@ -995,15 +995,15 @@ On Local Error GoTo errhandler
    
     ReDim SourceData(InfoHead.lngFileSize - 1)
    
-    Get handle, InfoHead.lngFileStart, SourceData
+    Get Handle, InfoHead.lngFileStart, SourceData
         Decompress_Data SourceData, InfoHead.lngFileSizeUncompressed
-    Close handle
+    Close Handle
        
     Extract_File_Memory = True
 Exit Function
  
 errhandler:
-    Close handle
+    Close Handle
     Erase SourceData
 End Function
 
@@ -1016,7 +1016,7 @@ Public Function Extract_File_Ex(ByVal file_type As resource_file_type, ByVal res
     Dim loopc As Long
     Dim SourceFilePath As String
     Dim InfoHead As INFOHEADER
-    Dim handle As Integer
+    Dim Handle As Integer
     
 'Set up the error handler
 On Local Error GoTo errhandler
@@ -1055,12 +1055,12 @@ On Local Error GoTo errhandler
     If InfoHead.strFileName = vbNullString Or InfoHead.lngFileSize = 0 Then Exit Function
 
     'Open the binary file
-    handle = FreeFile
-    Open SourceFilePath For Binary Access Read Lock Write As handle
+    Handle = FreeFile
+    Open SourceFilePath For Binary Access Read Lock Write As Handle
         
     'Make sure there is enough space in the HD
     If InfoHead.lngFileSizeUncompressed > General_Drive_Get_Free_Bytes(Left$(App.Path, 3)) Then
-        Close handle
+        Close Handle
         MsgBox "¡Espacio insuficiente!", , "Error"
         Exit Function
     End If
@@ -1071,19 +1071,19 @@ On Local Error GoTo errhandler
     ReDim bytArr(InfoHead.lngFileSize - 1)
     
     'Get the data
-    Get handle, InfoHead.lngFileStart, bytArr
+    Get Handle, InfoHead.lngFileStart, bytArr
     
     'Decompress all data
     Decompress_Data bytArr, InfoHead.lngFileSizeUncompressed
         
     'Close the binary file
-    Close handle
+    Close Handle
             
     Extract_File_Ex = True
 Exit Function
 
 errhandler:
-    Close handle
+    Close Handle
     Erase bytArr
     
 End Function

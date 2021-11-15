@@ -43,15 +43,16 @@ Public ServIndSel As Byte
 '************************************************
 
 'Almacenaremos los mensajes predefinidos
-Public MultiMensaje(1 To 255) As tMultiMessage
+Public MultiMensaje(0 To 255) As tMultiMessage
     
 Type tMultiMessage
     mensaje As String
 End Type
 
 '*****Lorwik Clima***********
-Public Anocheceria As Byte
+Public DayStatus As Byte
 '****************************
+Public Const OFFSET_HEAD As Integer = -5 'De los dialogos
 
 Public HeadSeleccion As Long  'Seleccion de Cabezas
 Public Form_Caption As String
@@ -60,8 +61,8 @@ Public Win2kXP As Boolean
 '******Conectar renderizado*********
 Private Type tMapaConnect
     Map As Byte
-    x As Byte
-    y As Byte
+    X As Byte
+    Y As Byte
 End Type
 
 Public MapaConnect As tMapaConnect
@@ -79,18 +80,17 @@ Public InvComUsu As New clsGraphicalInventory ' Inventario del usuario visible e
 Public InvComNpc As New clsGraphicalInventory ' Inventario con los items que ofrece el npc
 
 'Objetos públicos
-Public Dialogos As New clsDialogs
-Public texto As New clsDX8Font 'Textos renderizados
+Public Spells As New clsGraphicalSpells
 Public Inventario As New clsGraphicalInventory
 Public InventarioComNpc As New clsGraphicalInventory
 Public InventarioComUser As New clsGraphicalInventory
-Public Spells As New clsGraphicalSpells
 Public InvBanco(1) As New clsGraphicalInventory
-Public Engine As New clsDX8Engine 'DX8
-Public SurfaceDB As clsTexManager 'DX8
-Public CustomKeys As New clsCustomKeys
 
+Public SurfaceDB As clsSurfaceManager   'No va new porque es una interfaz, el new se pone al decidir que clase de objeto es
 Public Sound As clsSoundEngine
+Public CustomKeys As New clsCustomKeys
+Public texto As New clsDX8Font 'Textos renderizado
+Public Dialogos As New clsDialogs
 
 Public incomingData As New clsByteQueue
 Public outgoingData As New clsByteQueue
@@ -174,6 +174,8 @@ Public Site As String
 
 Public UserCiego As Boolean
 Public UserEstupido As Boolean
+Public UserCharIndex As Integer
+Public UserSpeed As Byte
 
 Public Enum E_SISTEMA_MUSICA
     CONST_DESHABILITADA = 0
@@ -246,15 +248,15 @@ Public Const LoopAdEternum As Integer = 999
 
 'Direcciones
 Public Enum E_Heading
-    NORTH = 1
-    EAST = 2
-    SOUTH = 3
-    WEST = 4
+    SOUTH = 1
+    NORTH = 2
+    WEST = 3
+    EAST = 4
 End Enum
 
 'Objetos
 Public Const MAX_INVENTORY_OBJS As Integer = 10000
-Public Const MAX_INVENTORY_SLOTS As Byte = 21
+Public Const MAX_INVENTORY_SLOTS As Byte = 28
 Public Const MAX_NPC_INVENTORY_SLOTS As Byte = 50
 Public Const MAX_SPELL_SLOTS As Byte = 18
 Public PremiosInv(1 To 20) As PremiosList
@@ -442,7 +444,7 @@ Type Inventory
     amount As Long
     '[/Alejo]
     Equipped As Byte
-    Valor As Single
+    valor As Single
     OBJType As Integer
     MaxDef As Integer
     MinDef As Integer
@@ -456,7 +458,7 @@ Type NpCinV
     name As String
     GrhIndex As Long
     amount As Integer
-    Valor As Single
+    valor As Single
     OBJType As Integer
     MaxDef As Integer
     MinDef As Integer
@@ -621,7 +623,7 @@ Public Type pjs
     rcvWeapon As Integer
     rcvRaza As Integer
     PJLogged As Byte
-    Mapa As String
+    mapa As String
 End Type
 
 Public Type acc
@@ -676,6 +678,7 @@ Public Enum eEditOptions
     eo_Sex
     eo_Raza
     eo_addGold
+    eo_Speed
 End Enum
 
 ''
@@ -717,7 +720,7 @@ Public PuertoDelServidor As String
 '********** FUNCIONES API ***********
 '
 'Graficos
-Public Declare Function SetPixel Lib "gdi32" (ByVal hDC As Long, ByVal x As Long, ByVal y As Long, ByVal crColor As Long) As Long
+Public Declare Function SetPixel Lib "gdi32" (ByVal hDC As Long, ByVal X As Long, ByVal Y As Long, ByVal crColor As Long) As Long
 
 Public Declare Function GetTickCount Lib "kernel32" () As Long
 
@@ -761,8 +764,8 @@ End Type
 
 Public Type tIndiceFx
     Animacion As Long
-    OffsetX As Integer
-    OffsetY As Integer
+    offsetX As Integer
+    offsetY As Integer
     FXTransparente As Boolean
 End Type
 
@@ -806,12 +809,12 @@ Public Type Stream
     name As String
     NumOfParticles As Long
     NumGrhs As Long
-    ID As Long
-    X1 As Long
-    Y1 As Long
-    X2 As Long
-    Y2 As Long
-    angle As Long
+    id As Long
+    x1 As Long
+    y1 As Long
+    x2 As Long
+    y2 As Long
+    Angle As Long
     vecx1 As Long
     vecx2 As Long
     vecy1 As Long
@@ -843,3 +846,10 @@ End Type
 
 'CopyMemory Kernel Function
 Public Declare Sub CopyMemory Lib "kernel32" Alias "RtlMoveMemory" (hpvDest As Any, hpvSource As Any, ByVal cbCopy As Long)
+
+Public Declare Function SelectObject Lib "gdi32" (ByVal hDC As Long, ByVal hObject As Long) As Long
+Public Declare Function CreateCompatibleDC Lib "gdi32" (ByVal hDC As Long) As Long
+Public Declare Function DeleteDC Lib "gdi32" (ByVal hDC As Long) As Long
+Public Declare Function BitBlt Lib "gdi32" (ByVal hDestDC As Long, ByVal X As Long, ByVal Y As Long, ByVal nWidth As Long, ByVal nHeight As Long, ByVal hSrcDC As Long, ByVal xSrc As Long, ByVal ySrc As Long, ByVal dwRop As Long) As Long
+Public Declare Function TransparentBlt Lib "msimg32.dll" (ByVal hDC As Long, ByVal X As Long, ByVal Y As Long, ByVal nWidth As Long, ByVal nHeight As Long, ByVal hSrcDC As Long, ByVal xSrc As Long, ByVal ySrc As Long, ByVal nSrcWidth As Long, ByVal nSrcHeight As Long, ByVal crTransparent As Long) As Boolean
+Public Declare Function DeleteObject Lib "gdi32" (ByVal hObject As Long) As Long

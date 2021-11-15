@@ -37,11 +37,11 @@ Type RVList
      Activated      As Boolean  'Si está activado..
 End Type
  
-Sub Create(ByVal x As Byte, ByVal y As Byte, ByVal ColorRGB As Long, ByVal rValue As Integer, ByVal eMode As Byte)
+Sub Create(ByVal X As Byte, ByVal Y As Byte, ByVal ColorRGB As Long, ByVal rValue As Integer, ByVal eMode As Byte)
      
     ' @ Agrega un nuevo valor.
      
-    With MapData(x, y).RenderValue
+    With MapData(X, Y).RenderValue
          
          .Activated = True
          .ColorRGB = ColorRGB
@@ -54,11 +54,11 @@ Sub Create(ByVal x As Byte, ByVal y As Byte, ByVal ColorRGB As Long, ByVal rValu
  
 End Sub
  
-Sub Draw(ByVal x As Byte, ByVal y As Byte, ByVal PixelX As Integer, ByVal PixelY As Integer)
+Sub Draw(ByVal X As Byte, ByVal Y As Byte, ByVal PixelX As Integer, ByVal PixelY As Integer)
  
     ' @ Dibuja un valor
      
-    With MapData(x, y).RenderValue
+    With MapData(X, Y).RenderValue
          
          If (Not .Activated) Or (Not .RenderVal <> 0) Then Exit Sub
             If .TimeRendered < RENDER_TIME Then
@@ -81,7 +81,7 @@ Sub Draw(ByVal x As Byte, ByVal y As Byte, ByVal PixelX As Integer, ByVal PixelY
                
                 'Si llego al tiempo lo limpio
                 If .TimeRendered >= RENDER_TIME Then
-                   Call Clear(x, y)
+                   Call Clear(X, Y)
                 End If
                 
          End If
@@ -90,11 +90,11 @@ Sub Draw(ByVal x As Byte, ByVal y As Byte, ByVal PixelX As Integer, ByVal PixelY
  
 End Sub
  
-Private Sub Clear(ByVal x As Byte, ByVal y As Byte)
+Private Sub Clear(ByVal X As Byte, ByVal Y As Byte)
  
     ' @ Limpia todo.
      
-    With MapData(x, y).RenderValue
+    With MapData(X, Y).RenderValue
          .Activated = False
          .ColorRGB = 0
          .RenderVal = 0

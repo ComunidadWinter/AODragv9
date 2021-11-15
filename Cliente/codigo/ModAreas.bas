@@ -11,17 +11,17 @@ Public MaxLimiteY As Integer
 
 Private Const TamañoAreas As Byte = 11
 
-Public Sub CambioDeArea(ByVal x As Byte, ByVal y As Byte)
+Public Sub CambioDeArea(ByVal X As Byte, ByVal Y As Byte)
     Dim loopX As Long, loopY As Long
     
-    MinLimiteX = (x \ TamañoAreas - 1) * TamañoAreas
+    MinLimiteX = (X \ TamañoAreas - 1) * TamañoAreas
     MaxLimiteX = MinLimiteX + ((TamañoAreas * 3) - 1)
     
-    MinLimiteY = (y \ TamañoAreas - 1) * TamañoAreas
+    MinLimiteY = (Y \ TamañoAreas - 1) * TamañoAreas
     MaxLimiteY = MinLimiteY + ((TamañoAreas * 3) - 1)
     
-    For loopX = 1 To 100
-        For loopY = 1 To 100
+    For loopX = 1 To XMaxMapSize
+        For loopY = 1 To XMaxMapSize
             
             If (loopY < MinLimiteY) Or (loopY > MaxLimiteY) Or (loopX < MinLimiteX) Or (loopX > MaxLimiteX) Then
                 'Erase NPCs
