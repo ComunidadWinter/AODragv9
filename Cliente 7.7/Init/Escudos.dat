@@ -1,0 +1,184 @@
+[INIT]
+
+NumEscudos=32
+
+[ESC1]
+Dir1=4727 'norte escudo imperial
+Dir2=4729
+Dir3=4726
+Dir4=4728 'sur
+
+[ESC3]
+dir1=4827 'norte escudo azul
+dir2=4829
+dir3=4826
+dir4=4828 'sur
+
+[esc4]
+dir1=13443 'azul
+dir2=13445
+dir3=13442
+dir4=13444
+
+[esc5]
+dir1=13469 'madera
+dir2=13471
+dir3=13468
+dir4=13470
+
+[esc6]
+dir1=13495 'dragon
+dir2=13497
+dir3=13494
+dir4=13496
+
+[esc7]
+dir1=14837 'cruz
+dir2=14839
+dir3=14836
+dir4=14838
+
+[esc8]
+dir1=14864 'bordes dorados
+dir2=14866
+dir3=14863
+dir4=14865
+
+[esc9]
+dir1=14891 'ceslete y blanco
+dir2=14893
+dir3=14890
+dir4=14892
+
+[esc10]
+dir1=14918 'dorado con letra
+dir2=14920
+dir3=14917
+dir4=14919
+
+[esc11]
+dir1=14945 'negro y blanco
+dir2=14947
+dir3=14944
+dir4=14946
+
+[esc12]
+dir1=14972 'negro y dorado
+dir2=14974
+dir3=14971
+dir4=14973
+
+[esc13]
+dir1=14999 'baldurs
+dir2=15001
+dir3=14998
+dir4=15000
+
+[esc14]
+dir1=16032 'aguila en rojo
+dir2=16034
+dir3=16031
+dir4=16033
+
+[esc15]
+dir1=16059 'dorado nuevo
+dir2=16061
+dir3=16058
+dir4=16060
+
+[esc16]
+dir1=16086 'clerigo
+dir2=16088
+dir3=16085
+dir4=16087
+
+[esc17]
+dir1=16113 'serpientes
+dir2=16115
+dir3=16112
+dir4=16114
+
+[esc18]
+dir1=16140 'dragon rojo
+dir2=16142
+dir3=16139
+dir4=16141
+
+[esc19]
+dir1=16167 'ojo dragon
+dir2=16169
+dir3=16166
+dir4=16168
+
+[esc20]
+Dir1=18585 'norte 
+Dir2=18587
+Dir3=18584
+Dir4=18586 'sur
+
+[esc21]' rojo nuevo
+Dir1=28585 'norte 
+Dir2=28587
+Dir3=28584
+Dir4=28586 'sur
+
+[esc22]' diamantes nuevo
+Dir1=28685 'norte 
+Dir2=28687
+Dir3=28684
+Dir4=28686 'sur
+
+[esc23]' escudo sombras
+Dir1=28785 'norte 
+Dir2=28787
+Dir3=28784
+Dir4=28786 'sur
+
+[esc24]' escudo leon
+Dir1=15637 'norte 
+Dir2=15639
+Dir3=15636
+Dir4=15638 'sur
+
+[esc25]' escudo rosa-negro
+Dir1=15610 'norte 
+Dir2=15612
+Dir3=15609
+Dir4=15611 'sur
+
+[ESC27]
+Dir1=23324 'norte escudo elfico masair
+Dir2=23326
+Dir3=23323
+Dir4=23325 'sur
+
+[ESC28]
+Dir1=23236 'norte escudo marron masair
+Dir2=23238
+Dir3=23235
+Dir4=23237 'sur
+
+[ESC29]
+Dir1=23264 'norte escudo rojo con cruz masair
+Dir2=23266
+Dir3=23263
+Dir4=23265 'sur
+
+[ESC30]
+Dir1=23294 'norte escudo azul con cruz masair
+Dir2=23296
+Dir3=23293
+Dir4=23295 'sur
+
+[ESC31]
+Dir1=23354 'norte escudo naranja masair
+Dir2=23356
+Dir3=23353
+Dir4=23355 'sur
+
+[ESC32]
+Dir1=23384 'norte escudo rodela masair
+Dir2=23386
+Dir3=23383
+Dir4=23385 'sur
+

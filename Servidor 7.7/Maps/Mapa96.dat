@@ -1,0 +1,10 @@
+[Mapa96]
+Name=Aldea Orca
+MusicNum=34-1
+StartPos=0-0-0
+PK=0
+Terreno=ALDEA
+Zona=CAMPO
+Restringir=No
+BackUp=0
+Aldea=1

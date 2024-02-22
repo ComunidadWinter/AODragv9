@@ -1,0 +1,17 @@
+[OPCIONES]
+flash=0
+sintechos=0
+navidad=0
+normal=1
+
+resolucion=0
+musica=0
+sonido=1
+asistente=0
+ambiente=0
+Server=2
+Chat=1
+DobleEquipar=1
+QuestObjetivos=1
+DobleEquipar2=1
+VelFPS=1

@@ -1,0 +1,255 @@
+[INIT]
+NumArmas=43
+
+[Arma1] 'Espada Genérica
+Dir1=4719 'norte
+Dir2=4721
+Dir3=4718
+Dir4=4720 'sur
+
+[Arma3] 'Hacha Larga de Guerra
+Dir1=4723 'norte
+Dir2=4725
+Dir3=4722
+Dir4=4724 'sur
+
+[ARMA4] 'Garrote
+Dir1=10269
+Dir2=10271
+Dir3=10268
+Dir4=10270
+
+[ARMA5] 'Cimitarra
+Dir1=10295
+Dir2=10297
+Dir3=10294
+Dir4=10296
+
+[ARMA6] 'Vara Mágica
+Dir1=10321
+Dir2=10323
+Dir3=10320
+Dir4=10322
+
+[ARMA7] 'Arco
+Dir1=10467
+Dir2=10469
+Dir3=10466
+Dir4=10468
+
+[ARMA8] 'Espada de Oro 
+Dir1=13521
+Dir2=13523
+Dir3=13520
+Dir4=13522
+
+[ARMA9] 'Hacha De Oro
+Dir1=15053
+Dir2=15055
+Dir3=15052
+Dir4=15054
+
+[ARMA10] 'Espada Cántabra
+Dir1=15080
+Dir2=15082
+Dir3=15079
+Dir4=15081
+
+[ARMA11] 'Daga
+Dir1=15107
+Dir2=15109
+Dir3=15106
+Dir4=15108
+
+[ARMA12] 'Hacha dos Filos
+Dir1=15134
+Dir2=15136
+Dir3=15133
+Dir4=15135
+
+[ARMA13] 'MataDragones
+Dir1=15161
+Dir2=15163
+Dir3=15160
+Dir4=15162
+
+[ARMA14] 'Báculo Mago
+Dir1=15026
+Dir2=15028
+Dir3=15025
+Dir4=15027
+
+[ARMA15] 'Espada de Cristal
+Dir1=16406
+Dir2=16408
+Dir3=16405
+Dir4=16407
+
+[ARMA16] 'No hay arma.. Bandera Azul
+Dir1=19346
+Dir2=19346
+Dir3=19346
+Dir4=19346
+
+[ARMA17] 'Estandarte Real
+Dir1=19431
+Dir2=19431
+Dir3=19431
+Dir4=19431
+
+[ARMA18] 'Estandarte Caos
+Dir1=19424
+Dir2=19424
+Dir3=19424
+Dir4=19424
+
+[ARMA19] 'Doble Espada-Hacha
+Dir1=25299
+Dir2=25301
+Dir3=25298
+Dir4=25300
+
+[ARMA20] 'Doble Daga
+Dir1=25273
+Dir2=25275
+Dir3=25272
+Dir4=25274
+
+[ARMA21] 'Doble Hacha 
+Dir1=25247
+Dir2=25249
+Dir3=25246
+Dir4=25248
+
+[ARMA22] 'Mandoble Sangriento
+Dir1=27354
+Dir2=27356
+Dir3=27353
+Dir4=27355
+
+[ARMA23] 'Doble Espada
+Dir1=27317
+Dir2=27319
+Dir3=27316
+Dir4=27318
+
+[ARMA24] 'Espada de los Templarios
+Dir1=27454
+Dir2=27456
+Dir3=27453
+Dir4=27455
+
+[ARMA25] 'Espada de Hoja Ancha
+Dir1=29554 
+Dir2=29556
+Dir3=29553
+Dir4=29555
+
+[ARMA26] 'Guadaña Normal
+Dir1=27654
+Dir2=27656
+Dir3=27653
+Dir4=27655
+
+[ARMA27] 'Guadaña +1
+Dir1=27754
+Dir2=27756
+Dir3=27753
+Dir4=27755
+
+[ARMA28] 'Hacha Dos Manos
+Dir1=27854
+Dir2=27856
+Dir3=27853
+Dir4=27855
+
+[ARMA29] 'Hacha Larga Real
+Dir1=27954
+Dir2=27956
+Dir3=27953
+Dir4=27955
+
+[ARMA30] 'Halberd
+Dir1=28054
+Dir2=28056
+Dir3=28053
+Dir4=28055
+
+[ARMA31] 'Maza
+Dir1=28154
+Dir2=28156
+Dir3=28153
+Dir4=28155
+
+'espada fuego
+[ARMA32] 'Espada De Fuego
+Dir1=28254
+Dir2=28256
+Dir3=28253
+Dir4=28255
+
+[ARMA33] 'Espada Venenosa
+Dir1=28454
+Dir2=28456
+Dir3=28453
+Dir4=28455
+
+[ARMA34] 'Lanza de Puño
+Dir1=28854
+Dir2=28856
+Dir3=28853
+Dir4=28855
+
+[ARMA35] 'Puñal Asesino +3
+Dir1=28354
+Dir2=28356
+Dir3=28353
+Dir4=28355
+
+[ARMA36] 'Vara de Magia
+Dir1=15691
+Dir2=15693
+Dir3=15690
+Dir4=15692
+
+[ARMA37] 'Báculo de Regeneración
+Dir1=15664
+Dir2=15666
+Dir3=15663
+Dir4=15665
+
+[ARMA38] 'Báculo Mágico
+Dir1=29054
+Dir2=29056
+Dir3=29053
+Dir4=29055
+
+[ARMA39] 'Báculo de la Naturaleza
+Dir1=29154
+Dir2=29156
+Dir3=29153
+Dir4=29155
+
+[ARMA40] 'Báculos y Varas (Armada Real)
+Dir1=28954
+Dir2=28956
+Dir3=28953
+Dir4=28955
+
+[ARMA41] 'Báculo del Caos
+Dir1=5417
+Dir2=5419
+Dir3=5416
+Dir4=5418
+
+[ARMA42] 'Báculo del Dragón
+Dir1=5444
+Dir2=5446
+Dir3=5443
+Dir4=5445
+
+[ARMA43] 'Báculo Desterrado
+Dir1=6630
+Dir2=6632
+Dir3=6629
+Dir4=6631

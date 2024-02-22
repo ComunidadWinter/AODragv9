@@ -1,0 +1,7 @@
+Línea 15: la clase RichTextLib.RichTextBox del control RichTextBox1 no era una clase de control cargada.
+Línea 21: el nombre de la propiedad _ExtentX de RichTextBox1 no es válido.
+Línea 22: el nombre de la propiedad _ExtentY de RichTextBox1 no es válido.
+Línea 23: el nombre de la propiedad _Version de RichTextBox1 no es válido.
+Línea 24: el nombre de la propiedad ReadOnly de RichTextBox1 no es válido.
+Línea 25: el nombre de la propiedad ScrollBars de RichTextBox1 no es válido.
+Línea 26: el nombre de la propiedad TextRTF de RichTextBox1 no es válido.

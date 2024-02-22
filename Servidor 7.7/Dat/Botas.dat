@@ -1,0 +1,21 @@
+[INIT]
+NumBodies=3
+'W1 Norte
+'W2 Este
+'W3 SUR
+'W4 Oeste
+
+[Body1]
+Walk1=17753
+Walk2=17755
+Walk3=17752
+Walk4=17754
+
+'El Body2 es el NULO osea no hay q poner ninguno
+
+[Body3]
+Walk1=18611
+Walk2=18613
+Walk3=18610
+Walk4=18612
+

@@ -1,0 +1,151 @@
+[INIT]
+NumArmas=46
+
+[Arma1]'daga
+Index=15
+
+[Arma2]'daga +1
+Index=165
+
+[Arma3]'daga +2
+Index=365
+
+[Arma4]'daga +3
+Index=366
+
+[Arma5]'daga + 4
+Index=367
+
+[Arma6]'daga de plata
+Index=597
+
+[Arma7]'puñal asesino
+Index=845
+
+[Arma8]'horquilla
+Index=9
+
+[Arma9]'Garrote
+Index=398
+
+[Arma10]'espada corta
+Index=164
+
+[Arma11]'espada larga
+Index=2
+
+[Arma12]'espada 2 manos
+Index=19
+
+[Arma13]'hacha
+Index=3
+
+[Arma14]'hacha larga de guerra
+Index=126
+
+[Arma15]'hacha de barbaro
+Index=159
+
+[Arma16]'hacha pekeña con sangre
+Index=755
+
+[Arma17]'hacha de guerra 2 filos
+Index=129
+
+[Arma18]'hacha de oro
+Index=605
+
+[Arma19]'martillo de guerra
+Index=401
+
+[Arma20]'mangual
+Index=604
+
+[Arma21]'sable
+Index=125
+
+[Arma22]'sable roñoso
+Index=962
+
+[Arma23]'espada vikinga
+Index=123
+
+[Arma24]'mango rojo
+Index=756
+
+[Arma25]'Cimitarra
+Index=399
+
+[Arma26]'katana
+Index=124
+
+[Arma27]'espada de plata
+Index=403
+
+[Arma28]'excalibur
+Index=611
+
+[Arma29]'cantabra
+Index=754
+
+[Arma30]'espada de oro
+Index=625
+
+[Arma31]'Diablo
+Index=559
+
+[Arma32]'matadrakos
+Index=402
+
+[Arma33]'doble espada +2
+Index=1085
+
+[Arma34]'Munición Maciza para Honda  (2-2)
+Index=966
+
+[Arma35]'Munición Ligera de pinchos para Honda  (2-3)
+Index=967
+
+[Arma36]'Munición pesada de pinchos para Honda  (1-4)
+Index=968
+
+[Arma37]'Munición Maciza de pinchos para Honda  (2-4)
+Index=969
+
+[Arma38]'Munición ligera para honda (1-1)
+Index=964
+
+[Arma39]'Munición Pesada para honda (1-3)
+Index=965
+
+[Arma40]'piquete minero
+Index=187
+
+[Arma41]'serrucho
+Index=198
+
+[Arma42]'hacha de leñador
+Index=127
+
+[Arma43]'espada fuego
+Index=1056
+
+[Arma44]'doble espada
+Index=1055
+
+[Arma45]'doble espada +1
+Index=1084
+
+[Arma46]'espada venenosa
+Index=1066
+
+
+
+'falta el bastón de poder, y muchas armas nuevas que están a la venta
+
+'[Arma??]'Bastón del Poder
+'Index=839
+
+'[Arma??]'vara de mago
+'Index=400
+

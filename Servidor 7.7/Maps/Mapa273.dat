@@ -1,0 +1,10 @@
+[mapa273]
+Name=Minotauro
+MusicNum=73-1
+StartPos=0-0-0
+PK=0
+Terreno=DUNGEON
+Zona=DUNGEON
+Restringir=No
+Lluvia=1
+Domar=1

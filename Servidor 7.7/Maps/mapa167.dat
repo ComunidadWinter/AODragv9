@@ -1,0 +1,10 @@
+[mapa167]
+Name=castillo norte
+MusicNum=57-1
+StartPos=0-0-0
+PK=0
+Terreno=CASTILLO
+Zona=CASTILLO
+Restringir=No
+Mascotas=1
+Domar=1

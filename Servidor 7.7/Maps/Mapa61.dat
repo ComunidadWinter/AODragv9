@@ -1,0 +1,12 @@
+[Mapa61]
+Name=Muelles de Banderbill
+MusicNum=50-1
+StartPos=0-0-0
+Terreno=CIUDAD
+Zona=CIUDAD
+Restringir=No
+BackUp=0
+Dueño=1
+PK=1
+Invisible=1
+Domar=1

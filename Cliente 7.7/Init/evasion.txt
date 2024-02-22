@@ -1,0 +1,37 @@
+
+1)Es bastante lioso, lo primero es que se aplican distintos factores dependiendo del valor skill TACTICO :
+
+If UserList(UserIndex).Stats.UserSkills(Tactico) < 61 Then
+    PoderEvasionTemp = (CInt(UserList(UserIndex).Stats.UserSkills(Tactico) / 2) * _
+    ModificadorEvasion(UserList(UserIndex).clase))
+ElseIf UserList(UserIndex).Stats.UserSkills(Tactico) < 121 Then
+        PoderEvasionTemp = ((CInt(UserList(UserIndex).Stats.UserSkills(Tactico) / 2) + _
+        UserList(UserIndex).Stats.UserAtributos(Agilidad)) * _
+        ModificadorEvasion(UserList(UserIndex).clase))
+ElseIf UserList(UserIndex).Stats.UserSkills(Tactico) < 181 Then
+        PoderEvasionTemp = ((CInt(UserList(UserIndex).Stats.UserSkills(Tactico) / 2) + _
+        (2 * UserList(UserIndex).Stats.UserAtributos(Agilidad))) * _
+        ModificadorEvasion(UserList(UserIndex).clase))
+Else
+        PoderEvasionTemp = ((CInt(UserList(UserIndex).Stats.UserSkills(Tactico) / 2) + _
+        (3 * UserList(UserIndex).Stats.UserAtributos(Agilidad))) * _
+        ModificadorEvasion(UserList(UserIndex).clase))
+End If
+
+2) Luego se aplica un incremento de evasión según el nivel del pj -12...
+
+PoderEvasion = (PoderEvasionTemp + (2.5 * Maximo(UserList(UserIndex).Stats.ELV - 12, 0)))
+
+3) Luego un incremento según la raza:
+PoderEvasion = PoderEvasion + CInt(Porcentaje(PoderEvasion, UserList(UserIndex).UserEvasiónRaza))
+
+4) y por último según la montura.
+
+If UserList(UserIndex).flags.Montura = 1 Then
+PoderEvasion = PoderEvasion + CInt(Porcentaje(PoderEvasion, UserList(UserIndex).Montura.Evasion(oo)))
+End If
+'------------fin pluto:2.4-------------------
+
+
+Exit Function
+End Function

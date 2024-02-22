@@ -1,0 +1,10 @@
+[mapa301]
+Name=CLAN
+MusicNum=20-1
+StartPos=0-0-0
+Terreno=CLAN
+Zona=CLAN
+Restringir=No
+Lluvia= 1
+Domar= 1
+pk=1

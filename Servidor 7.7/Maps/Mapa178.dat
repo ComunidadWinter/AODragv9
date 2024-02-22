@@ -1,0 +1,11 @@
+[Mapa178]
+Name=Egipto
+MusicNum=67-1
+StartPos=0-0-0
+Terreno=Dungeon
+Zona=Dungeon
+Restringir=No
+BackUp= 0
+pk=0
+Lluvia=1
+Domar=1

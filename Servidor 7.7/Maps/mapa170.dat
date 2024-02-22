@@ -1,0 +1,18 @@
+[Mapa170]
+Name=Caos
+MusicNum=55-1
+StartPos=0-0-0
+Terreno=CIUDAD
+Zona=CIUDAD
+Restringir=No
+BackUp= 1
+Dueño= 2
+Aldea= 0
+Invisible= 1
+Resucitar= 0
+Mascotas= 0
+Insegura= 0
+Lluvia= 0
+Domar= 1
+Monturas= 0
+pk=1

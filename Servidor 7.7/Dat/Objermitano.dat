@@ -1,0 +1,208 @@
+[INIT]
+NumObjs=63
+
+'TÚNICAS DE MANÁ
+
+[Obj1] ' T. lujo marron enanos
+Index=950
+
+[Obj2] ' T. lujo plateada enanos
+Index=951
+
+[Obj3] ' T. lujo azul enanos
+Index=952
+
+[Obj4] ' tunica mago lujo marron
+Index=730
+
+[Obj5] ' tunica mago lujo plateada
+Index=731
+
+[Obj6] ' tunica mago lujo azul
+Index=732
+
+
+'CASCOS, SOMBREROS
+
+[Obj7] ' Casco completo +100 mana
+Index=766
+
+[Obj8] ' Casco Medieval (+2 Agilidad)
+Index=765
+
+[Obj9] ' Casco Cubierto (+5 Agilidad)
+Index=764
+
+[Obj10] ' sombrero mago +300 mana
+Index=1074
+
+[Obj11] ' sombrero mago +2 agilidad
+Index=833
+
+[Obj12] ' sombrero mago +3 agilidad
+Index=834
+
+[Obj53] ' Casco completo +200 mana
+Index=1088
+
+[Obj62] ' Corona (+2 Agilidad)
+Index=747
+
+[Obj63] ' Corona (+2 Agilidad)
+Index=1073
+'ARMAS
+
+[Obj13] ' Arco Magico 33% ahorro
+Index=546
+
+[Obj14] ' Arco Magico 50% ahorro
+Index=843
+
+[Obj15] ' Arco Magico 75% ahorro
+Index=844
+
+[Obj16] ' Flechas en serie
+Index=480
+
+[Obj17] ' Flecha de los dioses
+Index=607
+
+[Obj18] ' Flecha Diablo
+Index=606
+
+[Obj19] ' Flecha Envenenada
+Index=608
+
+[Obj20] ' Puñal Asesino (+3 fuerza)
+Index=846
+
+[Obj21] ' Espada de Cristal
+Index=836
+
+[Obj22] ' Dos puntas (+2 fuerza)
+Index=762
+
+[Obj23] ' Espada azul (+3 fuerza)
+Index=761
+
+[Obj24] ' Espada Dorada (+5 fuerza)
+Index=760
+
+[Obj25] ' Báculo de la Magia
+Index=842
+
+[Obj26] ' Báculo mago +300 mana
+Index=753
+
+[Obj27] ' Baston regeneracion
+Index=840
+
+[Obj28] ' Baston supervivencia
+Index=841
+
+[Obj29] ' daga torcida +100 mana
+Index=757
+
+[Obj30] ' hacha roñosa +100 maná
+Index=763
+
+[Obj31] ' hacha tinieblas +200 maná
+Index=759
+
+[Obj32] ' Espada ensangrentada +200 Mana
+Index=758
+
+
+'ESCUDOS
+
+[Obj33] ' Escudo Celeste (+2 fuerza)
+Index=748
+
+[Obj34] ' Escudo Negro (+3 fuerza)
+Index=750
+
+[Obj35] ' Escudo Cruz (+5 Fuerza)
+Index=746
+
+[Obj36] ' Escudo Sajón (+5 fuerza)
+Index=824
+
+[Obj37] ' Escudo del Dragón Negro (+2 agilidad)
+Index=751
+
+[Obj38] ' Escudo Bordes Dorados (+3 agilidad)
+Index=749
+
+[Obj39] ' Escudo Baldurs (+5 Agilidad)
+Index=752
+
+[Obj61] ' Escudo sol (+5Fuerza + 3Agilidad)
+Index=1231
+
+
+
+'ARMADURAS
+
+[Obj40] ' Placas Roja (+2 agilidad)
+Index=727
+
+[Obj41] ' Placas de Plata (+3 agilidad)
+Index=726
+
+[Obj42] ' Placas de Oro (+5 agilidad)
+Index=725
+
+[Obj43] ' Armadura de la Ciénaga (+2 fuerza)
+Index=496
+
+[Obj44] ' Armadura Azul (+3 fuerza)
+Index=705
+
+[Obj45] ' Placas Dorada con Capa (+5 fuerza)
+Index=729
+
+[Obj46] ' Armadura Ligera Enanos (+2 agilidad)
+Index=870
+
+[Obj47] ' Armadura Mágica Enanos (+3 agilidad)
+Index=383
+
+[Obj48] ' Placas Dorada enanos (+5 agilidad)
+Index=741
+
+[Obj49] ' Placa Roja con Calavera (+2 fuerza)
+Index=745
+
+[Obj50] ' Placa con Capa Amarilla (+3 fuerza
+Index=744
+
+[Obj51] ' Armadura Bruñida (+5 fuerza)
+Index=500
+
+[Obj60] ' Armadura neptuno
+Index=1181
+
+'varas
+
+[Obj52] ' Bastón Mágico
+Index=1036
+
+[Obj54] ' Bastón del Dragón
+Index=1037
+
+[Obj55] ' Anillo de Energía
+Index=1225
+
+[Obj56] ' sombrero chamán
+Index=1222
+
+[Obj57] ' sombrero hechizado
+Index=1223
+
+[Obj58] ' baculo naturaleza
+Index=1225
+
+[Obj59] ' anillo energia
+Index=1221
+
+

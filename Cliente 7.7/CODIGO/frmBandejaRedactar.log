@@ -1,0 +1,17 @@
+Línea 19: la clase RichTextLib.RichTextBox del control RichTextBox3 no era una clase de control cargada.
+Línea 30: la clase RichTextLib.RichTextBox del control RichTextBox1 no era una clase de control cargada.
+Línea 43: la clase RichTextLib.RichTextBox del control RichTextBox2 no era una clase de control cargada.
+Línea 25: el nombre de la propiedad _ExtentX de RichTextBox3 no es válido.
+Línea 26: el nombre de la propiedad _ExtentY de RichTextBox3 no es válido.
+Línea 27: el nombre de la propiedad _Version de RichTextBox3 no es válido.
+Línea 28: el nombre de la propiedad TextRTF de RichTextBox3 no es válido.
+Línea 36: el nombre de la propiedad _ExtentX de RichTextBox1 no es válido.
+Línea 37: el nombre de la propiedad _ExtentY de RichTextBox1 no es válido.
+Línea 38: el nombre de la propiedad _Version de RichTextBox1 no es válido.
+Línea 40: el nombre de la propiedad MultiLine de RichTextBox1 no es válido.
+Línea 41: el nombre de la propiedad TextRTF de RichTextBox1 no es válido.
+Línea 49: el nombre de la propiedad _ExtentX de RichTextBox2 no es válido.
+Línea 50: el nombre de la propiedad _ExtentY de RichTextBox2 no es válido.
+Línea 51: el nombre de la propiedad _Version de RichTextBox2 no es válido.
+Línea 53: el nombre de la propiedad MultiLine de RichTextBox2 no es válido.
+Línea 54: el nombre de la propiedad TextRTF de RichTextBox2 no es válido.

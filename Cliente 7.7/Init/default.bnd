@@ -1,0 +1,36 @@
+//
+// No modificar este archivo a menos que
+// se esté seguro de lo que se hace!
+//
+
+[BINDS]
+1=/telep yo 1 25 25
+A=+agarrar
+C=+modocombate
+CTRL+C=/comerciar
+CTRL+D=/descansar
+CTRL+E=/enlistar
+CTRL+G=/gm ayuda
+CTRL+I=/informacion
+CTRL+M=/meditar
+CTRL+R=/recompensa
+CTRL+S=/est
+CTRL+T=/teleploc
+CTRL+X=/salir
+D=+domar
+E=+equipar
+M=+musica
+N=+nombres
+O=+ocultarse
+R=+robar
+S=+seguro
+SHIFT+A=-mod matux head 
+SHIFT+B=-bug 
+SHIFT+D=-desc 
+SHIFT+E=-depositar 
+SHIFT+P=-passwd 
+SHIFT+R=-retirar 
+SHIFT+T=-telep yo 
+T=+tirar
+U=+usar
+
