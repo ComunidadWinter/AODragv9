@@ -1,0 +1,18 @@
+[Mapa244]
+Name=Guarida oscura hechicera
+MusicNum=27-1
+StartPos=0-0-0
+Terreno=DUNGEON
+Zona=DUNGEON
+Restringir=No
+BackUp= 0
+Dueño= 0
+Aldea= 0
+Invisible= 0
+Resucitar= 0
+Mascotas= 0
+Insegura= 0
+Lluvia= 1
+Domar= 1
+Monturas= 0
+pk=0

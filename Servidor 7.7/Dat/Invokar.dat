@@ -1,0 +1,65 @@
+'#################### LISTA DE SPAWN #############################
+[INIT]
+NumNPCs=20
+
+
+[LIST]
+NI1=500
+NN1=Murcielago
+
+NI2=501
+NN2=Lobo
+
+NI3=600
+NN3=Devastador
+
+NI4=615
+NN4=Murcielagos
+
+NI5=634
+NN5=Chaman
+
+NI6=505
+NN6=Goblin
+
+NI7=506
+NN7=Gallo Salvaje
+
+NI8=507
+NN8=Zombi
+
+NI9=508
+NN9=Esqueleto Guerrero
+
+NI10=509
+NN10=Dragon Pequeño
+
+NI11=510
+NN11=Araña gigante
+
+NI12=664
+NN12=Piñata
+
+NI13=553
+NN13=Medusa
+
+NI14=677
+NN14=Tritón
+
+NI15=531
+NN15=Asesino
+
+NI16=679
+NN16=Devota
+
+NI17=540
+NN17=Duende
+
+NI18=537
+NN18=Beholder
+
+NI19=678
+NN19=Sicaria
+
+NI20=662
+NN20=Replicante

@@ -1,0 +1,922 @@
+'En este archivo se configura si se debe mostrar las lluvias en los distintos mapas.
+'1 se muestra
+'2 no se muestra.
+'La versión binaria de este archivo es la que usa el cliente.
+
+[INIT]
+NumMaps=304
+
+[Map1] 'Ullathorpe
+LLuvia=1
+
+[Map2] 'Bosques
+LLuvia=1
+
+[Map3] 'Bosques
+LLuvia=1
+
+[Map4] 'Bosques
+LLuvia=1
+
+[Map5] 'Bosques
+LLuvia=1
+
+[Map6] 'Bosques
+LLuvia=1
+
+[Map7] 'Bosques
+LLuvia=1
+
+[Map8] 'Bosques
+LLuvia=1
+
+[Map9] 'Bosques
+LLuvia=1
+
+[Map10] 'Bosques
+LLuvia=1
+
+[Map11] 'Bosques
+LLuvia=1
+
+[Map12] 'Bosques
+LLuvia=1
+
+[Map13] 'Bosques
+LLuvia=1
+
+[Map14] 'Bosques
+LLuvia=1
+
+[Map15] 'Desierto
+LLuvia=1
+
+[Map16] 'Desierto
+LLuvia=1
+
+[Map17] 'Desierto
+LLuvia=1
+
+[Map18] 'Bosques
+LLuvia=1
+
+[Map19] 'Bosques
+LLuvia=1
+
+[Map20] 'Desierto
+LLuvia=1
+
+[Map21] 'Desierto
+LLuvia=1
+
+[Map22] 'Bosque
+LLuvia=1
+
+[Map23] 'Bosque
+LLuvia=1
+
+[Map24] 'Bosque
+LLuvia=1
+
+[Map25] 'Bosque
+LLuvia=1
+
+[Map26] 'Bosque
+LLuvia=1
+
+[Map27] 'Bosque
+LLuvia=1
+
+[Map28] 'Bosque
+LLuvia=1
+
+[Map29] 'Bosque
+LLuvia=1
+
+[Map30] 'Bosque
+LLuvia=1
+
+[Map31] 'Bosque
+LLuvia=1
+
+[Map32] 'Bosque
+LLuvia=1
+
+[Map33] 'Dungeon oeste de Nix
+LLuvia=0
+
+[Map34] ' Nix
+LLuvia=1
+
+[Map35] 'Bosque
+LLuvia=1
+
+[Map36] 'Bosque
+LLuvia=1
+
+[Map37] 'Newbie Dungeon
+LLuvia=0
+
+[Map38] 'Bosque
+LLuvia=1
+
+[Map39] 'Bosque
+LLuvia=1
+
+[Map40] 'Catacumbas Ullathorpe
+LLuvia=0
+
+[Map41] 'Catacumbas Ullathorpe
+LLuvia=0
+
+[Map42] 'Catacumbas Ullathorpe
+LLuvia=0
+
+[Map43] 'Catacumbas Nix
+LLuvia=0
+
+[Map44] 'Catacumbas Nix
+LLuvia=0
+
+[Map45] 'Catacumbas Nix
+LLuvia=0
+
+[Map46] 'Bosque
+LLuvia=1
+
+[Map47] 'Bosque
+LLuvia=1
+
+[Map48] 'Dungeon
+LLuvia=0
+
+[Map49] 'GM
+LLuvia=0
+
+[Map50] 'Minas Rapajik
+LLuvia=0
+
+[Map51] 'Minas Rapajik
+LLuvia=0
+
+[Map52] 'Minas Rapajik
+LLuvia=0
+
+[Map53] 'Bosque
+LLuvia=1
+
+[Map54] 'Bosque
+LLuvia=1
+
+[Map55] 'Bosque
+LLuvia=1
+
+[Map56] 'Bosque
+LLuvia=1
+
+[Map57] 'Bosque
+LLuvia=1
+
+[Map58] 'Banderbill
+LLuvia=1
+
+[Map59] 'Banderbill
+LLuvia=1
+
+[Map60] 'Banderbill
+LLuvia=1
+
+[Map61] 'Lindos
+LLuvia=1
+
+[Map62] 'Lindos
+LLuvia=1
+
+[Map63] 'Lindos
+LLuvia=1
+
+[Map64] 'Lindos
+LLuvia=1
+
+[Map65] 'Banderbill
+LLuvia=1
+
+[Map66] 'Banderbill
+LLuvia=1
+
+[Map67] 'Bosque
+LLuvia=1
+
+[Map68] 'Bosque
+LLuvia=1
+
+[Map69] 'Bosque
+LLuvia=1
+
+[Map70] 'Bosque
+LLuvia=1
+
+[Map71] 'Bosque
+LLuvia=1
+
+[Map72] 'Bosque
+LLuvia=1
+
+[Map73] 'Bosque
+LLuvia=1
+
+[Map74] 'Bosque
+LLuvia=1
+
+[Map75] 'Bosque
+LLuvia=1
+
+[Map76] 'Bosque
+LLuvia=1
+
+[Map77] 'Bosque
+LLuvia=1
+
+[Map78] 'Bosque
+LLuvia=1
+
+[Map79] 'Bosque
+LLuvia=1
+
+[Map80] 'Bosque
+LLuvia=1
+
+[Map81] 'Bosque
+LLuvia=1
+
+[Map82] 'Bosque
+LLuvia=1
+
+[Map83] 'Bosque
+LLuvia=1
+
+[Map84] 'Bosque
+LLuvia=1
+
+[Map85] 'Bosque
+LLuvia=1
+
+[Map86] 'Bosque
+LLuvia=1
+
+[Map87] 'Bosque
+LLuvia=1
+
+[Map88] 'Bosque
+LLuvia=1
+
+[Map89] 'Bosque
+LLuvia=1
+
+[Map90] 'Bosque
+LLuvia=1
+
+[Map91] 'Bosque
+LLuvia=1
+
+[Map92] 'Bosque
+LLuvia=1
+
+[Map93] 'Bosque
+LLuvia=1
+
+[Map94] 'Bosque
+LLuvia=1
+
+[Map95] 'Bosque
+LLuvia=1
+
+[Map96] 'Bosque
+LLuvia=1
+
+[Map97] 'Bosque
+LLuvia=1
+
+[Map98] 'Bosque
+LLuvia=1
+
+[Map99] 'Bosque
+LLuvia=1
+
+[Map100] 'Bosque
+LLuvia=1
+
+[Map101] 'Bosque
+LLuvia=1
+
+[Map102] 'Bosque
+LLuvia=1
+
+[Map103] 'Bosque
+LLuvia=1
+
+[Map104] 'Bosque
+LLuvia=1
+
+[Map105] 'Bosque
+LLuvia=1
+
+[Map106] 'Bosque
+LLuvia=1
+
+[Map106] 'Bosque
+LLuvia=1
+
+[Map107] 'Bosque
+LLuvia=1
+
+[Map108] 'Bosque
+LLuvia=1
+
+[Map109] 'Bosque
+LLuvia=1
+
+[Map110] 'Bosque
+LLuvia=1
+
+[Map111] 'Bosque
+LLuvia=1
+
+[Map112] 'Bosque
+LLuvia=1
+
+[Map113] 'Bosque
+LLuvia=1
+
+[Map114] 'Bosque
+LLuvia=1
+
+[Map115] 'Dungeon
+LLuvia=0
+
+[Map116] 'Dungeon
+LLuvia=0
+
+[Map117] 'Bosque
+LLuvia=1
+
+[Map118] 'Bosque
+LLuvia=1
+
+[Map119] 'Bosque
+LLuvia=1
+
+[Map120] 'Bosque
+LLuvia=1
+
+[Map121] 'Bosque
+LLuvia=1
+
+[Map122] 'Bosque
+LLuvia=1
+
+[Map123] 'Bosque
+LLuvia=1
+
+[Map124] 'Bosque
+LLuvia=1
+
+[Map125] 'Bosque
+LLuvia=1
+
+[Map126] 'Bosque
+LLuvia=1
+
+[Map127] 'Bosque
+LLuvia=1
+
+[Map128] 'Bosque
+LLuvia=1
+
+[Map129] 'Bosque
+LLuvia=1
+
+[Map130] 'Bosque
+LLuvia=1
+
+[Map131] 'Bosque
+LLuvia=1
+
+[Map132] 'Bosque
+LLuvia=1
+
+[Map133] 'Bosque
+LLuvia=1
+
+[Map134] 'Bosque
+LLuvia=1
+
+[Map135] 'Bosque
+LLuvia=1
+
+[Map136] 'Bosque
+LLuvia=1
+
+[Map126] 'Bosque
+LLuvia=1
+
+[Map137] 'Bosque
+LLuvia=1
+
+[Map138] 'Bosque
+LLuvia=1
+
+[Map139] 'Bosque
+LLuvia=1
+
+[Map140] 'Dungeon
+LLuvia=0
+
+[Map141] 'Dungeon
+LLuvia=0
+
+[Map142] 'Dungeon
+LLuvia=0
+
+[Map143] 'Dungeon
+LLuvia=0
+
+[Map144] 'Dungeon
+LLuvia=0
+
+[Map145] 'Dungeon
+LLuvia=0
+
+[Map146] 'Dungeon
+LLuvia=0
+
+[Map147] 'Mar
+LLuvia=1
+
+[Map148] 'Mar
+LLuvia=1
+
+[Map149] 'Mar
+LLuvia=1
+
+[Map150] 'Mar
+LLuvia=1
+
+[Map151] 'Mar
+LLuvia=1
+
+[Map152] 'Mar
+LLuvia=1
+
+[Map153] 'Mar
+LLuvia=1
+
+[Map154] 'Mar
+LLuvia=1
+
+[Map155] 'Mar
+LLuvia=1
+
+[Map156] 'Mar
+LLuvia=0
+
+[Map157] 'Mar
+LLuvia=0
+
+[Map158] 'Dungeon Dragon
+LLuvia=0
+
+[Map159] 'Dungeon Dragon
+LLuvia=0
+
+[Map160] 'Dungeon Dragon
+LLuvia=0
+
+[Map161] 'Dungeon Dragon
+LLuvia=0
+
+[Map162] 'dungeon atlantis
+LLuvia=0
+
+[Map163] 'Mar
+LLuvia=1
+
+[Map164] 'torneo
+LLuvia=0
+
+[Map165] 'invocacion
+LLuvia=0
+
+[Map166] 'Mar
+LLuvia=1
+
+[Map167] 'Mar
+LLuvia=1
+
+[Map168] 'Mar
+LLuvia=1
+
+[Map169] 'Mar
+LLuvia=1
+
+[Map170] 'ciudad caos
+LLuvia=1
+
+[Map171] 'casa terror
+LLuvia=0
+
+[Map172] 'bosque terror
+LLuvia=1
+
+[Map173] 'bosque terror
+LLuvia=1
+
+[Map174] 'bosque terror
+LLuvia=1
+
+[Map175] 'bosque terror
+LLuvia=1
+
+[Map176] 'bosque terror
+LLuvia=1
+
+[Map177] 'casa terror
+LLuvia=0
+
+[Map178] 'EGIPTO
+LLuvia=0
+
+[Map179] 'EGIPTO
+LLuvia=0
+
+[Map180] 'EGIPTO
+LLuvia=0
+
+[Map181] 'EGIPTO
+LLuvia=0
+
+[Map182] 'EGIPTO
+LLuvia=0
+
+[Map183] 'laurana
+LLuvia=0
+
+[Map184] 'laurana
+LLuvia=0
+
+[Map185] 'fortaleza
+LLuvia=1
+
+[Map186] 'mina fortaleza
+LLuvia=0
+
+[Map187] ' Sala de los dioses
+LLuvia=1
+
+[Map188] 'Catedral
+LLuvia=0
+
+[Map189] 'GIncana
+LLuvia=0
+
+[Map190] 'Isla fortaleza
+LLuvia=1
+
+[Map191] 'prisión
+LLuvia=1
+
+[Map192] 'Dragfutbol
+LLuvia=0
+
+[Map193] 'Nido de arañas
+LLuvia=0
+
+[Map194] 'Torneo multiple
+LLuvia=0
+
+[Map195] ' Bosque
+LLuvia=1
+
+[Map196] ' Bosque
+LLuvia=1
+
+[Map197] ' Bosque
+LLuvia=1
+
+[Map198] ' Bosque
+LLuvia=1
+
+[Map199] ' Bosque
+LLuvia=1
+
+[Map200] ' Bosque
+LLuvia=1
+
+[Map201] ' Bosque
+LLuvia=1
+
+[Map202] ' Bosque
+LLuvia=1
+
+[Map203] ' Bosque
+LLuvia=1
+
+[Map204] ' Bosque
+LLuvia=1
+
+[Map205] ' Bosque
+LLuvia=1
+
+[Map206] ' Bosque
+LLuvia=1
+
+[Map207] ' Bosque
+LLuvia=1
+
+[Map208] ' Bosque
+LLuvia=1
+
+[Map209] ' Bosque
+LLuvia=1
+
+[Map210] 'Mar
+LLuvia=1
+
+[Map211] 'Mar
+LLuvia=1
+
+[Map212] 'Mar
+LLuvia=1
+
+[Map213] 'Mar
+LLuvia=1
+
+[Map214] 'Mar
+LLuvia=1
+
+[Map215] 'Isla pirata
+LLuvia=1
+
+[Map216] 'Isla pirata
+LLuvia=1
+
+[Map217] 'Mar
+LLuvia=1
+
+[Map218] 'Mar
+LLuvia=1
+
+[Map219] 'Mar
+LLuvia=1
+
+[Map220] 'Mar
+LLuvia=1
+
+[Map221] 'Mar
+LLuvia=1
+
+[Map222] 'Mar
+LLuvia=1
+
+[Map223] ' Bosque
+LLuvia=1
+
+[Map224] ' Bosque
+LLuvia=1
+
+[Map225] ' Bosque
+LLuvia=1
+
+[Map226] ' Bosque
+LLuvia=1
+
+[Map227] ' Bosque
+LLuvia=1
+
+[Map228] ' Bosque
+LLuvia=1
+
+[Map229] ' Bosque
+LLuvia=1
+
+[Map230] 'Mar
+LLuvia=1
+
+[Map231] 'Mar
+LLuvia=1
+
+[Map232] 'Mar
+LLuvia=1
+
+[Map233] 'Mar
+LLuvia=1
+
+[Map234] 'Mar
+LLuvia=1
+
+[Map235] 'Mar
+LLuvia=1
+
+[Map236] 'Mar
+LLuvia=1
+
+[Map237] 'Mar
+LLuvia=1
+
+[Map238] 'Mar
+LLuvia=1
+
+[Map239] 'Mar
+LLuvia=1
+
+[Map240] 'Mar
+LLuvia=1
+
+[Map241] 'Mar
+LLuvia=1
+
+[Map242] 'Mar
+LLuvia=1
+
+[Map243] 'Mar
+LLuvia=1
+
+[Map244] 'Cueva oscura
+LLuvia=0
+
+[Map245] 'Polo
+LLuvia=1
+
+[Map246] 'Polo
+LLuvia=1
+
+[Map247] 'Polo
+LLuvia=1
+
+[Map248] 'Polo
+LLuvia=1
+
+[Map249] 'Cueva del polo
+LLuvia=0
+
+[Map250] 'Dungeon Polo
+LLuvia=0
+
+[Map251] 'Conquista
+LLuvia=0
+
+[Map252] 'Conquista
+LLuvia=0
+
+[Map253] 'Conquista
+LLuvia=0
+
+[Map254] 'Conquista
+LLuvia=0
+
+[Map255] 'Conquista
+LLuvia=0
+
+[Map256] 'Conquista
+LLuvia=0
+
+[Map257] 'Conquista
+LLuvia=0
+
+[Map258] 'Conquista
+LLuvia=0
+
+[Map259] 'Conquista
+LLuvia=0
+
+[Map260] 'Conquista
+LLuvia=0
+
+[Map261] '
+LLuvia=1
+
+[Map262] '
+LLuvia=1
+
+[Map263] '
+LLuvia=1
+
+[Map264] '
+LLuvia=1
+
+[Map265] '
+LLuvia=1
+
+[Map266] '
+LLuvia=1
+
+[Map267] '
+LLuvia=1
+
+[Map268] '
+LLuvia=1
+
+[Map269] '
+LLuvia=1
+
+[Map270] '
+LLuvia=1
+
+[Map271] '
+LLuvia=1
+
+[Map272] '
+LLuvia=1
+
+[Map273] '
+LLuvia=1
+
+[Map274] '
+LLuvia=0
+
+[Map275] '
+LLuvia=0
+
+[Map276] '
+LLuvia=0
+
+[Map277] '
+LLuvia=0
+
+[Map278] ' sala clan
+LLuvia=0
+
+[Map279] ' sala clan
+LLuvia=0
+
+[Map280] ' sala clan
+LLuvia=0
+
+[Map281] ' sala clan
+LLuvia=0
+
+[Map282] ' sala clan
+LLuvia=0
+
+[Map283] ' sala clan
+LLuvia=0
+
+[Map284] ' sala clan
+LLuvia=0
+
+[Map285] ' mapa gm
+LLuvia=1
+
+[Map286] ' sotano
+LLuvia=0
+
+[Map287] ' sotano
+LLuvia=0
+
+[Map288] ' sotano
+LLuvia=0
+
+[Map289] ' sala clan
+LLuvia=0
+
+[Map290] ' sala clan
+LLuvia=0
+
+[Map291] ' Torneo
+LLuvia=0
+
+[Map292] ' Torneo
+LLuvia=0
+
+[Map293] ' Torneo
+LLuvia=0
+
+[Map294] ' Torneo
+LLuvia=0
+
+[Map295] ' Torneo
+LLuvia=0
+
+[Map296] ' Sala coliseo
+LLuvia=0
+
+[Map297] ' sala clan
+LLuvia=0
+
+[Map298] ' sala clan
+LLuvia=0
+
+[Map299] ' sala clan
+LLuvia=0
+
+[Map300] ' sala clan
+LLuvia=0
+
+[Map301] ' sala clan
+LLuvia=0
+
+[Map302] ' sala clan
+LLuvia=0
+
+[Map303] ' sala clan
+LLuvia=0

@@ -1,0 +1,9 @@
+[Mapa162]
+Name=Dungeon Athlantis
+MusicNum=61-1
+StartPos=0-0-0
+PK=0
+Terreno=DUNGEON
+Zona=DUNGEON
+Restringir=no
+Lluvia=1

@@ -1,0 +1,10 @@
+[mapa48]
+Name=Deadly room
+MusicNum=62-1
+StartPos=0-0-0
+pk=0
+Terreno=DUNGEON
+Zona=DUNGEON
+Restringir=No
+Domar=1
+Lluvia=1

@@ -1,0 +1,9 @@
+[Mapa118]
+Name=novale
+MusicNum=15-1
+StartPos=0-0-0
+Terreno=DUNGEON
+Zona=DUNGEON
+Restringir=No
+Lluvia=1
+Domar=1

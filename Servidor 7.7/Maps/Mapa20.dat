@@ -1,0 +1,11 @@
+[mapa20]
+Name=Desierto Rinkel
+MusicNum=10-1
+StartPos=1-0-0
+PK=1
+Terreno=DESIERTO
+Zona=DESIERTO
+Restringir=No
+Backup=0
+Invisible=1
+Domar=1

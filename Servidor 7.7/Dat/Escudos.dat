@@ -1,0 +1,188 @@
+[INIT]
+NumEscudos=33
+
+[ESC1] 'Escudo Imperial
+Dir1=4727 'norte 
+Dir2=4729
+Dir3=4726
+Dir4=4728 'sur
+
+[ESC3] 'Escudo de Tortuga
+dir1=4827 'norte 
+dir2=4829
+dir3=4826
+dir4=4828 'sur
+
+[esc4] 'Escudo Dragón
+dir1=13443 'norte
+dir2=13445
+dir3=13442
+dir4=13444 'sur
+
+[esc5] 'Escudo de Madera
+dir1=13469 'norte
+dir2=13471
+dir3=13468
+dir4=13470 'sur
+
+[esc6] 'Escudo Héroe
+dir1=13495 'norte
+dir2=13497
+dir3=13494
+dir4=13496 'sur
+
+[esc7] 'Escudo Cruz
+dir1=14837 'norte
+dir2=14839
+dir3=14836
+dir4=14838 'sur
+
+[esc8] 'Escudo Dorado
+dir1=14864 'norte
+dir2=14866
+dir3=14863
+dir4=14865 'sur
+
+[esc9] 'Escudo Celeste
+dir1=14891 'norte
+dir2=14893
+dir3=14890
+dir4=14892 'sur
+
+[esc10] 'Escudo Bordes Dorados
+dir1=14918 'norte
+dir2=14920
+dir3=14917
+dir4=14919 'sur
+
+[esc11] 'Escudo Negro
+dir1=14945 'norte
+dir2=14947
+dir3=14944
+dir4=14946 'sur
+
+[esc12] 'Escudo del Dragón Negro
+dir1=14972 'norte
+dir2=14974
+dir3=14971
+dir4=14973 'sur
+
+[esc13] 'Escudo Baldurs
+dir1=14999 'norte
+dir2=15001
+dir3=14998
+dir4=15000 'sur
+
+[esc14] 'Escudo Sajón
+dir1=16032 'norte
+dir2=16034
+dir3=16031
+dir4=16033 'sur
+
+[esc15] 'Escudo Bizantino
+dir1=16059 'norte
+dir2=16061
+dir3=16058
+dir4=16060 'sur
+
+[esc16] 'Escudo Inglés 
+dir1=16086 'norte
+dir2=16088
+dir3=16085
+dir4=16087 'sur
+
+[esc17] 'Escudo Genovés 
+dir1=16113 'norte
+dir2=16115
+dir3=16112
+dir4=16114 'sur
+
+[esc18] 'Escudo Veneciano
+dir1=16140 'norte
+dir2=16142
+dir3=16139
+dir4=16141 'sur
+
+[esc19] 'Escudo Mongol
+dir1=16167 'norte
+dir2=16169
+dir3=16166
+dir4=16168 'sur
+
+[esc20] 'Escudo Madera Reforzado
+Dir1=18585 'norte 
+Dir2=18587
+Dir3=18584
+Dir4=18586 'sur
+
+[esc21] 'Escudo Rojo
+Dir1=28585 'norte 
+Dir2=28587
+Dir3=28584
+Dir4=28586 'sur
+
+[esc22] 'Escudo de Diamantes
+Dir1=28685 'norte 
+Dir2=28687
+Dir3=28684
+Dir4=28686 'sur
+
+[esc23] 'Escudo de las Sombras
+Dir1=28785 'norte 
+Dir2=28787
+Dir3=28784
+Dir4=28786 'sur
+
+[esc24] 'Escudo de León
+Dir1=15637 'norte 
+Dir2=15639
+Dir3=15636
+Dir4=15638 'sur
+
+[esc25] 'Escudo Rosa-Negro
+Dir1=15610 'norte 
+Dir2=15612
+Dir3=15609
+Dir4=15611 'sur
+
+[ESC27] 'Escudo Élfico
+Dir1=23324 'norte
+Dir2=23326
+Dir3=23323
+Dir4=23325 'sur
+
+[ESC28] 'Escudo Rey
+Dir1=23236 'norte 
+Dir2=23238
+Dir3=23235
+Dir4=23237 'sur
+
+[ESC29] 'Escudo Teutón
+Dir1=23264 'norte 
+Dir2=23266
+Dir3=23263
+Dir4=23265 'sur
+
+[ESC30] 'Escudo Sol
+Dir1=23294 'norte
+Dir2=23296
+Dir3=23293
+Dir4=23295 'sur
+
+[ESC31] 'Escudo Templario
+Dir1=23354 'norte
+Dir2=23356
+Dir3=23353
+Dir4=23355 'sur
+
+[ESC32] 'Escudo Troyano
+Dir1=23384 'norte 
+Dir2=23386
+Dir3=23383
+Dir4=23385 'sur
+
+[ESC33] 'Escudo de Hierro
+Dir1=5143 'norte 
+Dir2=5145
+Dir3=5144
+Dir4=5142 'sur

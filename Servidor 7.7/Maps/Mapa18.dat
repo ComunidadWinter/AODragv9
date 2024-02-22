@@ -1,0 +1,8 @@
+[mapa18]
+Name=Bosques
+MusicNum=3-1
+StartPos=0-0-0
+PK=0
+Terreno=BOSQUE
+Zona=BOSQUE
+Restringir=No

@@ -1,0 +1,10 @@
+[mapa37]
+Name=Newbie Dungeon
+MusicNum=7-1
+StartPos=0-0-0
+PK=1
+Terreno=DUNGEON
+Zona=DUNGEON
+Restringir=Si
+Domar=1
+BackUp= 1

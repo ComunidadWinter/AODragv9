@@ -1,0 +1,50 @@
+[INIT]
+TotalQuest=2
+
+[QUEST1]
+Titulo="Mata Lobo"
+tx="Veamos cuanto tardas en matar 1 lobo"
+NivelMinimo=0
+NilvelMaximo=5
+Time=5
+SoloClase=
+'------Objetivos------------------
+NEnemigos=1
+Enemigo1=501-1
+Enemigo2=
+Level=
+Clase=
+Cantidad=
+NObjetos=0
+Objeto1=25-5
+Objeto2=26-2
+Entrega=134
+'--------Recompensa-----------
+Exp=1000
+Oro=1000
+NObjetosR=1
+ObjetoR1=19-1
+ObjetoR2=38-5
+
+[QUEST2]
+Titulo="Traeme una espada"
+tx="Veamos cuanto tardas en traerme 1 espada"
+NivelMinimo=0
+NilvelMaximo=5
+Time=8
+SoloClase=
+'------Objetivos------------------
+NEnemigos=0
+Enemigo1=0
+Enemigo2=0
+Level=0
+NObjetos=1
+Objeto1=19-1
+Objeto2=0
+Entrega=134
+'--------Recompensa-----------
+Exp=5000
+Oro=100
+NObjetosR=1
+ObjetoR1=37-1000
+ObjetoR2=38-1000

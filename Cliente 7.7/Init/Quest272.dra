@@ -1,0 +1,49 @@
+[INIT]
+TotalQuest=2
+
+[QUEST1]
+Titulo="Mata pollos2"
+tx="Veamos cuanto tardas en matar 10 lobo,20 zombies y un Mago de Nivel 10. Además debes traerme 2 pollos y 5 pasteles"
+Time=5
+NivelMinimo=0
+NilvelMaximo=5
+SoloClase=""
+'------Objetivos------------------
+NEnemigos=2
+Enemigo1=501-10
+Enemigo2=502-20
+Level=10
+Clase="Mago"
+Cantidad=1
+NObjetos=2
+Objeto1=25-5
+Objeto2=26-2
+Entrega=134
+'--------Recompensa-----------
+Exp=10000
+Oro=1000
+NObjetosR=2
+ObjetoR1=19-1
+ObjetoR2=38-5
+
+[QUEST2]
+Titulo="Traeme una espada2"
+tx="Veamos cuanto tardas en traerme 1 espada"
+NivelMinimo=0
+NilvelMaximo=5
+Time=8
+'------Objetivos------------------
+NEnemigos=0
+Enemigo1=0
+Enemigo2=0
+Level=0
+NObjetos=1
+Objeto1=19-1
+Objeto2=0
+Entrega=134
+'--------Recompensa-----------
+Exp=5000
+Oro=100
+NObjetosR=1
+ObjetoR1=37-1000
+ObjetoR2=38-1000

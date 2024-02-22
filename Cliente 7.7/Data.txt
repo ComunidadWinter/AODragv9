@@ -1,0 +1,1495 @@
+[Mapa1]
+Tipo=Ciudad
+Nombre=Ullatorphe
+Bichos=Serpientes, gallos, tigres y osos
+Info=Ciudad custodiada por guardias, un poco peligrosa para los criminales, alli encotrarás la entrada a sus catacumbas detrás de la chimenea de pociones.
+[Mapa2]
+Tipo=Bosque
+Nombre=Bosque
+Bichos=Serpientes, lobos y murcielagos.
+Info=Mapa fronterizo a Ullathorpe, con criaturas débiles.
+[Mapa3]
+Tipo=Bosque
+Nombre=Bosque
+Bichos=Serpientes, lobos y goblins.
+Info=Un buen lugar para el entrenamiento en los niveles más bajos.
+[Mapa4]
+Tipo=Bosque
+Nombre=Bosque
+Bichos=Zombies y esqueletos.
+Info=Un excelente lugar para el entrenamiento en los niveles más bajos.
+[Mapa5]
+Tipo=Bosque
+Nombre=Bosque
+Bichos=Murciélagos, serpientes, jabalíes, tigres y dinodragos.
+Info=Mapa fronterizo a Ullathorpe, contiene a la entrada a las Cuevas Dark, en una roca a la izquierda del camino.
+[Mapa6]
+Tipo=Bosque
+Nombre=Bosque
+Bichos=Goblins.
+Info=Un buen lugar para el entrenamiento en los niveles más bajos.
+[Mapa7]
+Tipo=Bosque
+Nombre=Bosque
+Bichos=Bandidos y lobos
+Info=En una bifurcación del camino se encuentra el vendedor de comida.
+[Mapa8]
+Tipo=Bosque
+Nombre=Bosque
+Bichos=Lobos.
+Info=Mapa fronterizo a Ullathorpe, con criaturas débiles.
+[Mapa9]
+Tipo=Bosque
+Nombre=Bosque
+Bichos=Lobos y serpientes.
+Info=Mapa con criaturas débiles, contiene un pequeño estanque.
+[Mapa10]
+Tipo=Costa
+Nombre=Costa
+Bichos=Lobos, esqueletos y bandidos.
+Info=Mapa fronterizo a la ciudad criminal, con criaturas débiles.
+[Mapa11]
+Tipo=Bosque
+Nombre=Bosque
+Bichos=Serpientes y murciélagos.
+Info=Mapa fronterizo a Ullathorpe, con criaturas débiles.
+[Mapa12]
+Tipo= Bosque
+Nombre=Bosque
+Bichos=Esqueletos, serpientes goblins y chamanes.
+Info=Un buen lugar para el entrenamiento en los niveles más bajos.
+[Mapa13]
+Tipo=Bosque
+Nombre=Bosque
+Bichos=Esqueletos y zombies.
+Info=Un excelente lugar para el entrenamiento en los niveles más bajos.
+[Mapa14]
+Tipo=Bosque
+Nombre=Bosque
+Bichos=Zombies y lobos.
+Info=Un buen lugar para el entrenamiento en los niveles más bajos.
+[Mapa15]
+Tipo=Desierto
+Nombre=Desierto de Rinkel
+Bichos=Serpientes, escorpiones, arañas pequeñas, arañas gigantes y yuan-ti.
+Info=El gusano del desierto te atacará por sorpresa!
+[Mapa16]
+Tipo=Desierto
+Nombre=Desierto de Rinkel
+Bichos=Serpientes, escorpiones, arañas pequeñas, arañas gigantes, basiliscos y yuan-ti.
+Info=El gusano del desierto te atacará por sorpresa!
+[Mapa17]
+Tipo=Desierto
+Nombre=Desierto de Rinkel
+Bichos=Serpientes, escorpiones,arañas pequeñas, arañas gigantes, basiliscos y yuan-ti.
+Info=El gusano del desierto te atacará por sorpresa!
+[Mapa18]
+Tipo=Bosque
+Nombre=Bosque
+Bichos=Zombies y lobos.
+Info=Un buen lugar para el entrenamiento en los niveles más bajos.
+[Mapa19]
+Tipo=Bosque
+Nombre=Bosque de Gorcor
+Bichos= Criaturas débiles para los orcos y mas noveles.
+Info= Bosques ideales para entrenar tu nuevo orco.
+[Mapa20]
+Tipo=Ciudad
+Nombre=Desierto de Rinkel
+Bichos=
+Info=Una pequeña ciudad en medio del desierto.
+[Mapa21]
+Tipo=Desierto
+Nombre=Desierto de Rinkel
+Bichos=Serpientes, escorpiones, lord zombies, arañas gigantes, viudas negras y yuan-ti.
+Info=Desde aquí se puede ingresar a las piramides.
+[Mapa22]
+Tipo=Bosque
+Nombre=Bosque
+Bichos=Lobos, serpientes y murcielagos.
+Info=Entrada a las minas de hierro por la cueva de la posicion 50 60 de este mapa.
+[Mapa23]
+Tipo=Bosque
+Nombre=Bosque
+Bichos=Cuervos, serpientes, murciélagos.
+Info=Un mapa alejado, con criaturas débiles.
+[Mapa24]
+Tipo=Costa
+Nombre=Bosque de Gorcor
+Bichos= Criaturas débiles para los orcos y mas noveles.
+Info= Bosques ideales para entrenar tu nuevo orco. Aquí se encuentra también la entrada al miniveril.
+[Mapa25]
+Tipo=Bosque
+Nombre=Bosque
+Bichos=Bandidos, lobos, serpientes y murciélagos.
+Info=Un buen lugar para el entrenamiento en los niveles bajos, el mapa tiene un islote en el centro.
+[Mapa26]
+Tipo=Bosque
+Nombre=Bree
+Bichos=Hobbits y lobos.
+Info=Un excelente lugar para el entrenamiento en tierra! La aldea hobbit posee rusticas casas con hostiles habitantes.
+[Mapa27]
+Tipo=Costa
+Nombre=Bosque de Gorcor
+Bichos= Criaturas débiles para los orcos y mas noveles.
+Info= Bosques ideales para entrenar tu nuevo orco.
+[Mapa28]
+Tipo=Costa
+Nombre=Costa
+Bichos=Gallos salvajes.
+Info=En este mapa podrás encontrar la entrada al laberinto del minotauro.
+[Mapa29]
+Tipo=Bosque
+Nombre=Bosque
+Bichos=Goblins y gallos salvajes.
+Info=Un mapa alejado, con criaturas débiles.
+[Mapa30]
+Tipo=Costa
+Nombre=Costa
+Bichos=Duendes, tortugas gigantes, goblins y lobos.
+Info=La entrada al Castillo Sur se encuentra ene ste mapa.
+[Mapa31]
+Tipo=Costa
+Nombre=Costa
+Bichos=Serpientes, gallos salvajes y lobos.
+Info=Un mapa costero con criaturas débiles.
+[Mapa32]
+Tipo=Bosque
+Nombre=Bosque
+Bichos=Murciélagos, gallos salvajes, serpientes y lobos.
+Info=Un mapa fronterizo a Nix, con criaturas débiles.
+[Mapa33]
+Tipo=Mina
+Nombre=Mina de Hierro
+Bichos=Goblins, Genios de las Cavernas, trogloditas y arañas gigantes.
+Info=Entrada a las minas de hierro, se entra por la cueva que hay en el mapa 22.
+[Mapa34]
+Tipo=Ciudad
+Nombre=Nix
+Bichos=
+Info=Una agradable ciudad costera con la entrada a las catacumbas en la roca que se encuentra en la parte Sud-Oeste.
+[Mapa35]
+Tipo=Costa
+Nombre=Costa
+Bichos=Serpientes y murcielagos.
+Info=En el mapa se encuentra la Mansión de Nix.
+[Mapa36]
+Tipo=Bosque
+Nombre=Bosque
+Bichos=Lobos, gallos salvajes, patos salvajes, jabalíes, tigres y salvajes.
+Info=Consigue la llave del Fuerte Orco para poder entrar a la fortificación!
+[Mapa37]
+Tipo=No Existe
+Nombre=No Existe
+Bichos=No Existe
+Info=Sin uso
+[Mapa38]
+Tipo=Bosque
+Nombre=Bosque
+Bichos=Gallos salvajes, patos salvajes, jabalíes, arañas gigantes, tigres, orcos, goblins montados y goblins arqueros.
+Info=En este mapa fronterizo a Ciudad Criminal se encuentra la entrada a una de las casas encantadas.
+[Mapa39]
+Tipo=Bosque
+Nombre=Bosque Dork
+Bichos=Serpientes, murciélagos, lobos, arañas gigantes, orcos, jabalíes, salvajes, goblins montados y goblins arqueros.
+Info=El Bosque Dork es un mapa con muchos arboles y arañas, peligroso para los personajes de bajo nivel.
+[Mapa40]
+Tipo=Dungeon
+Nombre=Catacumbas de Ullathorpe
+Bichos=Arañas gigantes, orcos, murciélagos gigantes, bandada de murciélagos, genios de las cavernas, trogloditas y basiliscos.
+Info=La entrada a las Catacumbas de Ullathorpe, se entra por debajo de la chimenea de la tienda de pociones. Comunica por vía subterránea con las ciudades Laurana y Nix.
+[Mapa41]
+Tipo=Dungeon
+Nombre=Catacumbas
+Bichos=No hay monstruos en este mapa
+Info=Estas catacumbas unen las cuidades de Ullathorpe, Laurana y Nix.
+[Mapa42]
+Tipo=Dungeon
+Nombre=Catacumbas
+Bichos=No hay monstruos en este mapa
+Info=La entrada a la ciudad de Laurana se encuentra en este mapa.
+[Mapa43]
+Tipo=Dungeon
+Nombre=Catacumbas
+Bichos=Viudas negras.
+Info=Estas catacumbas unen las cuidades de Ullathorpe, Laurana y Nix.
+[Mapa44]
+Tipo=Dungeon
+Nombre=Catacumbas
+Bichos=Murciélagos gigantes, bandadas de murciélagos y viudas negras.
+Info=Estas catacumbas unen las cuidades de Ullathorpe, Laurana y Nix.
+[Mapa45]
+Tipo=Dungeon
+Nombre=Catacumbas de Nix
+Bichos=Arañas gigantes, murciélagos gigantes, bandadas de murciélagos, trogloditas y basiliscos.
+Info=La entrada a las Catacumbas de Nix, se entra por la roca que se encuentra al Sud-Oeste de la ciudad. Comunica por vía subterránea con las ciudades Laurana y Nix.
+[Mapa46]
+Tipo=Costa
+Nombre=Costa
+Bichos=Orcos, escorpiones y gallos salvajes.
+Info=Un buen lugar para el entrenamiento en los niveles más bajos.
+[Mapa47]
+Tipo=Isla
+Nombre=Isla Veleta
+Bichos=No hay monstruos en este mapa.
+Info=Un lugar poco frecuentado por los viajeros, el punto más nórdico de AoDrag.
+[Mapa48]
+Tipo=Dungeon
+Nombre= Dungeon Veriil
+Bichos=Meduzas y dragones.
+Info=Un pequeño salón con teleports, en el que puede haber meduzas.
+[Mapa49]
+Tipo=Mapa Gm
+Nombre=Mapa Feo
+Bichos=No hay criaturas en este mapa
+Info=Aquí serás teleportado para ser atendido por un gm, en buena compañía del Sr Ilustre Notario Don Aodragbtot.
+[Mapa50]
+Tipo=Mina
+Nombre=Minas de Plata y Hierro
+Bichos=Trogloditas y ratas.
+Info=Una de las pocas minas de plata de todo AoDrag, se entra por el mapa 38.
+[Mapa51]
+Tipo=Mina
+Nombre=Minas de Plata
+Bichos=Genios de las cavernas y ratas.
+Info=Una de las pocas minas de plata de todo AoDrag, se entra por el mapa 38.
+[Mapa52]
+Tipo=Mina
+Nombre=Minas de Plata
+Bichos=Murciélagos, bandada de murciélagos, murciélagos gigantes y genios de las cavernas.
+Info=Una de las pocas minas de plata de todo AoDrag, se entra por el mapa 38.
+[Mapa53]
+Tipo=Bosque
+Nombre=Bosque
+Bichos=Dinodragos, lobos, gallos salvajes, serpientes y murcielagos.
+Info=Un buen lugar para el entrenamiento en los niveles bajos.
+[Mapa54]
+Tipo=Bosque
+Nombre=Bosque
+Bichos=Genios del bosque, tigres, dinodragos, goblins, bandidos, asesinos, lobos, serpientes y murcielagos.
+Info=Un mapa con diversas criaturas, ideal para entrenar en los niveles bajos e intermedios.
+[Mapa55]
+Tipo=Bosque
+Nombre=Bosque
+Bichos=Arañas gigantes, lobos, goblins y bandidos.
+Info=Un buen lugar para el entrenamiento en los niveles bajos.
+[Mapa56]
+Tipo=Bosque
+Nombre=Bosque
+Bichos=Lobos, goblins, gallos salvajes, serpientes y murcielagos.
+Info=Un bosque con criaturas débiles.
+[Mapa57]
+Tipo=Bosque
+Nombre=Bosque
+Bichos=Bandidos, goblins, lord zombies, lobos, serpientes y murcielagos.
+Info=
+[Mapa58]
+Tipo=Ciudad
+Nombre=Entrada a Banderbill
+Bichos=No hay monstruos en este mapa.
+Info=La entrada a la ciudad más grande del continente de Argentum. Aquí está la cuidadora de mascotas.
+[Mapa59]
+Tipo=Ciudad
+Nombre=Banderbill Sur
+Bichos=No hay monstruos en este mapa.
+Info=La parte Sur de esta magnífica ciudad, contiene a casi todos los vendedores.
+[Mapa60]
+Tipo=Ciudad
+Nombre=Banderbill Norte
+Bichos=No hay monstruos en este mapa.
+Info=En este mapa están las mayorías de las casas de Banderbill. Aquí podrás enlistarte a la Armada Real.
+[Mapa61]
+Tipo=Ciudad
+Nombre=Puerto de Banderbill
+Bichos=No hay monstruos en este mapa.
+Info=Muelle de Banderbill, ideal para los que se embarcan en la travesia para ir al Dungeon Veriil o a Lindos.
+[Mapa62]
+Tipo=Ciudad
+Nombre=Lindos
+Bichos=Tortugas gigantes
+Info=Lindos es una bonita isla, ideal para vivir aislado y en paz. Se encuentra cerca de la Isla Esperanza, y tiene un teleport al desierto.
+[Mapa63]
+Tipo=Ciudad
+Nombre=Abadía de Lindos
+Bichos=No hay monstruos en este mapa.
+Info=La abadía de Lindos era normalmente usada para celebrar los casamientos, hasta la construcción de la Catedral de AoDrag.
+[Mapa64]
+Tipo=Ciudad
+Nombre=Lindos
+Bichos=No hay monstruos en este mapa.
+Info=En la parte Este de Lindos se encuentran todas las casas de la ciudad, y el banco.
+[Mapa65]
+Tipo=Bosque
+Nombre=Bosque
+Bichos=Cuervos, lobos, serpientes y murcielagos.
+Info=Un mapa cercano a Banderbill, con criaturas débiles.
+[Mapa66]
+Tipo=Ciudad
+Nombre=Cárcel
+Bichos=No hay monstruos en este mapa.
+Info=Aqui es donde los Dioses mandan a los que no respetan las normas, no tiene salida por lo que tendrás que esperar hasta que se cumpla tu condena.
+[Mapa67]
+Tipo=Bosque
+Nombre=Bosque
+Bichos=Goblins, duendes, osos, lobos, serpientes y murcielagos.
+Info=Un buen lugar para el entrenamiento en los niveles bajos.
+[Mapa68]
+Tipo=Bosque
+Nombre=Bosque
+Bichos=Duendes, Lobos, serpientes y murcielagos.
+Info=En este mapa se encuentra la entrada al castillo Norte.
+[Mapa69]
+Tipo=Bosque
+Nombre=Bosque
+Bichos=Orcos, lobos, serpientes y murcielagos.
+Info=En este mapa se encuentra la entrada al Nido de Viudas Negras.
+[Mapa70]
+Tipo=Bosque
+Nombre=Bosque
+Bichos=Goblins y serpientes.
+Info=Un bosque con criaturas débiles
+[Mapa71]
+Tipo=Bosque
+Nombre=Bosque de Tinker
+Bichos= Criaturas débiles para los enanos y gnomos y mas noveles.
+Info= Bosques ideales para entrenar tu nuevo Enano o Gnomo.
+[Mapa72]
+Tipo=Bosque
+Nombre=Bosque de Tinker
+Bichos= Criaturas débiles para los enanos y gnomos y mas noveles.
+Info= Bosques ideales para entrenar tu nuevo Enano o Gnomo.
+[Mapa73]
+Tipo=Bosque
+Nombre=Bosque de Tinker
+Bichos= Criaturas débiles para los enanos y gnomos y mas noveles.
+Info= Bosques ideales para entrenar tu nuevo Enano o Gnomo.
+[Mapa74]
+Tipo=Bosque
+Nombre=Bosque
+Bichos=Osos pardos, lobos, goblins, serpientes y murcielagos.
+Info=Un buen lugar para el entrenamiento en los niveles bajos.
+[Mapa75]
+Tipo=Costa
+Nombre=Costa
+Bichos= Tortugas.
+Info=En este mapa poblado de tortugas se encuentra la entrada al Castillo Oeste.
+[Mapa76]
+Tipo=Costa
+Nombre=Bosque
+Bichos=Orcos y Ogros de todas las clases.
+Info=Mapa en el que encontrarás la entrada directa a Miniveriil.
+[Mapa77]
+Tipo=
+Nombre=X
+Bichos=X
+Info=X
+[Mapa78]
+Tipo=Bosque
+Nombre=Bosque de Montaráz
+Bichos= Criaturas débiles para los Humanos mas noveles.
+Info= Bosques ideales para entrenar tu nuevo Humano.
+[Mapa79]
+Tipo=Costa
+Nombre=Bosque de Montaráz
+Bichos= Criaturas débiles para los Humanos mas noveles.
+Info= Bosques ideales para entrenar tu nuevo Humano.
+[Mapa80]
+Tipo=Bosque
+Nombre=Bosque de Montaráz
+Bichos= Criaturas débiles para los Humanos mas noveles.
+Info= Bosques ideales para entrenar tu nuevo Humano.
+[Mapa81]
+Tipo=Ciudad
+Nombre=Ciudad descanso
+Bichos=Lobos y serpientes.
+Info=Una bonita ciudad. Al Este encontrarás el puerto que te llevará a la Fortaleza.
+[Mapa82]
+Tipo=
+Nombre=X
+Bichos=X
+Info=X
+[Mapa83]
+Tipo=Ciudad
+Nombre=Atlantis Este
+Bichos=No hay monstruos en este mapa.
+Info=El Este de la ciudad acuática, contiene todas las casas de la región.
+[Mapa84]
+Tipo=Ciudad
+Nombre=Atlantis
+Bichos=No hay monstruos en este mapa.
+Info=El centro de la ciudad acuática, aquí podrás enlistarte a la Legión y a la Armada Real.
+[Mapa85]
+Tipo=Ciudad
+Nombre=Atlantis Sur
+Bichos=Esqueletos, gallos salvajes, zombies, arañas pequeñas, lobos y serpientes.
+Info=Atlantis Sur contiene algunos monstruos en un cuadrilátero de arena al Sur, y la entrada al Dungeon Atlantis.
+[Mapa86]
+Tipo=Agua
+Nombre=Mapa aislado
+Bichos=
+Info=
+[Mapa87]
+Tipo=Agua
+Nombre=Agua
+Bichos=No hay monstruos en este mapa.
+Info=
+[Mapa88]
+Tipo=Agua
+Nombre=Agua
+Bichos=No hay monstruos en este mapa.
+Info=
+[Mapa89]
+Tipo=Agua
+Nombre=Agua
+Bichos=No hay monstruos en este mapa.
+Info=
+[Mapa90]
+Tipo=Agua
+Nombre=Agua
+Bichos=No hay monstruos en este mapa.
+Info=
+[Mapa91]
+Tipo=Agua
+Nombre=Agua
+Bichos=No hay monstruos en este mapa.
+Info=
+[Mapa92]
+Tipo=Agua
+Nombre=Agua
+Bichos=No hay monstruos en este mapa.
+Info=
+[Mapa93]
+Tipo=Agua
+Nombre=Agua
+Bichos=No hay monstruos en este mapa.
+Info=
+[Mapa94]
+Tipo=Agua
+Nombre=Agua
+Bichos=No hay monstruos en este mapa.
+Info=
+[Mapa95]
+Tipo=Agua
+Nombre=Agua
+Bichos=No hay monstruos en este mapa.
+Info=La entrada a la ciudad de Atlantis se encuentra en este mapa.
+[Mapa96]
+Tipo=Costa
+Nombre=Bosque de Gorcor
+Bichos= Criaturas débiles para los orcos y mas noveles.
+Info= Bosques ideales para entrenar tu nuevo orco.
+[Mapa97]
+Tipo=Poblado
+Nombre= Gorcor
+Bichos= Criaturas débiles para los orcos y mas noveles.
+Info= Lugar de partida de las aventuras de los Orcos.
+[Mapa98]
+Tipo=Bosque
+Nombre=Bosque de Gorcor
+Bichos= Criaturas déviles para los orcos y mas noveles.
+Info= Bosques ideales para entrenar tu nuevo orco.
+[Mapa99]
+Tipo=Agua
+Nombre=Agua
+Bichos=No hay monstruos en este mapa.
+Info=
+[Mapa100]
+Tipo=Agua
+Nombre=Agua
+Bichos=No hay monstruos en este mapa.
+Info=
+[Mapa101]
+Tipo=Agua
+Nombre=Agua
+Bichos=No hay monstruos en este mapa.
+Info=
+[Mapa102]
+Tipo=Agua
+Nombre=Agua
+Bichos=No hay monstruos en este mapa.
+Info=
+[Mapa103]
+Tipo=Agua
+Nombre=Agua
+Bichos=No hay monstruos en este mapa.
+Info=
+[Mapa104]
+Tipo=Agua
+Nombre=Agua
+Bichos=No hay monstruos en este mapa.
+Info=Al Este de este mapa encontrarás la ciudad de Lindos.
+[Mapa105]
+Tipo=Agua
+Nombre=Agua
+Bichos=No hay monstruos en este mapa.
+Info=Al Este de este mapa encontrarás la abadía de Lindos.
+[Mapa106]
+Tipo=Agua
+Nombre=Agua
+Bichos=No hay monstruos en este mapa.
+Info=
+[Mapa107]
+Tipo=Agua
+Nombre=Agua
+Bichos=No hay monstruos en este mapa.
+Info=
+[Mapa108]
+Tipo=Agua
+Nombre=Agua
+Bichos=Leviathan, barco pirata y tornado.
+Info=
+[Mapa109]
+Tipo=Agua
+Nombre=Agua
+Bichos=No hay monstruos en este mapa.
+Info=Al Este de este mapa se encuentra la entrada a la Sala de Invocación.
+[Mapa110]
+Tipo=Isla
+Nombre=Morgolock's Island
+Bichos=Fuegos fatuos, hadas, tigres y ogros gigantes.
+Info=Contiene un teleport que te llevara a la Sala de Invocación, que se encuentra en el mapa 165
+[Mapa111]
+Tipo=Costa
+Nombre=Puerto de Esperanza
+Bichos=Fuegos fatuos.
+Info=El Puerto de la Isla se encuentra en este mapa.
+[Mapa112]
+Tipo= Ciudad
+Nombre= Isla Esperanza
+Bichos=Jabalí, lord Orco, fuegos fatuos, tigres y patos.
+Info= Aquí entre las numerosas tiendas, banco y criaturas como orcos, encontrarás el Demonio de la Armada del Caos, para poder enlistarte.
+[Mapa113]
+Tipo=Isla
+Nombre= Isla Esperanza
+Bichos=Ogros gigantes, magos malvados, lord orco, orcos brujos, leviathan y liches.
+Info=Un excelente lugar para el entrenamiento en los niveles avanzados! Los poderosos monstruos de este mapa te atacarán física y mágicamente.
+[Mapa114]
+Tipo=Isla
+Nombre=Isla Esperanza
+Bichos=Ogros gigantes, serpientes, murciélagos, arañas pequeñas y águilas.
+Info=Un excelente lugar para el entrenamiento en los niveles avanzados! Los poderosos monstruos de este mapa te atacarán física y mágicamente.
+[Mapa115]
+Tipo=Dungeon
+Nombre=Miniveriil
+Bichos=Duendes, orcos brujos y ogros de todo tipo.
+Info=Dungeon Miniveriil, ideal para entrenar en niveles intermedios, se entra por el teleport del mapa 24.
+[Mapa116]
+Tipo=Dungeon
+Nombre=Miniveriil
+Bichos=Golems de todo tipo, orcos brujos, magos malvados y duendes.
+Info=Dungeon Miniveriil, ideal para entrenar en niveles intermedios, se entra por el teleport del mapa 24.
+[Mapa117]
+Tipo=
+Nombre=X
+Bichos=X
+Info=X
+[Mapa118]
+Tipo=
+Nombre=X
+Bichos=X
+Info=X
+[Mapa119]
+Tipo=
+Nombre=X
+Bichos=X
+Info=X
+[Mapa120]
+Tipo=Agua
+Nombre=Agua
+Bichos=Barco pirata y barco fantasma.
+Info=
+[Mapa121]
+Tipo=Agua
+Nombre=Agua
+Bichos=No hay monstruos en este mapa.
+Info=
+[Mapa122]
+Tipo=Agua
+Nombre=Agua
+Bichos=No hay monstruos en este mapa.
+Info=
+[Mapa123]
+Tipo=Agua
+Nombre=Agua
+Bichos=No hay monstruos en este mapa.
+Info=
+[Mapa124]
+Tipo=Agua
+Nombre=Agua
+Bichos=Barco pirata, tornado y barco fantasma.
+Info=
+[Mapa125]
+Tipo=Agua
+Nombre=Agua
+Bichos=Barco pirata y barco fantasma.
+Info=
+[Mapa126]
+Tipo=Agua
+Nombre=Agua
+Bichos=No hay monstruos en este mapa.
+Info=
+[Mapa127]
+Tipo=Agua
+Nombre=Agua
+Bichos=No hay monstruos en este mapa.
+Info=
+[Mapa128]
+Tipo=Agua
+Nombre=Agua
+Bichos=No hay monstruos en este mapa.
+Info=
+[Mapa129]
+Tipo=Agua
+Nombre=Agua
+Bichos=No hay monstruos en este mapa.
+Info=
+[Mapa130]
+Tipo=Agua
+Nombre=Agua
+Bichos=No hay monstruos en este mapa.
+Info=
+[Mapa131]
+Tipo=Agua
+Nombre=Agua
+Bichos=No hay monstruos en este mapa.
+Info=
+[Mapa132]
+Tipo=Agua
+Nombre=Agua
+Bichos=Tornados.
+Info=
+[Mapa133]
+Tipo=Agua
+Nombre=Agua
+Bichos=No hay monstruos en este mapa.
+Info=
+[Mapa134]
+Tipo=Agua
+Nombre=Agua
+Bichos=No hay monstruos en este mapa.
+Info=
+[Mapa135]
+Tipo=Agua
+Nombre=Agua
+Bichos=No hay monstruos en este mapa.
+Info=
+[Mapa136]
+Tipo=Agua
+Nombre=Agua
+Bichos=No hay monstruos en este mapa.
+Info=
+[Mapa137]
+Tipo=Agua
+Nombre=Agua
+Bichos=No hay monstruos en este mapa.
+Info=
+[Mapa138]
+Tipo=Agua
+Nombre=Agua
+Bichos=No hay monstruos en este mapa.
+Info=
+[Mapa139]
+Tipo=Isla
+Nombre=Entrada a Veriil
+Bichos=Barcos piratas, barcos fantasmas y dragones.
+Info=En este mapa encontrarás la entrada al Dugeon Veriil, que tiene a algunas de las criaturas más fuertes de AoDrag.
+[Mapa140]
+Tipo=Dungeon
+Nombre=Dungeon Veriil
+Bichos=Golems, brujas, liches y duendes.
+Info=El Dungeon Veriil contiene a algunas de las criaturas más poderosas del AoDrag, el lugar ideal para los jugadores más experimentados y de mayor nivel.
+[Mapa141]
+Tipo=Dungeon
+Nombre=Dungeon Veriil
+Bichos=Orcos brujos, golems y dragones.
+Info=El Dungeon Veriil contiene a algunas de las criaturas más poderosas del AoDrag, el lugar ideal para los jugadores más experimentados y de mayor nivel.
+[Mapa142]
+Tipo=Dungeon
+Nombre=Dungeon Veriil
+Bichos=Brujos, meduzas, cíclopes, liches, sombras, golems de hierro y orcos brujos.
+Info=El Dungeon Veriil contiene a algunas de las criaturas más poderosas del AoDrag, el lugar ideal para los jugadores más experimentados y de mayor nivel.
+[Mapa143]
+Tipo=Dungeon
+Nombre=Dungeon Veriil
+Bichos=Golems de hierro y semiogros volcánicos.
+Info=El Dungeon Veriil contiene a algunas de las criaturas más poderosas del AoDrag, el lugar ideal para los jugadores más experimentados y de mayor nivel.
+[Mapa144]
+Tipo=Dungeon
+Nombre=Dungeon Veriil
+Bichos=Brujo, golem de oro, golem de hierro, ogro malvado, meduza y ogro gigante.
+Info=El Dungeon Veriil contiene a algunas de las criaturas más poderosas del AoDrag, el lugar ideal para los jugadores más experimentados y de mayor nivel.
+[Mapa145]
+Tipo=Dungeon
+Nombre=Dungeon Veriil
+Bichos=Meduza, golem de piedra y brujo
+Info=Éste mapa contiene minas de oro y plata.
+[Mapa146]
+Tipo=Dungeon
+Nombre=Fuerte Veriil
+Bichos=Brujos, meduzas, golems de oro, magos malvados y brujas.
+Info=El Dungeon Veriil contiene a algunas de las criaturas más poderosas del AoDrag, el lugar ideal para los jugadores más experimentados y de mayor nivel.
+[Mapa147]
+Tipo=Agua
+Nombre=Agua
+Bichos=No hay monstruos en este mapa.
+Info=
+[Mapa148]
+Tipo=Agua
+Nombre=Agua
+Bichos=No hay monstruos en este mapa.
+Info=
+[Mapa149]
+Tipo=Agua
+Nombre=Agua
+Bichos=No hay monstruos en este mapa.
+Info=
+[Mapa150]
+Tipo=Ciudad
+Nombre=Puerto de Arghal
+Bichos=No hay monstruos en este mapa.
+Info=Muelle de Arghal, para que salgas a navegar con toda libertad!
+[Mapa151]
+Tipo=Ciudad
+Nombre=Arghâl
+Bichos=No hay monstruos en este mapa.
+Info=Arghâl una ciudad muy bonita y agradable, tiene multitud de tiendas, además de ser el unico sitio cercano donde encontrarás un sacerdote si te matan en Veriil.
+[Mapa152]
+Tipo=Agua
+Nombre=Agua
+Bichos=No hay monstruos en este mapa.
+Info=
+[Mapa153]
+Tipo=Agua
+Nombre=Agua
+Bichos=No hay monstruos en este mapa.
+Info=
+[Mapa154]
+Tipo=Agua
+Nombre=Agua
+Bichos=Tornados.
+Info=El mapa más tormentoso del AoDrag, los tornados pueden destrozar tu embarcación y enviarte al otro extremo del mundo!
+[Mapa155]
+Tipo=Agua
+Nombre=Agua
+Bichos=No hay monstruos en este mapa.
+Info=
+[Mapa156]
+Tipo=Dungeon
+Nombre=Cuevas Dark
+Bichos=Darks de todo tipo, cíclopes y golems de piedra.
+Info=Un excelente mapa para entrenar en los niveles intermedios, posee además minas de hierro, plata y oro!
+[Mapa157]
+Tipo=Ciudad
+Nombre=Ciudad Quest
+Bichos=No hay monstruos en este mapa.
+Info=Una ciudad con un laberinto invisible y una gran arena para torneos. Para llegar deberás atravesar el laberinto dragón.
+[Mapa158]
+Tipo=Dungeon
+Nombre=Laberinto Dragón
+Bichos=Grandes Dragones, sicarias, devotas, orcos y lord orcos.
+Info=Laberinto custodiado por los Grandes Dragones, si logras conseguir las 8 gemas diferentes y la gema del brujo de Veriil, conseguirás una tunica o armadura de dragón que no se cae al morir!
+[Mapa159]
+Tipo=Dungeon
+Nombre=Laberinto Dragón
+Bichos=Grandes Dragones, Orcos, Ogros, y Lord Orcos.
+Info=Laberinto custodiado por los Grandes Dragones, si logras conseguir las 8 gemas diferentes y la gema del brujo de Veriil, conseguirás una tunica o armadura de dragón que no se cae al morir!
+[Mapa160]
+Tipo=Dungeon
+Nombre=Laberinto Dragón
+Bichos=Grandes Dragones, Orcos, Ogros, y Lord Orcos.
+Info=Laberinto custodiado por los Grandes Dragones, si logras conseguir las 8 gemas diferentes y la gema del brujo de Veriil, conseguirás una tunica o armadura de dragón que no se cae al morir!
+[Mapa161]
+Tipo=Dungeon
+Nombre=Laberinto Dragón
+Bichos=Grandes Dragones, Orcos, Ogros, y Lord Orcos.
+Info=Laberinto custodiado por los Grandes Dragones, si logras conseguir las 8 gemas diferentes y la gema del brujo de Veriil, conseguirás una tunica o armadura de dragón que no se cae al morir!
+[Mapa162]
+Tipo=Dungeon
+Nombre=Dungeon Atlantis
+Bichos=Ciclopes, diversos darks, tritones y magos malvados.
+Info=Para acceder a éste Dungeon deberás dirigirte al teleport que se encuentra en la ciudad de Atlantis. Un Dungeon lleno de criaturas mágicas.
+[Mapa163]
+Tipo=
+Nombre=X
+Bichos=X
+Info=X
+[Mapa164]
+Tipo=Quest
+Nombre=Mapa Torneos
+Bichos=No hay monstruos en este mapa.
+Info=El mapa de torneo automático de AoDrag, para entrar deberás escribir /TORNEO en el npc de Nix o Ciudad Criminal. Matando a tu oponente conseguirás oro, y premios extras al vencer a muchos contrincantes!
+[Mapa165]
+Tipo=Quest
+Nombre=Sala de Invocación
+Bichos=Diablo de fuego
+Info=Sólo los más poderosos se atreven a desafiar al poderoso Demonio de fuego! Deberás ir acompaniado por tres personas más para retar al gran monstruo. Para acceder, utiliza el teleport del mapa 110.
+[Mapa166]
+Tipo=Castillo
+Nombre=Castillo Norte
+Bichos=Puerta y el Rey del castillo.
+Info=Vence al Rey del Castillo para conseguir transporte, y recompensas a cada hora!
+[Mapa167]
+Tipo=Castillo
+Nombre=Castillo Sur
+Bichos=Puerta y el Rey del castillo.
+Info=Vence al Rey del Castillo para conseguir transporte, y recompensas a cada hora!
+[Mapa168]
+Tipo=Castillo
+Nombre=Castillo Este
+Bichos=Puerta y el Rey del castillo.
+Info=Vence al Rey del Castillo para conseguir transporte, y recompensas a cada hora!
+[Mapa169]
+Tipo=Castillo
+Nombre=Castillo Oeste
+Bichos=Puerta y el Rey del castillo.
+Info=Vence al Rey del Castillo para conseguir transporte, y recompensas a cada hora!
+[Mapa170]
+Tipo=Ciudad
+Nombre=Ciudad Criminal
+Bichos=No hay monstruos en este mapa.
+Info=En ésta ciudad los guardias atacan a los ciudadanos. Lugar de reunión, y zona segura para los criminales.
+[Mapa171]
+Tipo=Encantada
+Nombre=Casa Encantada
+Bichos=Uruks, centinelas, licántropos y brujas.
+Info=No podrás entrar a la casa con menos de 30k de oro, ni siendo newbie, ni portando mascotas. Los espíritus te molestarán en este mapa!
+[Mapa172]
+Tipo=Dungeon
+Nombre=Bosque del Terror
+Bichos=Devastadores, trolls y ents.
+Info=Uno de los mejores mapas de entrenamiento de AoDrag! Monstruos salvajes estarán al acecho, no aconsejable para niveles bajos.
+[Mapa173]
+Tipo=Dungeon
+Nombre=Bosque del Terror
+Bichos=Devastadores, trolls y ents.
+Info=Uno de los mejores mapas de entrenamiento de AoDrag! Monstruos salvajes estarán al acecho, no aconsejable para niveles bajos.
+[Mapa174]
+Tipo=Dungeon
+Nombre=Bosque del Terror
+Bichos=Devastadores, trolls y ents.
+Info=Uno de los mejores mapas de entrenamiento de AoDrag! Monstruos salvajes estarán al acecho, no aconsejable para niveles bajos.
+[Mapa175]
+Tipo=Dungeon
+Nombre=Bosque del Terror
+Bichos=Devastadores, trolls, ents y devirs.
+Info=Uno de los mejores mapas de entrenamiento de AoDrag! Monstruos salvajes estarán al acecho, no aconsejable para niveles bajos.
+[Mapa176]
+Tipo=Dungeon
+Nombre=Bosque del Terror
+Bichos=Devastadores, trolls y ents.
+Info=Uno de los mejores mapas de entrenamiento de AoDrag! Monstruos salvajes estarán al acecho, no aconsejable para niveles bajos.
+[Mapa177]
+Tipo=Encantada
+Nombre=Casa Encantada
+Bichos=Beholders, liches, licántropos, zombies y brujas.
+Info=No podrás entrar a la casa con menos de 10k de oro, ni siendo newbie, ni portando mascotas. Los espíritus te molestarán en este mapa!
+[Mapa178]
+Tipo=Piramide
+Nombre=Laberinto pirámide
+Bichos=Fantasmas y Momias
+Info=Intenta atrevesar el laberinto para llegar a la Momia Faraón!
+[Mapa179]
+Tipo=Piramide
+Nombre=Laberinto pirámide
+Bichos=Fantasmas y Momias
+Info=Intenta atrevesar el laberinto para llegar a la Momia Faraón!
+[Mapa180]
+Tipo=Piramide
+Nombre=Sala estatuas
+Bichos= No hay monstruos en este mapa.
+Info=Una sala con los Dioses egipcios... elije al correcto, o serás enviado a las alcantarillas!
+[Mapa181]
+Tipo=Piramide
+Nombre=Alcantarillas
+Bichos=Murciélagos de todo tipo y tarántulas.
+Info=Quien no conozca a los Dioses egipcios, o muera dentro de la pirámide, caerá a las alcantarillas. Para seguir, termina el laberinto.
+[Mapa182]
+Tipo=Piramide
+Nombre=Tumba del faraón
+Bichos=Momia Faraón
+Info=La poderosa Momia Faraón sólo puede ser invocada algunas veces al día, pero como recompensa puedes recibir el Amuleto Ankh!
+[Mapa183]
+Tipo=Ciudad
+Nombre=Laurana
+Bichos=No hay monstruos en este mapa.
+Info=Laurana es la ciudad subterránea de AoDrag. Para llegar, deberás dirigirte al Oeste del mapa 42.
+[Mapa184]
+Tipo=Ciudad
+Nombre=Laurana
+Bichos=No hay monstruos en este mapa.
+Info=Laurana es la ciudad subterránea de AoDrag. Para llegar, deberás dirigirte al Oeste del mapa 42.
+[Mapa185]
+Tipo=Castillo
+Nombre=Fortaleza
+Bichos=Rey de la fortaleza
+Info=Tras conquistar los cuatro castillos tu clan podrá atacar la fortaleza del emperador, y obtener acceso al Veriil y recompensas aún mayores!
+[Mapa186]
+Tipo=Mina
+Nombre=Minas de la fortaleza
+Bichos=No hay monstruos en este mapa.
+Info=En estas minas encontrarás todo tipo de minerales. Está protegida para los dueños de la fortaleza. Contiene una salida al Dungeon Veril para los dueños de la fortaleza.
+[Mapa187]
+Tipo=Quest
+Nombre=Sala de los Dioses
+Bichos=No hay monstruos en este mapa.
+Info=Aquí se encuentran los mausoleos de todos los Dioses de AoDrag. Acude aquí para orar por tu Pj.
+[Mapa188]
+Tipo=Quest
+Nombre=Catedral
+Bichos=No hay monstruos en este mapa.
+Info=En la Catedral de AoDrag se celebran las bodas, los bautismos... y por qué no los divorcios?
+[Mapa189]
+Tipo=Quest
+Nombre=Gincana
+Bichos=Brujos protectores
+Info=En este mapa podrás desafiar a 3 amigos en una trepidante carrera en el agua, con laberintos invisibles y brujos atacándote.
+[Mapa190]
+Tipo=Isla
+Nombre=Isla Fortaleza
+Bichos=No hay monstruos en este mapa.
+Info=En esta isla se encuentra la entrada a la Fortaleza.
+[Mapa191]
+Tipo=
+Nombre=
+Bichos= Chetosos sedientos de macros
+Info=
+[Mapa192]
+Tipo=Quest
+Nombre= DragFútbol
+Bichos=
+Info=Demuestra tu habilidad con el esférico con dos amigos contra otro equipo. ¿España o Argentina? ¿Quien sera el mejor???
+[Mapa193]
+Tipo=Dungeon
+Nombre= Nido de Arañas
+Bichos=Arañas y Viudas Negras
+Info= Tienes aracnofobia? entonces este no es un buen sitio para ti, huye lo más lejos que puedas!
+[Mapa194]
+Tipo=Quest
+Nombre= Sala de Torneos
+Bichos= No hay criaturas en este mapa
+Info= Torneo de hasta 4 jugadores, paga 10000 oros par entrar y si ganas podrás llevarte el bote!
+[Mapa195]
+Tipo=
+Nombre=X
+Bichos=X
+Info=X
+[Mapa196]
+Tipo=Costa
+Nombre=Costa
+Bichos= Serpientes, lobos, esqueletos y muercielagos.
+Info= Un buen lugar para hacerse a la mar.
+[Mapa197]
+Tipo=Costa
+Nombre=Costa
+Bichos= Serpientes, lobos, esqueletos y muercielagos.
+Info= Un buen lugar para hacerse a la mar.
+[Mapa198]
+Tipo=Costa
+Nombre=Costa
+Bichos= Serpientes, lobos, esqueletos y muercielagos.
+Info= Un buen lugar para hacerse a la mar.
+[Mapa199]
+Tipo=Costa
+Nombre=Costa
+Bichos= Serpientes, lobos, esqueletos y muercielagos.
+Info= Un buen lugar para hacerse a la mar.
+[Mapa200]
+Tipo=Costa
+Nombre=Bosque de Transylvania
+Bichos= Criaturas débiles para los vampiros mas noveles.
+Info= Bosques ideales para entrenar tu nuevo vampiro.
+[Mapa201]
+Tipo=Bosque
+Nombre=Bosque de Transylvania
+Bichos= Criaturas débiles para los vampiros mas noveles.
+Info= Bosques ideales para entrenar tu nuevo vampiro.
+[Mapa202]
+Tipo=Costa
+Nombre=Costa
+Bichos= Serpientes, lobos, esqueletos y muercielagos.
+Info= Un buen lugar para hacerse a la mar.
+[Mapa203]
+Tipo=Costa
+Nombre=Costa
+Bichos= Serpientes, lobos, esqueletos y muercielagos.
+Info= Un buen lugar para hacerse a la mar.
+[Mapa204]
+Tipo=Costa
+Nombre=Costa
+Bichos= Serpientes, lobos, esqueletos y muercielagos.
+Info= Un buen lugar para hacerse a la mar.
+[Mapa205]
+Tipo=Costa
+Nombre=Bosque de Rivendel
+Bichos= Criaturas débiles para los elfos y mas noveles.
+Info= Bosques ideales para entrenar tu nuevo elfo.
+[Mapa206]
+Tipo=Bosque
+Nombre=Bosque de Rivendel
+Bichos= Criaturas débiles para los elfos y mas noveles.
+Info= Bosques ideales para entrenar tu nuevo elfo.
+[Mapa207]
+Tipo=Bosque
+Nombre=Bosque de Rivendel
+Bichos= Criaturas débiles para los elfos y mas noveles.
+Info= Bosques ideales para entrenar tu nuevo elfo.
+[Mapa208]
+Tipo=Bosque
+Nombre=Bosque de Rivendel
+Bichos= Criaturas débiles para los elfos y mas noveles.
+Info= Bosques ideales para entrenar tu nuevo elfo.
+[Mapa209]
+Tipo=Costa
+Nombre=Costa
+Bichos= Serpientes, lobos, esqueletos y muercielagos.
+Info= Un buen lugar para hacerse a la mar.
+[Mapa210]
+Tipo=Agua
+Nombre=Agua
+Bichos= No hay criaturas en este mapa.
+Info= Cres que eres un buen marino? intenta navegar por estos mares, si no temes lo que te puedas encontrar quizás llegues a algún sitio interesante.
+[Mapa211]
+Tipo=Agua
+Nombre=Agua
+Bichos= No hay criaturas en este mapa.
+Info= Cres que eres un buen marino? intenta navegar por estos mares, si no temes lo que te puedas encontrar quizás llegues a algún sitio interesante.
+[Mapa212]
+Tipo=Agua
+Nombre=Agua
+Bichos= No hay criaturas en este mapa.
+Info= Cres que eres un buen marino? intenta navegar por estos mares, si no temes lo que te puedas encontrar quizás llegues a algún sitio interesante.
+[Mapa213]
+Tipo=Agua
+Nombre=Agua
+Bichos= No hay criaturas en este mapa.
+Info= Cres que eres un buen marino? intenta navegar por estos mares, si no temes lo que te puedas encontrar quizás llegues a algún sitio interesante.
+[Mapa214]
+Tipo=Agua
+Nombre=Agua
+Bichos= No hay criaturas en este mapa.
+Info= Cres que eres un buen marino? intenta navegar por estos mares, si no temes lo que te puedas encontrar quizás llegues a algún sitio interesante.
+[Mapa215]
+Tipo=Poblado
+Nombre= Rivendel
+Bichos= Criaturas débiles para los elfos y mas noveles.
+Info= Lugar de partida de las aventuras de los elfos
+[Mapa216]
+Tipo=Isla
+Nombre=Isla pirata
+Bichos=Ratas gigantes, bandidos, patos salvajes, barco pirata, barco fantasma y John Silver.
+Info=Ahrg! Parche en el ojo, loro en el hombro, pata de palo y botella de rom en la mano,.. ¡Piratas!!!!
+[Mapa217]
+Tipo=Isla
+Nombre=Isla pirata
+Bichos= Ratas gigantes, Chamán, Patos, Tigres y Jabalís.
+Info=Ahrg! Parche en el ojo, loro en el hombro, pata de palo y botella de rom en la mano,.. ¡Piratas!!!!
+[Mapa218]
+Tipo=Costa
+Nombre=Bosque de Rivendel
+Bichos= Criaturas débiles para los elfos y mas noveles.
+Info= Bosques ideales para entrenar tu nuevo elfo.
+[Mapa219]
+Tipo=Agua
+Nombre=Agua
+Bichos= No hay criaturas en este mapa.
+Info= Cres que eres un buen marino? intenta navegar por estos mares, si no temes lo que te puedas encontrar quizás llegues a algún sitio interesante.
+[Mapa220]
+Tipo=Agua
+Nombre=Agua
+Bichos= No hay criaturas en este mapa.
+Info= Cres que eres un buen marino? intenta navegar por estos mares, si no temes lo que te puedas encontrar quizás llegues a algún sitio interesante.
+[Mapa221]
+Tipo=Agua
+Nombre=Agua
+Bichos= No hay criaturas en este mapa.
+Info= Cres que eres un buen marino? intenta navegar por estos mares, si no temes lo que te puedas encontrar quizás llegues a algún sitio interesante.
+[Mapa222]
+Tipo=Agua
+Nombre=Agua
+Bichos= No hay criaturas en este mapa.
+Info= Cres que eres un buen marino? intenta navegar por estos mares, si no temes lo que te puedas encontrar quizás llegues a algún sitio interesante.
+[Mapa223]
+Tipo=Costa
+Nombre=Costa
+Bichos= Serpientes, lobos, esqueletos y muercielagos.
+Info= Un buen lugar para hacerse a la mar.
+[Mapa224]
+Tipo=Costa
+Nombre=Costa
+Bichos= Serpientes, lobos, esqueletos y muercielagos.
+Info= Un buen lugar para hacerse a la mar.
+[Mapa225]
+Tipo=Costa
+Nombre=Costa
+Bichos= Serpientes, lobos, esqueletos y muercielagos.
+Info= Un buen lugar para hacerse a la mar.
+[Mapa226]
+Tipo=Costa
+Nombre=Costa
+Bichos= Serpientes, lobos, esqueletos y muercielagos.
+Info= Un buen lugar para hacerse a la mar.
+[Mapa227]
+Tipo=Costa
+Nombre=Costa
+Bichos= Serpientes, lobos, esqueletos y muercielagos.
+Info= Un buen lugar para hacerse a la mar.
+[Mapa228]
+Tipo=Costa
+Nombre=Costa
+Bichos= Serpientes, lobos, esqueletos y muercielagos.
+Info= Un buen lugar para hacerse a la mar.
+[Mapa229]
+Tipo=Costa
+Nombre=Costa
+Bichos= Serpientes, lobos, esqueletos y muercielagos.
+Info= Un buen lugar para hacerse a la mar.
+[Mapa230]
+Tipo=Agua
+Nombre=Agua
+Bichos= No hay criaturas en este mapa.
+Info= Cres que eres un buen marino? intenta navegar por estos mares, si no temes lo que te puedas encontrar quizás llegues a algún sitio interesante..
+[Mapa231]
+Tipo=Agua
+Nombre=Agua
+Bichos= No hay criaturas en este mapa.
+Info= Cres que eres un buen marino? intenta navegar por estos mares, si no temes lo que te puedas encontrar quizás llegues a algún sitio interesante.
+[Mapa232]
+Tipo=Agua
+Nombre=Agua
+Bichos= No hay criaturas en este mapa.
+Info= Cres que eres un buen marino? intenta navegar por estos mares, si no temes lo que te puedas encontrar quizás llegues a algún sitio interesante.
+[Mapa233]
+Tipo=Costa
+Nombre=Bosque de Tinker
+Bichos= Criaturas débiles para los enanos y gnomos y mas noveles.
+Info= Bosques ideales para entrenar tu nuevo Enano o Gnomo.
+[Mapa234]
+Tipo=Poblado
+Nombre= Tinker
+Bichos= Criaturas débiles para los enanos y gnomos y mas noveles.
+Info= Lugar de partida de las aventuras de los Enanos y Gnomos.
+[Mapa235]
+Tipo=Costa
+Nombre=Bosque de Tinker
+Bichos= Criaturas débiles para los enanos y gnomos y mas noveles.
+Info= Bosques ideales para entrenar tu nuevo Enano o Gnomo.
+[Mapa236]
+Tipo=Agua
+Nombre=Agua
+Bichos= No hay criaturas en este mapa.
+Info= Cres que eres un buen marino? intenta navegar por estos mares, si no temes lo que te puedas encontrar quizás llegues a algún sitio interesante.
+[Mapa237]
+Tipo=Agua
+Nombre=Agua
+Bichos= No hay criaturas en este mapa.
+Info= Cres que eres un buen marino? intenta navegar por estos mares, si no temes lo que te puedas encontrar quizás llegues a algún sitio interesante.
+[Mapa238]
+Tipo=Agua
+Nombre=Agua
+Bichos= No hay criaturas en este mapa.
+Info= Cres que eres un buen marino? intenta navegar por estos mares, si no temes lo que te puedas encontrar quizás llegues a algún sitio interesante.
+[Mapa239]
+Tipo=Agua
+Nombre=Agua
+Bichos= No hay criaturas en este mapa.
+Info= Cres que eres un buen marino? intenta navegar por estos mares, si no temes lo que te puedas encontrar quizás llegues a algún sitio interesante.
+[Mapa240]
+Tipo=Agua
+Nombre=Agua
+Bichos= No hay criaturas en este mapa.
+Info= Cres que eres un buen marino? intenta navegar por estos mares, si no temes lo que te puedas encontrar quizás llegues a algún sitio interesante.
+[Mapa241]
+Tipo=Agua
+Nombre=Agua
+Bichos= No hay criaturas en este mapa.
+Info= Cres que eres un buen marino? intenta navegar por estos mares, si no temes lo que te puedas encontrar quizás llegues a algún sitio interesante.
+[Mapa242]
+Tipo=Agua
+Nombre=Agua
+Bichos= No hay criaturas en este mapa.
+Info= Cres que eres un buen marino? intenta navegar por estos mares, si no temes lo que te puedas encontrar quizás llegues a algún sitio interesante.
+[Mapa243]
+Tipo=Costa
+Nombre=Bosque de Montaráz
+Bichos= Criaturas débiles para los Humanos mas noveles.
+Info= Bosques ideales para entrenar tu nuevo Humano.
+[Mapa244]
+Tipo= Dungeon
+Nombre= Cueva Tenebrosa
+Bichos= Ratas gigantes Viudas negras y Hechicera.
+Info= En lo más profundo de la tierra se encuentra recluida la que según dicen es la mayor Hechicera del reino. Yo tendría cuidado...
+[Mapa245]
+Tipo= Nieve
+Nombre= Polo
+Bichos= Pinguinos pequeños y grandes, Osos polares y Lobos árticos
+Info= Ufff que frio!!! Estos remotos lugares no son adecuandos para quien tema el frio invernal...
+[Mapa246]
+Tipo= Nieve
+Nombre= Polo
+Bichos= Pinguinos pequeños y grandes, Lobos árticos y Abominacion
+Info= Ufff que frio!!! Estos remotos lugares no son adecuandos para quien tema el frio invernal...
+[Mapa247]
+Tipo= Nieve
+Nombre= Polo
+Bichos= Osos polares, Yetis y Gollem de hielo
+Info= Ufff que frio!!! Estos remotos lugares no son adecuandos para quien tema el frio invernal...
+[Mapa248]
+Tipo= Nieve
+Nombre= Polo
+Bichos= Pinguinos pequeños y grandes, Lobos árticos y Abominacion
+Info= Ufff que frio!!! Estos remotos lugares no son adecuandos para quien tema el frio invernal...
+[Mapa249]
+Tipo= Nieve
+Nombre= Polo
+Bichos= No hay Bichos en este mapa
+Info= Ufff que frio!!! Estos remotos lugares no son adecuandos para quien tema el frio invernal...
+[Mapa250]
+Tipo= Dungeon
+Nombre= Cueva del Caballero Helado.
+Bichos= Caballero Helado.
+Info= Morada del Caballero Helado del Ártico. Es conocido por su poca hospitalidad con los visitantes.
+[Mapa251]
+Tipo=
+Nombre=X
+Bichos= X
+Info=X
+[Mapa252]
+Tipo=
+Nombre=X
+Bichos= X
+Info=X
+[Mapa253]
+Tipo=
+Nombre=X
+Bichos= X
+Info=X
+[Mapa254]
+Tipo=
+Nombre=X
+Bichos= X
+Info=X
+[Mapa255]
+Tipo=
+Nombre=X
+Bichos= X
+Info=X
+[Mapa256]
+Tipo=
+Nombre=X
+Bichos= X
+Info=X
+[Mapa257]
+Tipo=
+Nombre=X
+Bichos= X
+Info=X
+[Mapa258]
+Tipo=
+Nombre=X
+Bichos= X
+Info=X
+[Mapa259]
+Tipo=
+Nombre=X
+Bichos= X
+Info=X
+[Mapa260]
+Tipo=
+Nombre=X
+Bichos= X
+Info=X
+[Mapa261]
+Tipo=Poblado
+Nombre= Transylvania
+Bichos= Criaturas débiles para los vampiros mas noveles.
+Info= Lugar de partida de las aventuras de los Vampiros.
+[Mapa262]
+Tipo=Costa
+Nombre=Bosque de Transylvania
+Bichos= Criaturas débiles para los vampiros mas noveles.
+Info= Bosques ideales para entrenar tu nuevo vampiro.
+[Mapa263]
+Tipo=Costa
+Nombre=Bosque de Transylvania
+Bichos= Criaturas débiles para los vampiros mas noveles.
+Info= Bosques ideales para entrenar tu nuevo vampiro.
+[Mapa264]
+Tipo=Costa
+Nombre=Bosque de Transylvania
+Bichos= Criaturas débiles para los vampiros mas noveles.
+Info= Bosques ideales para entrenar tu nuevo vampiro.
+[Mapa265]
+Tipo=Agua
+Nombre=Agua
+Bichos= No hay criaturas en este mapa.
+Info= Cres que eres un buen marino? intenta navegar por estos mares, si no temes lo que te puedas encontrar quizás llegues a algún sitio interesante.
+[Mapa266]
+Tipo=Poblado
+Nombre= Montaráz
+Bichos= Criaturas débiles para los Humanos mas noveles.
+Info= Lugar de partida de las aventuras de los Humanos.
+[Mapa267]
+Tipo=Costa
+Nombre=Bosque de Montaráz
+Bichos= Criaturas débiles para los Humanos mas noveles.
+Info= Bosques ideales para entrenar tu nuevo Humano.
+[Mapa272]
+Tipo=Dungeon
+Nombre=Laberinto del minotauro
+Bichos=Guerrero fantasma.
+Info=Serás capaz de cruzar el laberinto para liberar el minotauro?
+[Mapa273]
+Tipo=Dungeon
+Nombre=Laberinto del minotauro
+Bichos=No hay criaturas en este mapa.
+Info=Serás capaz de cruzar el laberinto para liberar el minotauro?
+[Mapa274]
+Tipo=Dungeon
+Nombre=Sala de la sabiduría
+Bichos=No hay criaturas en este mapa.
+Info=Serás capaz de llegar a la sala de invocación del minotauro?
+[Mapa275]
+Tipo=Dungeon
+Nombre=Zona volcánica del minotauro
+Bichos=No hay criaturas en este mapa.
+Info=Aquí van a parar los que han fallado en el intento de llegar al minotauro.
+[Mapa276]
+Tipo=Dungeon
+Nombre=Sala del minotauro
+Bichos=No hay criaturas en este mapa.
+Info=Has llegado! Con la ayuda de un hilo de ariadna, podrás liberar el minotauro!
+[Mapa277]
+Tipo=Alquimista
+Nombre=Casa del aquimista
+Bichos=No hay criaturas en este mapa.
+Info=Aquí encontrarás diversos NPC's con diversos usos.
+[Mapa278]
+Tipo=Sala de Clan
+Nombre=Sala de Clan
+Bichos=No hay criaturas en este mapa.
+Info=Sala para algun clan que haya llegado a nivel 3.
+[Mapa279]
+Tipo=Mapa Gm
+Nombre=Mapa gm que iba a ser y nunca fue
+Bichos=No hay criaturas en este mapa.
+Info=Mapa sin uso.
+[Mapa280]
+Tipo=Sala de Clan
+Nombre=Sala de Clan
+Bichos=No hay criaturas en este mapa.
+Info=Sala para algun clan que haya llegado a nivel 3.
+[Mapa281]
+Tipo=Sala de Clan
+Nombre=Sala de Clan
+Bichos=No hay criaturas en este mapa.
+Info=Sala para algun clan que haya llegado a nivel 3.
+[Mapa282]
+Tipo=Sala de Clan
+Nombre=Sala de Clan
+Bichos=No hay criaturas en este mapa.
+Info=Sala para algun clan que haya llegado a nivel 3.
+[Mapa283]
+Tipo=Sala de Clan
+Nombre=Sala de Clan
+Bichos=No hay criaturas en este mapa.
+Info=Sala para algun clan que haya llegado a nivel 3.
+[Mapa284]
+Tipo=Sala de Clan
+Nombre=Sala de Clan
+Bichos=No hay criaturas en este mapa.
+Info=Sala para algun clan que haya llegado a nivel 3.
+[Mapa285]
+Tipo=Sala de Clan
+Nombre=Sala de Clan
+Bichos=No hay criaturas en este mapa.
+Info=Sala para algun clan que haya llegado a nivel 3.
+[Mapa286]
+Tipo=Sótano
+Nombre=Sótano
+Bichos=No hay criaturas en este mapa.
+Info=Sótano para alguna de las casas.
+[Mapa287]
+Tipo=Sótano
+Nombre=Sótano
+Bichos=No hay criaturas en este mapa.
+Info=Sótano para alguna de las casas.
+[Mapa288]
+Tipo=Sótano
+Nombre=Sótano
+Bichos=No hay criaturas en este mapa.
+Info=Sótano para alguna de las casas.
+[Mapa289]
+Tipo=Sala de Clan
+Nombre=Sala de Clan
+Bichos=No hay criaturas en este mapa.
+Info=Sala para algun clan que haya llegado a nivel 3.
+[Mapa290]
+Tipo=Sala de Clan
+Nombre=Sala de Clan
+Bichos=No hay criaturas en este mapa.
+Info=Sala para algun clan que haya llegado a nivel 3.
+[Mapa291]
+Tipo=Torneo
+Nombre=Torneo 2vs2
+Bichos=No hay criaturas en este mapa.
+Info=Sala donde se puede combatir en parejas
+[Mapa292]
+Tipo=Torneo
+Nombre=Sala de Torneo
+Bichos=No hay criaturas en este mapa.
+Info=Sala de Torneo......
+[Mapa293]
+Tipo=Torneo
+Nombre=Torneo Todos Vs Todos
+Bichos=No hay criaturas en este mapa.
+Info=Sala para combatir todos a la vez sin que se caigan los objetos al morir
+[Mapa294]
+Tipo=Torneo
+Nombre=Sala de Torneo
+Bichos=No hay criaturas en este mapa.
+Info=Sala de Torneo......
+[Mapa295]
+Tipo=Torneo
+Nombre=Sala de Torneo
+Bichos=No hay criaturas en este mapa.
+Info=Sala de Torneo......
+[Mapa296]
+Tipo=Coliseo
+Nombre=Coliseo
+Bichos=No hay criaturas en este mapa.
+Info=Lugar donde podrás elegir a qué sala de torneo quieres participar.
+[Mapa297]
+Tipo=Sala de Clan
+Nombre=Sala de Clan
+Bichos=No hay criaturas en este mapa.
+Info=Sala para algun clan que haya llegado a nivel 3.
+[Mapa298]
+Tipo=Sala de Clan
+Nombre=Sala de Clan
+Bichos=No hay criaturas en este mapa.
+Info=Sala para algun clan que haya llegado a nivel 3.
+[Mapa299]
+Tipo=Sala de Clan
+Nombre=Sala de Clan
+Bichos=No hay criaturas en este mapa.
+Info=Sala para algun clan que haya llegado a nivel 3.
+[Mapa300]
+Tipo=Sala de Clan
+Nombre=Sala de Clan
+Bichos=No hay criaturas en este mapa.
+Info=Sala para algun clan que haya llegado a nivel 3.
+[Mapa301]
+Tipo=Sala de Clan
+Nombre=Sala de Clan
+Bichos=No hay criaturas en este mapa.
+Info=Sala para algun clan que haya llegado a nivel 3.
+[Mapa302]
+Tipo=Sala de Clan
+Nombre=Sala de Clan
+Bichos=No hay criaturas en este mapa.
+Info=Sala para algun clan que haya llegado a nivel 3.
+[Mapa303]
+Tipo=Quest
+Nombre=Mapa Torneos
+Bichos=No hay criaturas en este mapa.
+Info=Torneos organizados por Game Masters

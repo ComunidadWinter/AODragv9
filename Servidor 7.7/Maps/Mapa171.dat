@@ -1,0 +1,12 @@
+[Mapa171]
+Name=Casa Terror
+MusicNum=64-1
+StartPos=0-0-0
+Terreno=CASA
+Zona=CASA
+Restringir=No
+BackUp= 0
+pk=0
+Mascotas=1
+Monturas=1
+Domar=1

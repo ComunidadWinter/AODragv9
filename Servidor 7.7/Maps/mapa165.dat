@@ -1,0 +1,12 @@
+[mapa165]
+Name=Sala Invocacion
+MusicNum=70-1
+StartPos=0-0-0
+PK=0
+Terreno=DUNGEON
+Zona=DUNGEON
+Restringir=No
+Mascotas=1
+Monturas=1
+Lluvia=1
+Domar=1

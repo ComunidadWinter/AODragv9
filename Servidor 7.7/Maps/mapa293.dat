@@ -1,0 +1,14 @@
+[mapa293]
+Name=TODOSVSTODOS
+MusicNum=9-1
+StartPos=0-0-0
+PK=0
+Terreno=TORNEO
+Zona=TORNEO
+Restringir=No
+Resucitar=1
+Invisible=1
+Mascotas=1
+Monturas=1
+Lluvia=1
+Domar=1
