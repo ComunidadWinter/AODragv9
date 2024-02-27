@@ -1,9 +1,0 @@
-[mapa270]
-Name=Castillo Norte
-MusicNum=20-1
-StartPos=0-0-0
-PK=0
-Terreno=CASTILLO
-Zona=CASTILLO
-Restringir=No
-Domar=1

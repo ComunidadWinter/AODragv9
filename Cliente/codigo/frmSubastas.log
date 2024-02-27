@@ -1,0 +1,6 @@
+Línea 228: la clase MSFlexGridLib.MSFlexGrid del control Items no era una clase de control cargada.
+Línea 234: el nombre de la propiedad _ExtentX de Items no es válido.
+Línea 235: el nombre de la propiedad _ExtentY de Items no es válido.
+Línea 236: el nombre de la propiedad _Version de Items no es válido.
+Línea 237: el nombre de la propiedad Cols de Items no es válido.
+Línea 238: el nombre de la propiedad ScrollBars de Items no es válido.
