@@ -1,24 +1,24 @@
 [Unicornio]
-Mapa=18 ->18
+Mapa=70 ->70
 [Caballo Negro]
-Mapa=145 ->145
+Mapa=9 ->9
 [Tigre Blanco]
-Mapa=204 ->204
+Mapa=45 ->45
 [Elefante]
-Mapa=75 ->75
+Mapa=4 ->4
 [Dragón Dorado]
-Mapa=206 ->206
+Mapa=141 ->141
 [Jabalí Gigante]
-Mapa=2 ->2
+Mapa=263 ->263
 [Escarabajo]
-Mapa=29 ->29
+Mapa=71 ->71
 [Rinosaurio]
-Mapa=22 ->22
+Mapa=115 ->115
 [Cerbero]
-Mapa=11 ->11
+Mapa=142 ->142
 [Wyvern]
-Mapa=204 ->204
+Mapa=30 ->30
 [Avestruz]
-Mapa=262 ->262
+Mapa=218 ->218
 [Jabalí]
 Mapa=71
